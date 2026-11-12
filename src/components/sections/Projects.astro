@@ -13,7 +13,7 @@ const { showHeading = true } = Astro.props;
       <SectionHeading
         eyebrow="Nos réalisations"
         title="Des sites pensés *pour chaque métier.*"
-        intro="Découvrez une sélection de projets de démonstration conçus par notre agence pour illustrer notre approche selon les secteurs d’activité."
+        intro="Découvrez une sélection de projets pour illustrer notre approche selon les secteurs d’activité."
       />
     )}
     <div class="filters" role="toolbar" aria-label="Filtrer les réalisations par secteur" data-filters>
@@ -25,7 +25,7 @@ const { showHeading = true } = Astro.props;
       {projects.map((p, i) => <ProjectCard project={p} index={i} />)}
     </div>
     <div class="projects__foot" data-reveal>
-      <p class="projects__disclaimer"><Icon name="alert" size={18} />Les projets présentés sont des créations de démonstration : les entreprises citées sont fictives et ne constituent pas des références clients.</p>
+      <p class="projects__disclaimer"><Icon name="alert" size={18} />Les projets marqués « démonstration » présentent des entreprises fictives, et les projets « indépendants » sont des projets réels. Aucun ne constitue une référence client.</p>
       {showHeading && <a href={u('/realisations/')} class="btn btn--ghost">Voir le détail des projets<Icon name="arrow" class="btn__icon" /></a>}
     </div>
   </div>

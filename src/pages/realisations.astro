@@ -13,7 +13,7 @@ import { projects } from '../data/projects';
     title="Des sites conçus *pour chaque métier.*"
     intro="Chaque secteur a ses codes, ses clients et ses attentes. Ces projets de démonstration montrent comment nous adaptons la structure, le ton et le design à chaque activité."
   >
-    <p class="notice" data-reveal style="--d:.4s"><Icon name="alert" size={20} /><span><strong>Projets de démonstration.</strong> Les entreprises présentées ci-dessous sont fictives. Elles ont été imaginées par notre agence pour illustrer notre savoir-faire et ne constituent pas des références clients.</span></p>
+    <p class="notice" data-reveal style="--d:.4s"><Icon name="alert" size={20} /><span><strong>Projets de démonstration et projets indépendants.</strong> Les projets marqués « démonstration » présentent des entreprises fictives, imaginées pour illustrer notre savoir-faire. Les projets marqués « indépendant » sont des projets réels. Aucun d’eux ne constitue une référence client.</span></p>
     <nav class="jump" aria-label="Accès rapide aux projets" data-reveal style="--d:.5s">
       {projects.map((p) => <a href={`#${p.slug}`}>{p.category}</a>)}
     </nav>
@@ -27,7 +27,7 @@ import { projects } from '../data/projects';
             <DevicePair project={p} />
           </div>
           <div class="case__body">
-            <p class="case__meta" data-reveal><span>{String(i + 1).padStart(2, '0')}</span>{p.category}{p.demo && <em>Démonstration</em>}</p>
+            <p class="case__meta" data-reveal><span>{String(i + 1).padStart(2, '0')}</span>{p.category}{(p.badge || p.demo) && <em>{p.badge ?? 'Démonstration'}</em>}</p>
             <h2 class="h3 case__title" id={`${p.slug}-title`} data-reveal>{p.name}</h2>
             <p class="case__summary" data-reveal>{p.summary}</p>
             <div class="case__cols" data-reveal>

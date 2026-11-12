@@ -14,6 +14,8 @@ export type Illustration = 'house' | 'car' | 'plate' | 'leaf' | 'sparkle' | 'sci
 export interface Project {
   slug: string;
   demo: boolean;
+  /** Étiquette affichée à la place de « Projet de démonstration » (ex. « Projet indépendant »). */
+  badge?: string;
   category: string;
   categoryId: string;
   name: string;
@@ -49,6 +51,38 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'revizstmg',
+    demo: false,
+    badge: 'Projet indépendant',
+    category: 'Application web',
+    categoryId: 'application',
+    name: 'RévizSTMG',
+    domain: 'revizstmg.github.io',
+    url: 'https://revizstmg.github.io/',
+    screenshots: {
+      desktop: '/images/revizstmg-desktop.webp',
+      mobile: '/images/revizstmg-mobile.webp',
+      alt: 'Aperçu de RévizSTMG, application de révision du bac STMG : catalogue des cours de Terminale',
+    },
+    summary:
+      'Application web de révision du bac STMG, de la Première à la Terminale : cours matière par matière, exercices corrigés et flashcards, avec des cours lisibles sans inscription.',
+    goals: ['Proposer des cours clairs, matière par matière', 'Permettre de s’entraîner avec exercices et flashcards', 'Garder les cours accessibles sans compte'],
+    features: ['17 matières et plus de 750 chapitres', 'Cours lisibles sans inscription', 'Exercices corrigés et flashcards', 'Interface adaptée au mobile'],
+    theme: {
+      bg: '#F4F0E8', surface: '#FFFFFF', ink: '#203E36', muted: '#5F6B66',
+      accent: '#203E36', accentInk: '#FFFFFF',
+      photoA: '#9DB5A8', photoB: '#203E36', serif: true, dark: false,
+    },
+    site: {
+      nav: ['Cours', 'À propos', 'Application'],
+      kicker: 'Bac STMG',
+      headline: 'Comprends tes erreurs. Prépare ton contrôle.',
+      cta: 'Commencer à réviser',
+      cards: ['Économie', 'Droit', 'Management'],
+      illustration: 'leaf',
+    },
+  },
   {
     slug: 'boucherie',
     demo: true,
