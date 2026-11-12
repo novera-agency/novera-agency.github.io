@@ -54,7 +54,13 @@ const orgLd = {
     <meta name="twitter:card" content="summary_large_image" />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd ?? orgLd)} />
-    <script is:inline>document.documentElement.classList.add('js');</script>
+    <script is:inline>
+      // Force HTTPS : redirige toute visite en HTTP (sauf en développement local).
+      if (location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+        location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+      }
+      document.documentElement.classList.add('js');
+    </script>
   </head>
   <body>
     <a href="#main" class="skip-link">Aller au contenu</a>
