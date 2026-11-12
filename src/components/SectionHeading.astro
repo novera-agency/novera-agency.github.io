@@ -1,0 +1,21 @@
+---
+import SplitText from './SplitText.astro';
+interface Props { eyebrow: string; title: string; intro?: string; align?: 'left' | 'split'; id?: string }
+const { eyebrow, title, intro, align = 'split', id } = Astro.props;
+---
+<div class:list={['sh', `sh--${align}`]}>
+  <div class="sh__main">
+    <p class="eyebrow" data-reveal>{eyebrow}</p>
+    <SplitText as="h2" class="h2 sh__title" text={title} />
+  </div>
+  {intro && <p class="lead sh__intro" data-reveal style="--d:.2s" id={id}>{intro}</p>}
+  <slot />
+</div>
+<style>
+  .sh { display: grid; gap: 28px; margin-bottom: clamp(48px, 7vw, 96px); }
+  .sh__main { display: grid; gap: 22px; }
+  .sh :global(.sh__title) { max-width: 16ch; }
+  .sh--split { grid-template-columns: 1.3fr 1fr; align-items: end; column-gap: 64px; }
+  .sh--split .sh__intro { justify-self: end; }
+  @media (max-width: 900px) { .sh--split { grid-template-columns: 1fr; } .sh--split .sh__intro { justify-self: start; } }
+</style>

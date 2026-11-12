@@ -1,0 +1,49 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import Todo from '../components/Todo.astro';
+import { site } from '../config/site';
+const l = site.legal;
+---
+<LegalLayout title="Mentions légales" description={`Mentions légales du site ${site.name}.`} updated="12 novembre 2026">
+  <h2>Éditeur du site</h2>
+  <p>Conformément à l’article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique (LCEN), le présent site est édité par :</p>
+  <dl>
+    <dt>Raison sociale</dt><dd><Todo value={l.companyName} /></dd>
+    <dt>Forme juridique</dt><dd><Todo value={l.legalForm} /></dd>
+    <dt>Capital social</dt><dd><Todo value={l.capital} /></dd>
+    <dt>Siège social</dt><dd><Todo value={l.address} /></dd>
+    <dt>SIRET</dt><dd><Todo value={l.siret} /></dd>
+    <dt>Immatriculation</dt><dd><Todo value={l.rcs} /></dd>
+    <dt>TVA intracommunautaire</dt><dd><Todo value={l.vat} /></dd>
+    <dt>E-mail</dt><dd><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></dd>
+    <dt>Téléphone</dt><dd><a href={`tel:${site.contact.phoneHref}`}>{site.contact.phone}</a></dd>
+  </dl>
+
+  <h2>Directeur de la publication</h2>
+  <p><Todo value={l.director} /></p>
+
+  <h2>Hébergement</h2>
+  <dl>
+    <dt>Hébergeur</dt><dd><Todo value={l.host.name} /></dd>
+    <dt>Adresse</dt><dd><Todo value={l.host.address} /></dd>
+    <dt>Téléphone</dt><dd><Todo value={l.host.phone} /></dd>
+  </dl>
+
+  <h2>Propriété intellectuelle</h2>
+  <p>L’ensemble des contenus de ce site (textes, maquettes, éléments graphiques, logo, structure) est la propriété exclusive de {l.companyName}, sauf mention contraire. Toute reproduction, représentation ou adaptation, totale ou partielle, sans autorisation écrite préalable est interdite et constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle.</p>
+
+  <h2>Projets de démonstration</h2>
+  <p>Les réalisations présentées sur ce site sont des projets de démonstration conçus par {site.name}. Les noms d’entreprises, domaines et contenus qui y figurent sont fictifs ; toute ressemblance avec une entreprise existante serait fortuite. Ils ne constituent ni des références clients ni des témoignages.</p>
+
+  <h2>Responsabilité</h2>
+  <p>{site.name} s’efforce de fournir des informations exactes et à jour, mais ne saurait garantir l’exhaustivité de l’ensemble des contenus. Les informations présentées sur les services proposés ont une valeur indicative et ne constituent pas une offre contractuelle : seul le devis signé engage les parties. Aucun résultat en matière de référencement ou de nombre de clients n’est garanti.</p>
+
+  <h2>Liens externes</h2>
+  <p>Le site peut contenir des liens vers des sites tiers. {site.name} n’exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu.</p>
+
+  <h2>Données personnelles et cookies</h2>
+  <p>Le traitement de vos données personnelles est décrit dans notre <a href="/politique-de-confidentialite/">politique de confidentialité</a>, qui précise également notre usage des cookies.</p>
+
+  <h2>Droit applicable</h2>
+  <p>Les présentes mentions légales sont soumises au droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux français seront seuls compétents.</p>
+</LegalLayout>

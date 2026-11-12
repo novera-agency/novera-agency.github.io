@@ -1,0 +1,28 @@
+---
+/** Cadre « ordinateur portable » — le contenu est passé en slot. */
+interface Props { domain?: string; class?: string }
+const { domain = 'votre-site.fr', class: cls = '' } = Astro.props;
+---
+<div class:list={['laptop', cls]}>
+  <div class="laptop__lid">
+    <div class="laptop__bar">
+      <span class="laptop__dots"><i></i><i></i><i></i></span>
+      <span class="laptop__url"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span data-url>{domain}</span></span>
+    </div>
+    <div class="laptop__screen"><slot /></div>
+  </div>
+  <div class="laptop__base"><span></span></div>
+</div>
+<style>
+  .laptop { position: relative; width: 100%; }
+  .laptop__lid { position: relative; padding: 1.4% 1.4% 0; border-radius: 1.6% 1.6% 0 0 / 2.4% 2.4% 0 0; background: #121214; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); }
+  .laptop__bar { display: flex; align-items: center; gap: 2%; padding: 0 2%; background: #ecebe8; border-radius: 6px 6px 0 0; }
+  .laptop { container-type: inline-size; }
+  .laptop__bar { height: 4.2cqw; min-height: 14px; }
+  .laptop__dots { display: flex; gap: .7cqw; }
+  .laptop__dots i { width: 1.05cqw; height: 1.05cqw; min-width: 5px; min-height: 5px; border-radius: 50%; background: #cfcdc8; }
+  .laptop__url { margin: 0 auto; display: inline-flex; align-items: center; gap: .6cqw; padding: .4cqw 2cqw; border-radius: 99px; background: #fff; color: #6b6b72; font-size: max(7px, 1.35cqw); font-weight: 500; transform: translateX(-3cqw); }
+  .laptop__screen { position: relative; aspect-ratio: 16 / 9.4; overflow: hidden; background: #fff; }
+  .laptop__base { position: relative; height: 2.3cqw; margin: 0 -6%; background: linear-gradient(#d9d8d4, #b9b8b3 60%, #8f8e8a); border-radius: 0 0 14px 14px / 0 0 60% 60%; box-shadow: 0 30px 60px -20px rgba(12,12,13,.45); }
+  .laptop__base span { position: absolute; left: 50%; top: 0; width: 14%; height: 45%; transform: translateX(-50%); background: #a9a8a3; border-radius: 0 0 10px 10px; }
+</style>

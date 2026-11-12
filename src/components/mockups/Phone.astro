@@ -1,0 +1,16 @@
+---
+/** Cadre « smartphone » — le contenu est passé en slot. */
+interface Props { class?: string }
+const { class: cls = '' } = Astro.props;
+---
+<div class:list={['phone', cls]}>
+  <div class="phone__screen">
+    <span class="phone__island"></span>
+    <slot />
+  </div>
+</div>
+<style>
+  .phone { container-type: inline-size; position: relative; width: 100%; aspect-ratio: 9 / 19; padding: 3.6%; border-radius: 17% / 8%; background: #121214; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), 0 0 0 1px rgba(0,0,0,.4), 0 40px 70px -25px rgba(12,12,13,.55); }
+  .phone__screen { position: relative; width: 100%; height: 100%; border-radius: 14% / 6.6%; overflow: hidden; background: #fff; }
+  .phone__island { position: absolute; z-index: 3; top: 3.2cqw; left: 50%; width: 30cqw; height: 8.4cqw; transform: translateX(-50%); background: #0a0a0b; border-radius: 99px; }
+</style>

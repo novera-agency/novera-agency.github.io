@@ -1,0 +1,7 @@
+---
+/** Met en évidence une information à compléter (texte contenant « À compléter »). */
+interface Props { value: string }
+const { value } = Astro.props;
+const todo = /compléter/i.test(value);
+---
+{todo ? <span class="todo">{value}</span> : <>{value}</>}

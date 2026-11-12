@@ -1,0 +1,30 @@
+---
+/**
+ * Logo de l'agence. Si un fichier logo est défini dans
+ * src/config/site.ts, il est affiché ; sinon un logotype texte.
+ */
+import { site } from '../config/site';
+interface Props { variant?: 'dark' | 'light'; class?: string }
+const { variant = 'dark', class: cls = '' } = Astro.props;
+const src = variant === 'light' ? (site.logoLight ?? site.logo) : site.logo;
+---
+<a href="/" class:list={['logo', `logo--${variant}`, cls]} aria-label={`${site.name} — accueil`}>
+  {src ? (
+    <img src={src} alt={site.name} height="36" class="logo__img" />
+  ) : (
+    <>
+      <span class="logo__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M8 22.5 14.2 9.5h3.6L24 22.5h-3.7l-1.2-2.7h-6.2l-1.2 2.7Zm6.2-5.6h3.6L16 12.8Z" fill="var(--logo-cut)"/></svg>
+      </span>
+      <span class="logo__text">{site.name}</span>
+    </>
+  )}
+</a>
+<style>
+  .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.14rem; letter-spacing: -0.03em; color: var(--ink); --logo-cut: var(--bg); }
+  .logo--light { color: var(--on-dark); --logo-cut: var(--dark); }
+  .logo__mark { display: inline-flex; transition: transform .6s var(--ease); }
+  .logo:hover .logo__mark { transform: rotate(-8deg) scale(1.05); }
+  .logo__mark svg path { transition: fill .3s; }
+  .logo__img { height: 36px; width: auto; }
+</style>

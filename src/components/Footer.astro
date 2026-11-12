@@ -1,0 +1,82 @@
+---
+import { nav, site } from '../config/site';
+import { services } from '../data/content';
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+const year = new Date().getFullYear();
+const socials = Object.entries(site.social).filter(([, url]) => url);
+const consentEnabled = Boolean(site.analytics.googleAnalyticsId);
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <Logo variant="light" />
+        <p>{site.tagline}. Création et rénovation de sites Internet pour les artisans, commerçants et petites entreprises.</p>
+        <a href="/#contact" class="btn btn--light">Demander mon devis gratuit<Icon name="arrow" class="btn__icon" /></a>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <h2 class="footer__title">Navigation</h2>
+          <ul role="list">
+            <li><a href="/">Accueil</a></li>
+            {nav.map((n) => <li><a href={n.href}>{n.label}</a></li>)}
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__title">Services</h2>
+          <ul role="list">
+            {services.map((s) => <li><a href={`/#service-${s.id}`}>{s.title}</a></li>)}
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__title">Contact</h2>
+          <ul role="list">
+            <li><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></li>
+            <li><a href={`tel:${site.contact.phoneHref}`}>{site.contact.phone}</a></li>
+            <li class="footer__plain">{site.contact.hours}</li>
+            {socials.map(([k, url]) => <li><a href={url} target="_blank" rel="noopener noreferrer" class="footer__social">{k}</a></li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__word" aria-hidden="true">{site.name}</div>
+    <div class="footer__bottom">
+      <p>© {year} {site.name}. Tous droits réservés.</p>
+      <ul role="list">
+        <li><a href="/mentions-legales/">Mentions légales</a></li>
+        <li><a href="/politique-de-confidentialite/">Politique de confidentialité</a></li>
+        <li>
+          {consentEnabled
+            ? <button type="button" data-cookie-open>Gestion des cookies</button>
+            : <a href="/politique-de-confidentialite/#cookies">Cookies</a>}
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer { background: var(--dark); color: var(--on-dark); padding-top: clamp(72px, 9vw, 120px); overflow: hidden; }
+  .footer__top { display: grid; grid-template-columns: 1.1fr 1.6fr; gap: 64px; padding-bottom: 64px; }
+  .footer__brand { display: grid; gap: 22px; justify-items: start; align-content: start; }
+  .footer__brand p { color: var(--on-dark-muted); max-width: 40ch; }
+  .footer__cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .footer__title { font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; color: var(--on-dark-muted); font-weight: 600; margin-bottom: 18px; }
+  .footer__cols ul { display: grid; gap: 10px; }
+  .footer__cols a, .footer__bottom a, .footer__bottom button { color: var(--on-dark); opacity: .85; transition: opacity .3s, color .3s; overflow-wrap: anywhere; }
+  .footer__cols a:hover, .footer__bottom a:hover, .footer__bottom button:hover { opacity: 1; color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+  .footer__plain { color: var(--on-dark-muted); font-size: .95rem; }
+  .footer__social { text-transform: capitalize; }
+  .footer__word { font-size: clamp(3.4rem, 15vw, 15rem); font-weight: 700; letter-spacing: -0.06em; line-height: .8; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(245,244,241,.16); user-select: none; padding-bottom: 8px; transform: translateY(14%); }
+  .footer__bottom { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding: 26px 0 32px; border-top: 1px solid rgba(245,244,241,.12); font-size: .9rem; color: var(--on-dark-muted); position: relative; background: var(--dark); }
+  .footer__bottom ul { display: flex; gap: 24px; flex-wrap: wrap; }
+  @media (max-width: 960px) {
+    .footer__top { grid-template-columns: 1fr; gap: 48px; }
+  }
+  @media (max-width: 600px) {
+    .footer__cols { grid-template-columns: 1fr 1fr; }
+    .footer__cols > div:last-child { grid-column: 1 / -1; }
+    .footer__bottom { flex-direction: column; align-items: flex-start; }
+  }
+</style>

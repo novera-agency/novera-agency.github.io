@@ -1,0 +1,40 @@
+---
+import { reasons } from '../../data/content';
+import SplitText from '../SplitText.astro';
+import Icon from '../Icon.astro';
+const icons = ['user', 'compass', 'shield', 'mobile', 'spark', 'wallet'] as const;
+---
+<section class="section section--dark why" id="pourquoi" aria-labelledby="why-title">
+  <div class="container">
+    <div class="why__intro">
+      <p class="eyebrow" data-reveal>Pourquoi travailler avec nous ?</p>
+      <SplitText as="h2" class="h2 why__title" text="Votre site Internet est souvent *le premier contact* entre votre entreprise et un futur client." />
+      <p class="why__punch" data-reveal style="--d:.3s">Donnez-lui une bonne raison de vous choisir.</p>
+    </div>
+    <ul role="list" class="why__grid">
+      {reasons.map((r, i) => (
+        <li class="reason" data-reveal style={`--d:${(i % 3) * 0.08}s`}>
+          <span class="reason__icon"><Icon name={icons[i]} size={22} /></span>
+          <h3 class="reason__title">{r.title}</h3>
+          <p class="reason__text">{r.text}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+<style>
+  .why { overflow: hidden; }
+  .why::before { content: ''; position: absolute; width: 900px; height: 900px; right: -300px; top: -400px; background: radial-gradient(circle, rgba(47,75,255,.35), transparent 65%); pointer-events: none; }
+  .why__intro { display: grid; gap: 26px; margin-bottom: clamp(56px, 8vw, 110px); position: relative; }
+  .why :global(.why__title) { max-width: 20ch; }
+  .why__punch { font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 500; color: var(--on-dark-muted); letter-spacing: -0.02em; }
+  .why__grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(245,244,241,.12); border-left: 1px solid rgba(245,244,241,.12); position: relative; }
+  .reason { position: relative; display: grid; gap: 14px; align-content: start; padding: clamp(28px, 3.4vw, 44px); border-right: 1px solid rgba(245,244,241,.12); border-bottom: 1px solid rgba(245,244,241,.12); transition: background-color .5s var(--ease); }
+  .reason:hover { background: rgba(245,244,241,.04); }
+  .reason__icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: rgba(245,244,241,.08); color: var(--on-dark); margin-bottom: 10px; transition: background-color .5s var(--ease), transform .6s var(--ease); }
+  .reason:hover .reason__icon { background: var(--accent); transform: translateY(-4px); }
+  .reason__title { font-size: 1.28rem; letter-spacing: -0.025em; }
+  .reason__text { color: var(--on-dark-muted); font-size: .98rem; }
+  @media (max-width: 960px) { .why__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .why__grid { grid-template-columns: 1fr; } }
+</style>

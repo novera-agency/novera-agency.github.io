@@ -1,0 +1,37 @@
+---
+import type { Project } from '../data/projects';
+import DevicePair from './mockups/DevicePair.astro';
+import Icon from './Icon.astro';
+interface Props { project: Project; index?: number }
+const { project: p, index = 0 } = Astro.props;
+---
+<article class="project" data-category={p.categoryId} data-reveal style={`--d:${(index % 2) * 0.1}s; --tint:${p.theme.dark ? p.theme.bg : p.theme.photoA}`}>
+  <a href={`/realisations/#${p.slug}`} class="project__link" aria-label={`Voir le projet de démonstration ${p.category} — ${p.name}`}>
+    <div class="project__visual">
+      {p.demo && <span class="project__badge">Projet de démonstration</span>}
+      <DevicePair project={p} />
+    </div>
+    <div class="project__meta">
+      <div>
+        <p class="project__cat">{p.category}</p>
+        <h3 class="project__name">{p.name}</h3>
+      </div>
+      <span class="project__arrow"><Icon name="arrow-up-right" size={20} /></span>
+    </div>
+  </a>
+</article>
+<style>
+  .project { min-width: 0; }
+  .project.is-hidden { display: none; }
+  .project__link { display: grid; gap: 20px; }
+  .project__visual { position: relative; padding: clamp(28px, 5vw, 56px) clamp(20px, 4vw, 48px) clamp(20px, 3vw, 36px); border-radius: var(--radius-l); overflow: hidden; background:
+      radial-gradient(80% 80% at 80% 0%, color-mix(in srgb, var(--tint) 45%, transparent), transparent 70%),
+      color-mix(in srgb, var(--tint) 18%, var(--bg-2)); transition: border-radius .6s var(--ease); }
+  .project:hover .project__visual { border-radius: calc(var(--radius-l) + 10px); }
+  .project__badge { position: absolute; top: 16px; left: 16px; z-index: 2; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.85); backdrop-filter: blur(8px); font-size: .74rem; font-weight: 700; letter-spacing: .04em; color: var(--ink); }
+  .project__meta { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 0 4px; }
+  .project__cat { font-size: .85rem; color: var(--muted); font-weight: 500; }
+  .project__name { font-size: clamp(1.3rem, 2vw, 1.6rem); letter-spacing: -0.03em; margin-top: 4px; }
+  .project__arrow { display: grid; place-items: center; flex: none; width: 52px; height: 52px; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--line-strong); transition: background-color .4s var(--ease), color .4s var(--ease), transform .6s var(--ease), box-shadow .4s; }
+  .project:hover .project__arrow { background: var(--ink); color: var(--bg); transform: rotate(45deg); box-shadow: none; }
+</style>

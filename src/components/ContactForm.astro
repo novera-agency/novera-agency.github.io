@@ -1,0 +1,130 @@
+---
+/**
+ * Formulaire de demande de devis.
+ * L'envoi est géré par src/scripts/form.ts selon la configuration
+ * définie dans src/config/site.ts (Web3Forms ou Formspree).
+ */
+import { site } from '../config/site';
+import { sectorOptions } from '../data/content';
+import Icon from './Icon.astro';
+const { web3formsAccessKey, formspreeId, subject } = site.form;
+const provider = web3formsAccessKey ? 'web3forms' : formspreeId ? 'formspree' : 'none';
+const action = provider === 'web3forms'
+  ? 'https://api.web3forms.com/submit'
+  : provider === 'formspree' ? `https://formspree.io/f/${formspreeId}` : '';
+---
+<form class="form" novalidate data-contact-form data-provider={provider} data-email={site.contact.email} data-subject={subject} action={action || undefined} method="post">
+  {provider === 'web3forms' && <input type="hidden" name="access_key" value={web3formsAccessKey} />}
+  <input type="hidden" name="subject" value={subject} />
+  <input type="hidden" name="from_name" value={site.name} />
+  <!-- Pot de miel anti-spam : doit rester vide -->
+  <div class="hp" aria-hidden="true"><label>Ne pas remplir <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+
+  <fieldset class="form__type">
+    <legend class="field__label">Type de projet <span class="req" aria-hidden="true">*</span></legend>
+    <div class="choices">
+      <label class="choice">
+        <input type="radio" name="type_projet" value="Création d'un site" required checked />
+        <span class="choice__box"><Icon name="plus" size={22} /><b>Création</b><small>Je n’ai pas encore de site</small></span>
+      </label>
+      <label class="choice">
+        <input type="radio" name="type_projet" value="Rénovation d'un site" />
+        <span class="choice__box"><Icon name="spark" size={22} /><b>Rénovation</b><small>Je veux moderniser mon site</small></span>
+      </label>
+    </div>
+  </fieldset>
+
+  <div class="form__grid">
+    <div class="field">
+      <label class="field__label" for="f-name">Nom et prénom <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="f-name" name="nom" type="text" autocomplete="name" required minlength="2" placeholder="Jean Dupont" />
+      <p class="field__error" id="f-name-err"></p>
+    </div>
+    <div class="field">
+      <label class="field__label" for="f-company">Nom de l’entreprise <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="f-company" name="entreprise" type="text" autocomplete="organization" required placeholder="Dupont Rénovation" />
+      <p class="field__error" id="f-company-err"></p>
+    </div>
+    <div class="field">
+      <label class="field__label" for="f-email">Adresse e-mail <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="f-email" name="email" type="email" autocomplete="email" required placeholder="jean@entreprise.fr" />
+      <p class="field__error" id="f-email-err"></p>
+    </div>
+    <div class="field">
+      <label class="field__label" for="f-phone">Numéro de téléphone <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="f-phone" name="telephone" type="tel" autocomplete="tel" required inputmode="tel" pattern="[\+0-9 \.\(\)\-]{8,20}" placeholder="06 12 34 56 78" />
+      <p class="field__error" id="f-phone-err"></p>
+    </div>
+    <div class="field field--full">
+      <label class="field__label" for="f-sector">Secteur d’activité <span class="req" aria-hidden="true">*</span></label>
+      <select class="input" id="f-sector" name="secteur" required>
+        <option value="" disabled selected>Sélectionnez votre secteur</option>
+        {sectorOptions.map((o) => <option value={o}>{o}</option>)}
+      </select>
+      <p class="field__error" id="f-sector-err"></p>
+    </div>
+    <div class="field field--full">
+      <label class="field__label" for="f-message">Description du besoin <span class="req" aria-hidden="true">*</span></label>
+      <textarea class="input" id="f-message" name="message" required minlength="20" placeholder="Présentez votre activité, vos objectifs et, le cas échéant, l’adresse de votre site actuel."></textarea>
+      <p class="field__error" id="f-message-err"></p>
+    </div>
+  </div>
+
+  <div class="field form__consent">
+    <label class="check">
+      <input type="checkbox" name="consentement" value="oui" required id="f-consent" />
+      <span>J’accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="/politique-de-confidentialite/" target="_blank">politique de confidentialité</a>. <span class="req" aria-hidden="true">*</span></span>
+    </label>
+    <p class="field__error" id="f-consent-err"></p>
+  </div>
+
+  <div class="form__submit">
+    <button type="submit" class="btn btn--accent btn--lg" data-submit>
+      <span data-submit-label>Envoyer ma demande</span>
+      <Icon name="arrow" class="btn__icon" />
+    </button>
+    <p class="form__required"><span class="req">*</span> Champs obligatoires</p>
+  </div>
+
+  <div class="form__status" role="status" aria-live="polite" data-form-status hidden></div>
+</form>
+
+<style>
+  .form { display: grid; gap: 28px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form__type { border: 0; padding: 0; display: grid; gap: 12px; }
+  .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .choice { position: relative; cursor: pointer; }
+  .choice input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .choice__box { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; row-gap: 2px; align-items: center; padding: 18px 20px; border-radius: 16px; background: var(--bg); box-shadow: inset 0 0 0 1px transparent; transition: box-shadow .3s var(--ease), background-color .3s var(--ease); }
+  .choice__box :global(svg) { grid-row: span 2; width: 40px; height: 40px; padding: 9px; border-radius: 12px; background: var(--surface); transition: background-color .3s, color .3s; }
+  .choice__box b { font-size: 1.05rem; letter-spacing: -0.02em; }
+  .choice__box small { font-size: .84rem; color: var(--muted); }
+  .choice:hover .choice__box { box-shadow: inset 0 0 0 1px var(--line-strong); }
+  .choice input:checked + .choice__box { background: var(--surface); box-shadow: inset 0 0 0 2px var(--ink); }
+  .choice input:checked + .choice__box :global(svg) { background: var(--accent); color: #fff; }
+  .choice input:focus-visible + .choice__box { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .form__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .field--full { grid-column: 1 / -1; }
+  .check { display: flex; gap: 12px; align-items: flex-start; font-size: .9rem; color: var(--ink-2); cursor: pointer; }
+  .check input { flex: none; width: 20px; height: 20px; margin-top: 2px; accent-color: var(--accent); cursor: pointer; }
+  .check a { text-decoration: underline; text-underline-offset: 3px; color: var(--ink); }
+  .form__consent.is-invalid .check { color: var(--danger); }
+  .form__submit { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .form__required { font-size: .84rem; color: var(--muted); }
+  .form__required .req, .check .req { color: var(--accent); }
+  .btn[aria-busy='true'] { pointer-events: none; opacity: .75; }
+  .btn[aria-busy='true'] :global(.btn__icon) { animation: pulse 1s ease-in-out infinite; }
+  @keyframes pulse { 50% { transform: translateX(6px); } }
+  .form__status { display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; border-radius: 16px; font-size: .95rem; line-height: 1.5; }
+  .form__status[hidden] { display: none; }
+  .form__status[data-state='success'] { background: #e8f5ec; color: #12512c; }
+  .form__status[data-state='error'] { background: #fdecea; color: #7d1d10; }
+  .form__status[data-state='info'] { background: #eef1ff; color: #1b2a8f; }
+  .form__status :global(a) { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .form__status strong { display: block; margin-bottom: 2px; }
+  @media (max-width: 640px) {
+    .form__grid, .choices { grid-template-columns: 1fr; }
+    .form__submit .btn { width: 100%; }
+  }
+</style>
