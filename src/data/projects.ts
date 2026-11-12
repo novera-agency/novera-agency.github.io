@@ -84,6 +84,38 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: 'quickfix-ia',
+    demo: false,
+    badge: 'Projet indépendant',
+    category: 'Plateforme web',
+    categoryId: 'plateforme',
+    name: 'QuickFix.IA',
+    domain: 'quickfixia.netlify.app',
+    url: 'https://quickfixia.netlify.app/',
+    screenshots: {
+      desktop: '/images/quickfix-desktop.webp',
+      mobile: '/images/quickfix-mobile.webp',
+      alt: 'Aperçu de QuickFix.IA, plateforme de mise en relation pour les urgences à domicile',
+    },
+    summary:
+      'Plateforme de mise en relation entre particuliers et artisans pour les urgences à domicile (plomberie, serrurerie, électricité) : demande en quelques secondes, artisans à proximité, tarif annoncé à l’avance et suivi de l’intervention.',
+    goals: ['Rendre une demande d’urgence simple et rapide', 'Rassurer avec des artisans vérifiés et des prix affichés', 'Séparer clairement le parcours particulier et le parcours artisan'],
+    features: ['Parcours particulier et parcours artisan', 'Démonstrations interactives des deux parcours', 'Suivi de l’intervention en direct', 'Bandeau de consentement aux cookies'],
+    theme: {
+      bg: '#0D1B2A', surface: '#162A40', ink: '#FFFFFF', muted: '#9AA6B5',
+      accent: '#FF6B35', accentInk: '#FFFFFF',
+      photoA: '#FF6B35', photoB: '#0D1B2A', serif: false, dark: true,
+    },
+    site: {
+      nav: ['Comment ça marche', 'Confiance', 'Artisans'],
+      kicker: 'Urgences à domicile',
+      headline: 'Une urgence à la maison ?',
+      cta: 'J’ai une urgence',
+      cards: ['Plomberie', 'Serrurerie', 'Électricité'],
+      illustration: 'house',
+    },
+  },
+  {
     slug: 'boucherie',
     demo: true,
     category: 'Boucherie',
