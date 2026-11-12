@@ -58,6 +58,14 @@ Par défaut, aucun cookie n’est déposé (polices auto-hébergées, aucun trac
 - [ ] Configurer l’envoi du formulaire et faire un essai réel
 - [ ] Remplacer les projets de démonstration par de vraies réalisations dès que possible (avec l’accord des clients)
 
+## Sites de démonstration
+
+Les sites de démonstration (paysagiste, boulangerie, restaurant, kebab, épicerie) sont des sites statiques indépendants dans `public/demos/<nom>/`, avec leurs propres styles. Ils partagent seulement `public/demos/shared.css`, `public/demos/demo.js` et les polices auto-hébergées de `public/demos/fonts/`.
+
+- Entreprises, adresses, téléphones, horaires et prix y sont **fictifs** ; chaque page porte un bandeau « Site de démonstration » et une balise `noindex`.
+- Leurs formulaires **n’envoient rien** et le disent à l’écran.
+- Pour ajouter un projet : créer la fiche dans `src/data/projects.ts` (champs `url`, `screenshots`), les captures dans `public/images/`.
+
 ## Structure
 
 ```

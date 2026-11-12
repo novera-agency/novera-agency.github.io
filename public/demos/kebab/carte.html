@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La carte — Anatolia Kebab</title>
+<meta name="description" content="Sandwichs, assiettes, menus et desserts d’Anatolia Kebab, snack fictif de démonstration. Composez votre sandwich et voyez le prix en direct.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#171412">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23FFB81C'/%3E%3Cpath d='M16 5c4 0 6 6 7 13 .6 4 .8 6-1 8H10c-1.800-2-1.600-4-1-8 1-7 3-13 7-13Z' fill='%23E5352B'/%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-bar">Site de démonstration conçu par NOVERA Agency<a href="../../realisations/#kebab">Retour aux réalisations</a></div>
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="Anatolia Kebab, accueil">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#FFB81C"/><path d="M16 5c4 0 6 6 7 13 .6 4 .8 6-1 8H10c-1.800-2-1.600-4-1-8 1-7 3-13 7-13Z" fill="#E5352B"/></svg>
+      Anatolia <span>Kebab</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="carte.html">La carte</a></li>
+        <li><a href="contact.html">Commander</a></li>
+        <li class="nav-cta"><a href="carte.html#composer">Composer mon sandwich</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-head">
+    <div class="container">
+      <p class="crumbs"><a href="index.html">Accueil</a> / La carte</p>
+      <h1 class="reveal">La carte.</h1>
+      <p class="lead reveal" style="--d:.1s">Des prix affichés, pas de surprise. Les tarifs ci-dessous sont des exemples fictifs.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:clamp(40px,6vw,72px)">
+    <div class="container menu-layout">
+      <div>
+        <section class="cat" id="sandwichs"><h2>Sandwichs</h2>
+          <div class="rows">
+            <div class="row"><b>Kebab veau</b><span>Galette, viande de veau, salade, tomate, oignon, sauce</span><em>8,50 €</em></div>
+            <div class="row"><b>Kebab poulet</b><span>Galette, poulet grillé, crudités, sauce</span><em>8,50 €</em></div>
+            <div class="row"><b>Kebab mixte</b><span>Veau et poulet, crudités, sauce</span><em>9,00 €</em></div>
+            <div class="row"><b>Dürüm</b><span>Galette fine roulée, viande au choix, crudités, sauce</span><em>8,90 €</em></div>
+            <div class="row"><b>Falafel</b><span>Végétarien. Falafels, houmous, crudités, sauce</span><em>7,90 €</em></div>
+          </div>
+        </section>
+        <section class="cat" id="assiettes"><h2>Assiettes</h2>
+          <div class="rows">
+            <div class="row"><b>Assiette kebab</b><span>Viande de veau, frites maison, salade, pain, sauce</span><em>12,50 €</em></div>
+            <div class="row"><b>Assiette poulet</b><span>Poulet grillé, frites maison, salade, pain, sauce</span><em>12,50 €</em></div>
+            <div class="row"><b>Assiette falafel</b><span>Végétarien. Falafels, houmous, salade, pain</span><em>11,50 €</em></div>
+          </div>
+        </section>
+        <section class="cat" id="menus"><h2>Menus</h2>
+          <div class="rows">
+            <div class="row"><b>Menu sandwich</b><span>Ton sandwich + frites maison + boisson 33 cl</span><em>+ 3,00 €</em></div>
+            <div class="row"><b>Menu enfant</b><span>Petit kebab, frites, boisson</span><em>6,90 €</em></div>
+          </div>
+        </section>
+        <section class="cat" id="extras"><h2>Frites &amp; desserts</h2>
+          <div class="rows">
+            <div class="row"><b>Frites maison</b><span>Portion généreuse</span><em>3,00 €</em></div>
+            <div class="row"><b>Salade</b><span>Crudités, olives, sauce au choix</span><em>4,00 €</em></div>
+            <div class="row"><b>Baklava</b><span>Pistache et miel</span><em>3,50 €</em></div>
+            <div class="row"><b>Boissons</b><span>Canettes 33 cl, eau, ayran</span><em>2,00 €</em></div>
+          </div>
+          <p class="note" style="margin-top:16px">Allergènes disponibles sur demande au comptoir. Prix, produits et horaires fictifs.</p>
+        </section>
+      </div>
+
+      <aside class="builder reveal" id="composer" aria-labelledby="b-title">
+        <h2 id="b-title">Compose ton sandwich</h2>
+        <form id="builder-form" novalidate>
+          <fieldset><legend>1 · Le pain</legend><div class="opts">
+            <label class="opt"><input type="radio" name="pain" value="Galette" data-price="7.5" checked><span>Galette</span></label>
+            <label class="opt"><input type="radio" name="pain" value="Dürüm" data-price="8"><span>Dürüm</span></label>
+            <label class="opt"><input type="radio" name="pain" value="Pain turc" data-price="7.5"><span>Pain turc</span></label>
+          </div></fieldset>
+          <fieldset style="margin-top:14px"><legend>2 · La viande</legend><div class="opts">
+            <label class="opt"><input type="radio" name="viande" value="Poulet" data-price="0" checked><span>Poulet</span></label>
+            <label class="opt"><input type="radio" name="viande" value="Veau" data-price="0.5"><span>Veau</span></label>
+            <label class="opt"><input type="radio" name="viande" value="Mixte" data-price="0.5"><span>Mixte</span></label>
+            <label class="opt"><input type="radio" name="viande" value="Falafel" data-price="-0.5"><span>Falafel</span></label>
+          </div></fieldset>
+          <fieldset style="margin-top:14px"><legend>3 · Les sauces (2 maximum)</legend><div class="opts" id="sauces">
+            <label class="opt"><input type="checkbox" name="sauce" value="Blanche" checked><span>Blanche</span></label>
+            <label class="opt"><input type="checkbox" name="sauce" value="Harissa"><span>Harissa</span></label>
+            <label class="opt"><input type="checkbox" name="sauce" value="Algérienne"><span>Algérienne</span></label>
+            <label class="opt"><input type="checkbox" name="sauce" value="Barbecue"><span>Barbecue</span></label>
+          </div></fieldset>
+          <fieldset style="margin-top:14px"><legend>4 · En plus</legend><div class="opts">
+            <label class="opt"><input type="checkbox" name="extra" value="Fromage" data-price="1"><span>Fromage + 1 €</span></label>
+            <label class="opt"><input type="checkbox" name="extra" value="Menu" data-price="3"><span>Menu frites + boisson + 3 €</span></label>
+          </div></fieldset>
+          <div class="total" style="margin-top:18px"><p id="recap" aria-live="polite">Galette · Poulet · Blanche</p><strong id="total">7,50 €</strong></div>
+          <button class="btn" type="submit" style="margin-top:16px">Commander ce sandwich</button>
+          <div class="form-status" id="b-status" role="status" hidden></div>
+        </form>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand"><a class="logo" href="index.html">Anatolia <span>Kebab</span></a><p>Snack fictif présenté à titre de démonstration.</p></div>
+      <div><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="carte.html">La carte</a></li><li><a href="contact.html">Commander</a></li></ul></div>
+      <div><h4>Horaires</h4><ul><li>Midi : 11h – 15h</li><li>Soir : 18h – 23h</li><li>Tous les jours</li></ul></div>
+    </div>
+    <p class="foot-bottom">© <span data-year>2026</span> Anatolia Kebab — Site de démonstration. Établissement, adresse, horaires et prix fictifs.</p>
+  </div>
+</footer>
+<script src="../demo.js" defer></script>
+<script>
+(function () {
+  var form = document.getElementById('builder-form');
+  var recap = document.getElementById('recap'), total = document.getElementById('total'), status = document.getElementById('b-status');
+  var fmt = function (n) { return n.toFixed(2).replace('.', ',') + ' €'; };
+  function update() {
+    var checked = Array.prototype.slice.call(form.querySelectorAll('input:checked'));
+    var sum = 0, parts = [];
+    checked.forEach(function (i) { sum += parseFloat(i.dataset.price || 0); parts.push(i.value); });
+    recap.textContent = parts.join(' · ');
+    total.textContent = fmt(sum);
+  }
+  form.addEventListener('change', function (e) {
+    if (e.target.name === 'sauce') {
+      var on = form.querySelectorAll('input[name="sauce"]:checked');
+      if (on.length > 2) e.target.checked = false;
+    }
+    status.hidden = true;
+    update();
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.hidden = false;
+    status.textContent = 'Site de démonstration : aucune commande n’est envoyée. Sur le site final, ce récapitulatif (' + recap.textContent + ' — ' + total.textContent + ') serait transmis au snack.';
+  });
+  update();
+})();
+</script>
+</body>
+</html>

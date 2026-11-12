@@ -41,7 +41,7 @@ import { projects } from '../data/projects';
               </div>
             </div>
             <div class="case__links" data-reveal>
-              {p.url && <a href={p.url} class="btn btn--sm" target="_blank" rel="noopener noreferrer">Voir le site en ligne<Icon name="arrow-up-right" class="btn__icon" /></a>}
+              {p.url && <a href={p.url.startsWith('/') ? u(p.url) : p.url} class="btn btn--sm" target="_blank" rel="noopener noreferrer">{p.demo ? 'Voir le site de démonstration' : 'Voir le site en ligne'}<Icon name="arrow-up-right" class="btn__icon" /></a>}
               <a href={u('/contact/?projet=creation')} class="link-arrow">Un projet similaire ? Parlons-en<Icon name="arrow" /></a>
             </div>
           </div>

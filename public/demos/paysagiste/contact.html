@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact et demande d’étude — Verdance Paysage</title>
+<meta name="description" content="Demandez une étude gratuite pour votre jardin. Verdance Paysage, entreprise fictive de démonstration.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2C5A3A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%232C5A3A'/%3E%3Cpath d='M9 22c0-7 5-12 14-12 0 8-4 13-11 13-1.500 0-2.500-.4-3-1Z' fill='%23CFE58A'/%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-bar">Site de démonstration conçu par NOVERA Agency<a href="../../realisations/#paysagiste">Retour aux réalisations</a></div>
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="Verdance Paysage, accueil">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="10" fill="#2C5A3A"/><path d="M9 22c0-7 5-12 14-12 0 8-4 13-11 13-1.5 0-2.5-.4-3-1Z" fill="#CFE58A"/><path d="M9 23c3-4 6-7 10-9" stroke="#2C5A3A" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Verdance <span>Paysage</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="prestations.html">Prestations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html#formulaire">Demander une étude</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-head">
+    <div class="container">
+      <nav aria-label="Fil d’Ariane" class="lead" style="font-size:.9rem"><a href="index.html">Accueil</a> / Contact</nav>
+      <h1 class="reveal">Parlons de <em>votre jardin.</em></h1>
+      <p class="lead reveal" style="--d:.1s">Décrivez votre terrain et vos envies. Nous revenons vers vous pour fixer une visite.</p>
+    </div>
+  </section>
+
+  <section class="container contact-grid" style="padding-bottom:0">
+    <div class="info reveal">
+      <dl>
+        <div><dt>E-mail</dt><dd>contact@verdance-paysage.example</dd></div>
+        <div><dt>Téléphone</dt><dd>01 99 00 00 00</dd></div>
+        <div><dt>Horaires</dt><dd>Lundi – vendredi, 8h – 18h<br>Samedi sur rendez-vous</dd></div>
+        <div><dt>Zone d’intervention</dt><dd>Chartres et rayon de 30 km (exemple)</dd></div>
+      </dl>
+      <p class="form-note">Coordonnées fictives : cette entreprise n’existe pas.</p>
+    </div>
+
+    <form class="form reveal" id="formulaire" data-demo novalidate style="--d:.1s">
+      <div class="fields">
+        <div class="field"><label for="nom">Nom et prénom</label><input class="input" id="nom" name="nom" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="email">E-mail</label><input class="input" id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="projet">Type de projet</label>
+          <select class="input" id="projet" name="projet" required>
+            <option value="" selected disabled>Choisissez</option>
+            <option>Création d’un jardin</option><option>Terrasse ou allée</option><option>Plantations ou haie</option><option>Entretien régulier</option><option>Arrosage ou éclairage</option>
+          </select></div>
+        <div class="field"><label for="surface">Surface approximative</label>
+          <select class="input" id="surface" name="surface">
+            <option value="" selected>Je ne sais pas</option><option>Moins de 200 m²</option><option>200 à 500 m²</option><option>500 à 1 000 m²</option><option>Plus de 1 000 m²</option>
+          </select></div>
+        <div class="field field--full"><label for="message">Votre projet</label><textarea class="input" id="message" name="message" required minlength="20" placeholder="Décrivez votre terrain, l’usage souhaité, vos plantes préférées…"></textarea></div>
+      </div>
+      <button class="btn" type="submit">Envoyer ma demande <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="form-note">Formulaire de démonstration : aucune donnée n’est envoyée ni conservée.</p>
+      <div class="form-status" data-status role="status" hidden></div>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand"><a class="logo" href="index.html" style="color:#fff">Verdance <span>Paysage</span></a><p>Création et entretien de jardins. Entreprise fictive présentée à titre de démonstration.</p></div>
+      <div><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="prestations.html">Prestations</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>contact@verdance-paysage.example</li><li>01 99 00 00 00</li><li>Lundi – vendredi, 8h – 18h</li></ul></div>
+    </div>
+    <p class="foot-bottom">© <span data-year>2026</span> Verdance Paysage — Site de démonstration. Entreprise, adresse et coordonnées fictives.</p>
+  </div>
+</footer>
+<script src="../demo.js" defer></script>
+</body>
+</html>

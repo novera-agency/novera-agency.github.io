@@ -21,7 +21,7 @@ export interface Project {
   name: string;
   /** Domaine fictif affiché dans la barre d'adresse de la maquette. */
   domain: string;
-  /** Adresse du site en ligne (facultatif) : affiche un bouton « Voir le site ». */
+  /** Adresse du site en ligne (facultatif) : affiche un bouton « Voir le site ». Un chemin commençant par / est un site hébergé dans /public. */
   url?: string;
   /** Captures d'écran réelles (dans /public) : remplacent la maquette générée. */
   screenshots?: { desktop: string; mobile: string; alt: string };
@@ -50,7 +50,7 @@ export interface Project {
   };
 }
 
-export const projects: Project[] = [
+const all: Project[] = [
   {
     slug: 'revizstmg',
     demo: false,
@@ -147,6 +147,99 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: 'boulangerie',
+    demo: true,
+    category: 'Boulangerie',
+    categoryId: 'boulangerie',
+    name: 'Maison Levain',
+    domain: 'maison-levain.example',
+    url: '/demos/boulangerie/',
+    screenshots: {
+      desktop: '/images/boulangerie-desktop.webp',
+      mobile: '/images/boulangerie-mobile.webp',
+      alt: 'Aperçu du site de démonstration Maison Levain',
+    },
+    summary:
+      'Site chaleureux pour une boulangerie artisanale : fournées du jour qui se mettent à jour selon l’heure, pains, viennoiseries, pâtisseries, formule du midi et précommande.',
+    goals: ['Montrer le savoir-faire artisanal', 'Informer sur les horaires de sortie de four', 'Faciliter la précommande'],
+    features: ['Fournées du jour en temps réel', 'Carte des pains et pâtisseries avec prix', 'Formule du midi', 'Formulaire de précommande'],
+    theme: {
+      bg: '#FBF6EC', surface: '#FFFFFF', ink: '#2A1B12', muted: '#6F5B4B',
+      accent: '#B8741A', accentInk: '#FFFFFF',
+      photoA: '#EBC56B', photoB: '#4A2F1D', serif: true, dark: false,
+    },
+    site: {
+      nav: ['Nos produits', 'Contact'],
+      kicker: 'Boulangerie artisanale',
+      headline: 'Le pain prend son temps.',
+      cta: 'Précommander',
+      cards: ['Pains', 'Viennoiseries', 'Pâtisseries'],
+      illustration: 'sparkle',
+    },
+  },
+  {
+    slug: 'kebab',
+    demo: true,
+    category: 'Kebab',
+    categoryId: 'kebab',
+    name: 'Anatolia Kebab',
+    domain: 'anatolia-kebab.example',
+    url: '/demos/kebab/',
+    screenshots: {
+      desktop: '/images/kebab-desktop.webp',
+      mobile: '/images/kebab-mobile.webp',
+      alt: 'Aperçu du site de démonstration Anatolia Kebab',
+    },
+    summary:
+      'Site direct et gourmand pour un snack : carte avec prix, composez votre sandwich avec calcul du prix en direct, commande à emporter et horaires.',
+    goals: ['Donner envie dès la première seconde', 'Afficher les prix clairement', 'Simplifier la commande à emporter'],
+    features: ['Compositeur de sandwich avec prix en direct', 'Carte par catégories', 'Formulaire de commande à emporter', 'Optimisé pour le mobile'],
+    theme: {
+      bg: '#171412', surface: '#FFFFFF', ink: '#FFFFFF', muted: '#B9AFA3',
+      accent: '#E5352B', accentInk: '#FFFFFF',
+      photoA: '#E5352B', photoB: '#171412', serif: false, dark: true,
+    },
+    site: {
+      nav: ['La carte', 'Commander'],
+      kicker: 'Kebab · Grill',
+      headline: 'Grillé à la broche. Servi bien chaud.',
+      cta: 'Composer mon sandwich',
+      cards: ['Kebab', 'Dürüm', 'Assiette'],
+      illustration: 'sparkle',
+    },
+  },
+  {
+    slug: 'epicerie',
+    demo: true,
+    category: 'Épicerie',
+    categoryId: 'epicerie',
+    name: 'Comptoir Mirabelle',
+    domain: 'comptoir-mirabelle.example',
+    url: '/demos/epicerie/',
+    screenshots: {
+      desktop: '/images/epicerie-desktop.webp',
+      mobile: '/images/epicerie-mobile.webp',
+      alt: 'Aperçu du site de démonstration Comptoir Mirabelle',
+    },
+    summary:
+      'Site en mosaïque de tuiles pour une épicerie fine de quartier : rayons, produits de saison selon le mois, paniers de la semaine et commande en retrait boutique.',
+    goals: ['Présenter les rayons de façon vivante', 'Mettre en avant les produits de saison', 'Proposer des paniers à retirer en boutique'],
+    features: ['Produits de saison mis à jour selon le mois', 'Statut ouvert / fermé en direct', 'Page rayons détaillée', 'Commande de panier'],
+    theme: {
+      bg: '#EFEBDD', surface: '#FBF9F1', ink: '#1F2418', muted: '#5E6350',
+      accent: '#3E4A2B', accentInk: '#FFFFFF',
+      photoA: '#CBD5B0', photoB: '#3E4A2B', serif: true, dark: false,
+    },
+    site: {
+      nav: ['Nos rayons', 'Contact'],
+      kicker: 'Épicerie fine',
+      headline: 'L’épicerie du coin, en mieux choisie.',
+      cta: 'Commander un panier',
+      cards: ['Fruits & légumes', 'Crèmerie', 'Vrac'],
+      illustration: 'leaf',
+    },
+  },
+  {
     slug: 'artisan-batiment',
     demo: true,
     category: 'Artisan et bâtiment',
@@ -202,19 +295,25 @@ export const projects: Project[] = [
     category: 'Restaurant',
     categoryId: 'restaurant',
     name: 'La Table d’Aurèle',
-    domain: 'table-aurele.fr',
+    domain: 'table-aurele.example',
+    url: '/demos/restaurant/',
+    screenshots: {
+      desktop: '/images/restaurant-desktop.webp',
+      mobile: '/images/restaurant-mobile.webp',
+      alt: 'Aperçu du site de démonstration La Table d’Aurèle',
+    },
     summary:
-      'Site élégant pour un restaurant bistronomique : carte consultable sur mobile, ambiance mise en valeur et réservation facilitée.',
+      'Site élégant pour un restaurant de cuisine de saison : menu du moment, carte avec prix en points de conduite, menus midi et dégustation, réservation en ligne.',
     goals: ['Transmettre l’ambiance du lieu', 'Rendre la carte lisible sur téléphone', 'Encourager la réservation'],
-    features: ['Carte et menus du moment', 'Lien de réservation', 'Galerie d’ambiance', 'Horaires et accès'],
+    features: ['Carte typographique avec prix', 'Menu du midi et menu dégustation', 'Formulaire de réservation', 'Horaires et informations pratiques'],
     theme: {
-      bg: '#1A1411', surface: '#251C18', ink: '#F4EBDD', muted: '#B8A894',
-      accent: '#D4A25A', accentInk: '#1A1411',
-      photoA: '#6E4B33', photoB: '#2A1D16', serif: true, dark: true,
+      bg: '#14110F', surface: '#1D1916', ink: '#F2EADF', muted: '#A99C8C',
+      accent: '#C9A46B', accentInk: '#16110C',
+      photoA: '#6E4B33', photoB: '#14110F', serif: true, dark: true,
     },
     site: {
-      nav: ['La carte', 'Le lieu', 'Événements', 'Réserver'],
-      kicker: 'Bistronomie de saison',
+      nav: ['La carte', 'Réserver'],
+      kicker: 'Cuisine de saison',
       headline: 'Une cuisine de saison, un lieu à partager.',
       cta: 'Réserver une table',
       cards: ['Entrées', 'Plats', 'Desserts'],
@@ -227,22 +326,28 @@ export const projects: Project[] = [
     category: 'Paysagiste',
     categoryId: 'paysagiste',
     name: 'Verdance Paysage',
-    domain: 'verdance-paysage.fr',
+    domain: 'verdance-paysage.example',
+    url: '/demos/paysagiste/',
+    screenshots: {
+      desktop: '/images/paysagiste-desktop.webp',
+      mobile: '/images/paysagiste-mobile.webp',
+      alt: 'Aperçu du site de démonstration Verdance Paysage',
+    },
     summary:
-      'Site pour un paysagiste créateur de jardins : réalisations par type d’espace, entretien sous contrat et demande d’étude personnalisée.',
-    goals: ['Valoriser les réalisations', 'Distinguer création et entretien', 'Recueillir des demandes d’étude'],
-    features: ['Portfolio par type de jardin', 'Page entretien', 'Formulaire d’étude', 'Zone d’intervention'],
+      'Site vitrine pour une entreprise de paysage : création de jardins, terrasses, entretien, calendrier des saisons et demande d’étude gratuite.',
+    goals: ['Valoriser les réalisations et les prestations', 'Expliquer la méthode en quatre temps', 'Recueillir des demandes d’étude'],
+    features: ['Calendrier du jardin par saison', 'Page prestations et formules d’entretien', 'Formulaire d’étude avec surface et type de projet', 'Foire aux questions'],
     theme: {
-      bg: '#EEF1EA', surface: '#FFFFFF', ink: '#18261C', muted: '#5F6B60',
-      accent: '#2E6A3F', accentInk: '#FFFFFF',
-      photoA: '#8FAF7E', photoB: '#2E4A32', serif: true, dark: false,
+      bg: '#F2F4ED', surface: '#FFFFFF', ink: '#14241A', muted: '#566559',
+      accent: '#2C5A3A', accentInk: '#FFFFFF',
+      photoA: '#9DB5A8', photoB: '#2C5A3A', serif: true, dark: false,
     },
     site: {
-      nav: ['Création', 'Entretien', 'Jardins', 'Contact'],
+      nav: ['Prestations', 'Contact'],
       kicker: 'Conception & entretien',
       headline: 'Des jardins pensés pour être vécus.',
       cta: 'Demander une étude',
-      cards: ['Terrasses', 'Plantations', 'Entretien'],
+      cards: ['Création', 'Terrasses', 'Entretien'],
       illustration: 'leaf',
     },
   },
@@ -297,6 +402,13 @@ export const projects: Project[] = [
     },
   },
 ];
+
+/** Ordre d'affichage : les projets en ligne d'abord, puis les maquettes générées. */
+const order = ['revizstmg', 'quickfix-ia', 'boucherie', 'boulangerie', 'restaurant', 'kebab', 'epicerie', 'paysagiste'];
+export const projects: Project[] = [...all].sort((a, b) => {
+  const ia = order.indexOf(a.slug), ib = order.indexOf(b.slug);
+  return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+});
 
 export const categories = [
   { id: 'all', label: 'Tous' },
