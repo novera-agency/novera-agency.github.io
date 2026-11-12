@@ -7,6 +7,8 @@ import { u } from '../utils/url';
 import { site } from '../config/site';
 interface Props { variant?: 'dark' | 'light'; class?: string }
 const { variant = 'dark', class: cls = '' } = Astro.props;
+const [first, ...others] = site.name.split(' ');
+const rest = others.join(' ');
 const src = variant === 'light' ? (site.logoLight ?? site.logo) : site.logo;
 ---
 <a href={u('/')} class:list={['logo', `logo--${variant}`, cls]} aria-label={`${site.name} — accueil`}>
@@ -15,9 +17,9 @@ const src = variant === 'light' ? (site.logoLight ?? site.logo) : site.logo;
   ) : (
     <>
       <span class="logo__mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M8 22.5 14.2 9.5h3.6L24 22.5h-3.7l-1.2-2.7h-6.2l-1.2 2.7Zm6.2-5.6h3.6L16 12.8Z" fill="var(--logo-cut)"/></svg>
+        <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M9.5 22.5V9.5h3.4l5.9 8.1V9.5h3.7v13h-3.4l-5.9-8.1v8.1Z" fill="var(--logo-cut)"/></svg>
       </span>
-      <span class="logo__text">{site.name}</span>
+      <span class="logo__text"><b>{first}</b>{rest && <span class="logo__rest"> {rest}</span>}</span>
     </>
   )}
 </a>
@@ -27,5 +29,7 @@ const src = variant === 'light' ? (site.logoLight ?? site.logo) : site.logo;
   .logo__mark { display: inline-flex; transition: transform .6s var(--ease); }
   .logo:hover .logo__mark { transform: rotate(-8deg) scale(1.05); }
   .logo__mark svg path { transition: fill .3s; }
+  .logo__text b { font-weight: 800; letter-spacing: 0.02em; }
+  .logo__rest { font-weight: 500; opacity: .7; }
   .logo__img { height: 36px; width: auto; }
 </style>
