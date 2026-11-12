@@ -27,7 +27,7 @@ export const site = {
   logoLight: null as string | null,
 
   /** URL de production (sans slash final) — utilisée pour le SEO et le sitemap. */
-  url: 'https://www.votre-domaine.fr',
+  url: 'https://novera-agency.github.io',
 
   /** Langue et région. */
   locale: 'fr_FR',

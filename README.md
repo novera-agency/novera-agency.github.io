@@ -19,7 +19,7 @@ Le déploiement est automatisé par `.github/workflows/deploy.yml` : à chaque m
 
 1. Sur GitHub : **Settings → Pages → Build and deployment → Source : « GitHub Actions »**.
 2. Fusionnez votre travail dans `main` (ou lancez le workflow à la main depuis l’onglet **Actions**).
-3. Le site est publié sur `https://<compte>.github.io/<depot>/`.
+3. Le site est publié sur `https://novera-agency.github.io/` (dépôt `novera-agency.github.io`).
 
 Les liens internes s’adaptent automatiquement au sous-dossier (`/<depot>/`) grâce à `src/utils/url.ts` : utilisez toujours `u('/chemin/')` pour un nouveau lien interne.
 
