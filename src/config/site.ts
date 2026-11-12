@@ -12,7 +12,7 @@
 
 export const site = {
   /** Nom commercial de l'agence (affiché partout sur le site). */
-  name: 'NOVERA Studio',
+  name: 'NOVERA Agency',
 
   /** Courte signature affichée à côté du logo et dans le pied de page. */
   tagline: 'Agence de création web',
@@ -97,7 +97,7 @@ export const site = {
 
   /** Informations légales — À COMPLÉTER avant mise en ligne. */
   legal: {
-    companyName: 'NOVERA Studio', // Raison sociale
+    companyName: 'NOVERA Agency', // Raison sociale
     legalForm: '[Forme juridique — À compléter]', // ex. SAS, EURL, EI…
     capital: '[Capital social — À compléter]',
     address: '[Adresse du siège — À compléter]',
