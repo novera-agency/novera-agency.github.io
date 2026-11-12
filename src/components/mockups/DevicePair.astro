@@ -4,15 +4,22 @@ import type { Project } from '../../data/projects';
 import Laptop from './Laptop.astro';
 import Phone from './Phone.astro';
 import MiniSite from './MiniSite.astro';
+import { u } from '../../utils/url';
 interface Props { project: Project; class?: string }
 const { project, class: cls = '' } = Astro.props;
 ---
 <div class:list={['pair', cls]}>
   <Laptop domain={project.domain} class="pair__laptop">
-    <MiniSite project={project} layout="desktop" />
+    {project.screenshots
+      ? <img class="shot" src={u(project.screenshots.desktop)} alt={project.screenshots.alt} width="1600" height="1000" loading="lazy" decoding="async" />
+      : <MiniSite project={project} layout="desktop" />}
   </Laptop>
   <div class="pair__phone">
-    <Phone><MiniSite project={project} layout="mobile" /></Phone>
+    <Phone>
+      {project.screenshots
+        ? <img class="shot" src={u(project.screenshots.mobile)} alt="" width="585" height="1266" loading="lazy" decoding="async" />
+        : <MiniSite project={project} layout="mobile" />}
+    </Phone>
   </div>
 </div>
 <style>
@@ -21,4 +28,5 @@ const { project, class: cls = '' } = Astro.props;
   :global(.project:hover) .pair__phone { transform: translateY(-4%) rotate(-1.5deg); }
   :global(.project:hover) .pair :global(.pair__laptop) { transform: translateY(-1.5%); }
   .pair :global(.pair__laptop) { transition: transform .8s var(--ease); }
+  .shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 </style>

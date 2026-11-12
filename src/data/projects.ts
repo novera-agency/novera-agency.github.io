@@ -19,6 +19,10 @@ export interface Project {
   name: string;
   /** Domaine fictif affiché dans la barre d'adresse de la maquette. */
   domain: string;
+  /** Adresse du site en ligne (facultatif) : affiche un bouton « Voir le site ». */
+  url?: string;
+  /** Captures d'écran réelles (dans /public) : remplacent la maquette générée. */
+  screenshots?: { desktop: string; mobile: string; alt: string };
   summary: string;
   goals: string[];
   features: string[];
@@ -45,6 +49,37 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'boucherie',
+    demo: true,
+    category: 'Boucherie',
+    categoryId: 'boucherie',
+    name: 'Boucherie Al-Baraka',
+    domain: 'gabriel-merlin.github.io/Buisness-solo',
+    url: 'https://gabriel-merlin.github.io/Buisness-solo/',
+    screenshots: {
+      desktop: '/images/boucherie-desktop.webp',
+      mobile: '/images/boucherie-mobile.webp',
+      alt: 'Aperçu du site de la Boucherie Al-Baraka, boucherie halal artisanale à Paris',
+    },
+    summary:
+      'Site vitrine pour une boucherie halal artisanale parisienne : histoire de la maison, engagements qualité, gamme de produits, horaires et accès, avec un appel direct depuis le mobile.',
+    goals: ['Rassurer sur l’origine et la qualité des viandes', 'Présenter la gamme de produits', 'Faciliter la venue en boutique et l’appel'],
+    features: ['Pages viande, produits et contact', 'Horaires et adresse en un coup d’œil', 'Bouton d’appel sur mobile', 'Données structurées pour le référencement local'],
+    theme: {
+      bg: '#F8F6F1', surface: '#FFFFFF', ink: '#16302A', muted: '#5F6B66',
+      accent: '#1A4D3A', accentInk: '#FFFFFF',
+      photoA: '#5E9C7F', photoB: '#1A4D3A', serif: true, dark: false,
+    },
+    site: {
+      nav: ['Accueil', 'Notre viande', 'Nos produits', 'Contact'],
+      kicker: 'Boucherie halal artisanale',
+      headline: 'Viandes sélectionnées avec exigence.',
+      cta: 'Découvrir nos produits',
+      cards: ['Bœuf', 'Agneau', 'Volaille'],
+      illustration: 'leaf',
+    },
+  },
   {
     slug: 'artisan-batiment',
     demo: true,
