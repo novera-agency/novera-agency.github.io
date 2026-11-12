@@ -37,7 +37,7 @@ export const site = {
     "Agence web spécialisée dans la création et la rénovation de sites Internet professionnels pour artisans, commerçants, restaurants, garages et TPE.",
 
   contact: {
-    email: 'websiteconsulting@gmail.com',
+    email: 'websiteconsulting28@gmail.com',
     /**
      * Téléphone de l'agence. Laissez vide ('') pour le masquer partout
      * (en-tête, menu mobile, contact, pied de page, mentions légales).
