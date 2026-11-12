@@ -34,7 +34,7 @@ const consentEnabled = Boolean(site.analytics.googleAnalyticsId);
           <h2 class="footer__title">Contact</h2>
           <ul role="list">
             <li><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></li>
-            <li><a href={`tel:${site.contact.phoneHref}`}>{site.contact.phone}</a></li>
+            {site.contact.phone && <li><a href={`tel:${site.contact.phoneHref}`}>{site.contact.phone}</a></li>}
             <li class="footer__plain">{site.contact.hours}</li>
             {socials.map(([k, url]) => <li><a href={url} target="_blank" rel="noopener noreferrer" class="footer__social">{k}</a></li>)}
           </ul>

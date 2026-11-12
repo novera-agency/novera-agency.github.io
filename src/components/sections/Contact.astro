@@ -21,7 +21,7 @@ const { headingLevel = 'h2' } = Astro.props;
 
       <ul role="list" class="contact__info" data-reveal style="--d:.4s">
         <li><a href={`mailto:${site.contact.email}`}><Icon name="mail" size={20} /><span><small>E-mail</small>{site.contact.email}</span></a></li>
-        <li><a href={`tel:${site.contact.phoneHref}`}><Icon name="phone" size={20} /><span><small>Téléphone</small>{site.contact.phone}</span></a></li>
+        {site.contact.phone && <li><a href={`tel:${site.contact.phoneHref}`}><Icon name="phone" size={20} /><span><small>Téléphone</small>{site.contact.phone}</span></a></li>}
         <li><div><Icon name="clock" size={20} /><span><small>Disponibilité</small>{site.contact.hours}</span></div></li>
       </ul>
     </div>

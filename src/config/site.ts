@@ -37,11 +37,15 @@ export const site = {
     "Agence web spécialisée dans la création et la rénovation de sites Internet professionnels pour artisans, commerçants, restaurants, garages et TPE.",
 
   contact: {
-    email: 'contact@votre-domaine.fr',
-    /** Format affiché */
-    phone: '01 23 45 67 89',
+    email: 'websiteconsulting@gmail.com',
+    /**
+     * Téléphone de l'agence. Laissez vide ('') pour le masquer partout
+     * (en-tête, menu mobile, contact, pied de page, mentions légales).
+     * Exemple : phone: '01 23 45 67 89', phoneHref: '+33123456789'
+     */
+    phone: '',
     /** Format international pour les liens « tel: » */
-    phoneHref: '+33123456789',
+    phoneHref: '',
     city: 'France',
     hours: 'Du lundi au vendredi, 9h – 18h',
   },

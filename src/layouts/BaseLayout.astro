@@ -26,7 +26,7 @@ const orgLd = {
   description: site.description,
   url: new URL(u('/'), siteUrl).href,
   email: site.contact.email,
-  telephone: site.contact.phoneHref,
+  ...(site.contact.phoneHref ? { telephone: site.contact.phoneHref } : {}),
   areaServed: 'FR',
   serviceType: ['Création de sites Internet', 'Refonte de sites Internet', 'Référencement naturel (SEO)'],
 };

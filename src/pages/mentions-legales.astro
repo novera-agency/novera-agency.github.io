@@ -17,7 +17,7 @@ const l = site.legal;
     <dt>Immatriculation</dt><dd><Todo value={l.rcs} /></dd>
     <dt>TVA intracommunautaire</dt><dd><Todo value={l.vat} /></dd>
     <dt>E-mail</dt><dd><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></dd>
-    <dt>Téléphone</dt><dd><a href={`tel:${site.contact.phoneHref}`}>{site.contact.phone}</a></dd>
+    {site.contact.phone && <><dt>Téléphone</dt><dd><a href={`tel:${site.contact.phoneHref}`}>{site.contact.phone}</a></dd></>}
   </dl>
 
   <h2>Directeur de la publication</h2>
