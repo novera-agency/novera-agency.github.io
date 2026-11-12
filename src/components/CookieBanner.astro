@@ -1,0 +1,33 @@
+---
+import { u } from '../utils/url';
+/**
+ * Bandeau de consentement : affiché uniquement si un outil de
+ * mesure d'audience est configuré (src/config/site.ts → analytics).
+ * Aucun script tiers n'est chargé avant acceptation.
+ */
+import { site } from '../config/site';
+const gaId = site.analytics.googleAnalyticsId;
+---
+{gaId && (
+  <div class="cookie" data-cookie-banner data-ga-id={gaId} hidden role="dialog" aria-live="polite" aria-labelledby="cookie-title">
+    <p id="cookie-title" class="cookie__title">Votre vie privée</p>
+    <p class="cookie__text">
+      Nous souhaitons mesurer l’audience du site afin de l’améliorer. Ces cookies ne sont déposés qu’avec votre accord.
+      <a href={u('/politique-de-confidentialite/#cookies')}>En savoir plus</a>
+    </p>
+    <div class="cookie__actions">
+      <button type="button" class="btn btn--ghost btn--sm" data-cookie-choice="refuse">Refuser</button>
+      <button type="button" class="btn btn--sm" data-cookie-choice="accept">Accepter</button>
+    </div>
+  </div>
+)}
+<style>
+  .cookie { position: fixed; z-index: 150; left: 16px; bottom: 16px; width: min(420px, calc(100vw - 32px)); padding: 22px; border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-l); display: grid; gap: 10px; animation: cookie-in .7s var(--ease) both; }
+  .cookie[hidden] { display: none; }
+  .cookie__title { font-weight: 700; letter-spacing: -0.02em; }
+  .cookie__text { font-size: .92rem; color: var(--ink-2); }
+  .cookie__text a { text-decoration: underline; text-underline-offset: 3px; }
+  .cookie__actions { display: flex; gap: 10px; margin-top: 6px; }
+  .cookie__actions .btn { flex: 1; }
+  @keyframes cookie-in { from { opacity: 0; transform: translateY(20px); } }
+</style>

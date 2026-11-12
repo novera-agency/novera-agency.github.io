@@ -1,0 +1,203 @@
+/**
+ * PROJETS DE DÉMONSTRATION
+ * ------------------------------------------------------------
+ * Ces projets sont des maquettes conçues par l'agence pour
+ * illustrer son savoir-faire. Les entreprises citées sont
+ * FICTIVES et sont signalées comme telles sur le site.
+ *
+ * Lorsque vous aurez de vraies réalisations, ajoutez-les ici
+ * avec `demo: false` (et, idéalement, l'accord écrit du client).
+ */
+
+export type Illustration = 'house' | 'car' | 'plate' | 'leaf' | 'sparkle' | 'scissors';
+
+export interface Project {
+  slug: string;
+  demo: boolean;
+  category: string;
+  categoryId: string;
+  name: string;
+  /** Domaine fictif affiché dans la barre d'adresse de la maquette. */
+  domain: string;
+  summary: string;
+  goals: string[];
+  features: string[];
+  theme: {
+    bg: string;
+    surface: string;
+    ink: string;
+    muted: string;
+    accent: string;
+    accentInk: string;
+    photoA: string;
+    photoB: string;
+    serif: boolean;
+    dark: boolean;
+  };
+  site: {
+    nav: string[];
+    kicker: string;
+    headline: string;
+    cta: string;
+    cards: string[];
+    illustration: Illustration;
+  };
+}
+
+export const projects: Project[] = [
+  {
+    slug: 'artisan-batiment',
+    demo: true,
+    category: 'Artisan et bâtiment',
+    categoryId: 'artisan',
+    name: 'Maison Duret Rénovation',
+    domain: 'duret-renovation.fr',
+    summary:
+      'Site vitrine pour une entreprise de rénovation intérieure : présentation des savoir-faire, galerie de chantiers et demande de devis en quelques clics.',
+    goals: ['Inspirer confiance dès la première visite', 'Mettre en avant les chantiers', 'Générer des demandes de devis qualifiées'],
+    features: ['Galerie avant / après', 'Formulaire de devis par type de travaux', 'Zone d’intervention avec carte', 'Bouton d’appel sur mobile'],
+    theme: {
+      bg: '#F3EEE6', surface: '#FFFFFF', ink: '#1E2621', muted: '#6B6A63',
+      accent: '#C2632F', accentInk: '#FFFFFF',
+      photoA: '#B9A58C', photoB: '#5D4F40', serif: false, dark: false,
+    },
+    site: {
+      nav: ['Savoir-faire', 'Chantiers', 'Méthode', 'Contact'],
+      kicker: 'Rénovation intérieure',
+      headline: 'Rénover avec soin, construire avec exigence.',
+      cta: 'Demander un devis',
+      cards: ['Maçonnerie', 'Plâtrerie', 'Carrelage'],
+      illustration: 'house',
+    },
+  },
+  {
+    slug: 'garage-automobile',
+    demo: true,
+    category: 'Garage automobile',
+    categoryId: 'garage',
+    name: 'Garage Central Motors',
+    domain: 'central-motors.fr',
+    summary:
+      'Site pour un garage indépendant : prestations et tarifs indicatifs, prise de rendez-vous et informations pratiques accessibles en un coup d’œil.',
+    goals: ['Rendre les prestations lisibles', 'Faciliter la prise de rendez-vous', 'Afficher horaires et accès'],
+    features: ['Grille de prestations', 'Formulaire de rendez-vous', 'Horaires et Google Maps', 'Appel en un geste'],
+    theme: {
+      bg: '#0F1114', surface: '#1A1D22', ink: '#F3F4F6', muted: '#9AA0AA',
+      accent: '#E5372B', accentInk: '#FFFFFF',
+      photoA: '#3A3F48', photoB: '#121418', serif: false, dark: true,
+    },
+    site: {
+      nav: ['Entretien', 'Réparation', 'Tarifs', 'Rendez-vous'],
+      kicker: 'Mécanique toutes marques',
+      headline: 'Votre véhicule entre de bonnes mains.',
+      cta: 'Prendre rendez-vous',
+      cards: ['Révision', 'Freinage', 'Diagnostic'],
+      illustration: 'car',
+    },
+  },
+  {
+    slug: 'restaurant',
+    demo: true,
+    category: 'Restaurant',
+    categoryId: 'restaurant',
+    name: 'La Table d’Aurèle',
+    domain: 'table-aurele.fr',
+    summary:
+      'Site élégant pour un restaurant bistronomique : carte consultable sur mobile, ambiance mise en valeur et réservation facilitée.',
+    goals: ['Transmettre l’ambiance du lieu', 'Rendre la carte lisible sur téléphone', 'Encourager la réservation'],
+    features: ['Carte et menus du moment', 'Lien de réservation', 'Galerie d’ambiance', 'Horaires et accès'],
+    theme: {
+      bg: '#1A1411', surface: '#251C18', ink: '#F4EBDD', muted: '#B8A894',
+      accent: '#D4A25A', accentInk: '#1A1411',
+      photoA: '#6E4B33', photoB: '#2A1D16', serif: true, dark: true,
+    },
+    site: {
+      nav: ['La carte', 'Le lieu', 'Événements', 'Réserver'],
+      kicker: 'Bistronomie de saison',
+      headline: 'Une cuisine de saison, un lieu à partager.',
+      cta: 'Réserver une table',
+      cards: ['Entrées', 'Plats', 'Desserts'],
+      illustration: 'plate',
+    },
+  },
+  {
+    slug: 'paysagiste',
+    demo: true,
+    category: 'Paysagiste',
+    categoryId: 'paysagiste',
+    name: 'Verdance Paysage',
+    domain: 'verdance-paysage.fr',
+    summary:
+      'Site pour un paysagiste créateur de jardins : réalisations par type d’espace, entretien sous contrat et demande d’étude personnalisée.',
+    goals: ['Valoriser les réalisations', 'Distinguer création et entretien', 'Recueillir des demandes d’étude'],
+    features: ['Portfolio par type de jardin', 'Page entretien', 'Formulaire d’étude', 'Zone d’intervention'],
+    theme: {
+      bg: '#EEF1EA', surface: '#FFFFFF', ink: '#18261C', muted: '#5F6B60',
+      accent: '#2E6A3F', accentInk: '#FFFFFF',
+      photoA: '#8FAF7E', photoB: '#2E4A32', serif: true, dark: false,
+    },
+    site: {
+      nav: ['Création', 'Entretien', 'Jardins', 'Contact'],
+      kicker: 'Conception & entretien',
+      headline: 'Des jardins pensés pour être vécus.',
+      cta: 'Demander une étude',
+      cards: ['Terrasses', 'Plantations', 'Entretien'],
+      illustration: 'leaf',
+    },
+  },
+  {
+    slug: 'entreprise-nettoyage',
+    demo: true,
+    category: 'Entreprise de nettoyage',
+    categoryId: 'nettoyage',
+    name: 'Clairéo Services',
+    domain: 'claireo-services.fr',
+    summary:
+      'Site pour une entreprise de nettoyage professionnel : offres pour bureaux, commerces et copropriétés, avec devis rapide et engagements clairs.',
+    goals: ['Rassurer les clients professionnels', 'Segmenter les offres', 'Simplifier la demande de devis'],
+    features: ['Offres par type de locaux', 'Devis en ligne', 'Engagements qualité', 'Zone d’intervention'],
+    theme: {
+      bg: '#F3F7FB', surface: '#FFFFFF', ink: '#0F2236', muted: '#5D6F82',
+      accent: '#1F78D1', accentInk: '#FFFFFF',
+      photoA: '#A9CBEA', photoB: '#3D6E9E', serif: false, dark: false,
+    },
+    site: {
+      nav: ['Bureaux', 'Commerces', 'Copropriétés', 'Devis'],
+      kicker: 'Nettoyage professionnel',
+      headline: 'Des espaces impeccables, en toute sérénité.',
+      cta: 'Obtenir un devis',
+      cards: ['Bureaux', 'Vitrerie', 'Fin de chantier'],
+      illustration: 'sparkle',
+    },
+  },
+  {
+    slug: 'salon-de-coiffure',
+    demo: true,
+    category: 'Salon de coiffure',
+    categoryId: 'coiffure',
+    name: 'Atelier Solène',
+    domain: 'atelier-solene.fr',
+    summary:
+      'Site raffiné pour un salon de coiffure : prestations et tarifs, univers du salon et prise de rendez-vous accessible depuis chaque page.',
+    goals: ['Refléter l’univers du salon', 'Afficher clairement les tarifs', 'Faciliter la prise de rendez-vous'],
+    features: ['Carte des prestations', 'Lien de réservation', 'Galerie du salon', 'Horaires et accès'],
+    theme: {
+      bg: '#F6EEEA', surface: '#FFFFFF', ink: '#2A1C1A', muted: '#7D6863',
+      accent: '#8E4E43', accentInk: '#FFFFFF',
+      photoA: '#D8B9AC', photoB: '#7A5048', serif: true, dark: false,
+    },
+    site: {
+      nav: ['Prestations', 'Tarifs', 'Le salon', 'Rendez-vous'],
+      kicker: 'Coiffure & coloration',
+      headline: 'L’art de sublimer chaque style.',
+      cta: 'Prendre rendez-vous',
+      cards: ['Coupe', 'Couleur', 'Soins'],
+      illustration: 'scissors',
+    },
+  },
+];
+
+export const categories = [
+  { id: 'all', label: 'Tous' },
+  ...projects.map((p) => ({ id: p.categoryId, label: p.category })),
+];

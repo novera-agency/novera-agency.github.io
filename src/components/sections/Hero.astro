@@ -1,0 +1,119 @@
+---
+import { projects } from '../../data/projects';
+import SplitText from '../SplitText.astro';
+import Icon from '../Icon.astro';
+import Laptop from '../mockups/Laptop.astro';
+import Phone from '../mockups/Phone.astro';
+import MiniSite from '../mockups/MiniSite.astro';
+
+// Démos affichées en alternance dans la vitrine d'accueil.
+const showcase = ['artisan-batiment', 'restaurant', 'garage-automobile', 'paysagiste']
+  .map((slug) => projects.find((p) => p.slug === slug)!)
+  .filter(Boolean);
+---
+<section class="hero">
+  <div class="container">
+    <div class="hero__head">
+      <p class="eyebrow hero__eyebrow" data-reveal>Création &amp; rénovation de sites Internet</p>
+      <SplitText as="h1" class="display hero__title" text="Votre entreprise mérite une présence *à la hauteur* de son savoir-faire." delay={0.1} />
+      <div class="hero__row">
+        <p class="lead" data-reveal style="--d:.45s">
+          Nous créons et modernisons des sites Internet professionnels conçus pour valoriser votre activité, renforcer votre crédibilité et vous aider à attirer de nouveaux clients.
+        </p>
+        <div class="hero__ctas" data-reveal style="--d:.55s">
+          <a href="#contact" class="btn btn--lg" data-set-project="creation">Créer mon site Internet<Icon name="arrow" class="btn__icon" /></a>
+          <a href="#contact" class="btn btn--ghost btn--lg" data-set-project="renovation">Rénover mon site<Icon name="arrow" class="btn__icon" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="stage" data-reveal="scale" style="--d:.3s" data-showcase>
+      <div class="stage__bg" aria-hidden="true"></div>
+
+      <div class="stage__devices">
+        <div class="stage__laptop" data-parallax="0.04">
+          <Laptop domain={showcase[0].domain}>
+            {showcase.map((p, i) => (
+              <div class:list={['stage__slide', { 'is-active': i === 0 }]} data-slide data-domain={p.domain}>
+                <MiniSite project={p} layout="desktop" />
+              </div>
+            ))}
+          </Laptop>
+        </div>
+        <div class="stage__phone" data-parallax="-0.06">
+          <Phone>
+            {showcase.map((p, i) => (
+              <div class:list={['stage__slide', { 'is-active': i === 0 }]} data-slide>
+                <MiniSite project={p} layout="mobile" />
+              </div>
+            ))}
+          </Phone>
+        </div>
+
+        <div class="chip chip--a" aria-hidden="true"><Icon name="mobile" size={18} />Adapté au mobile</div>
+        <div class="chip chip--b" aria-hidden="true"><Icon name="mail" size={18} />Demande de devis</div>
+        <div class="chip chip--c" aria-hidden="true"><Icon name="spark" size={18} />Structure SEO</div>
+      </div>
+
+      <div class="stage__caption">
+        <span class="stage__tag">Projets de démonstration</span>
+        <ul role="list" class="stage__labels">
+          {showcase.map((p, i) => (
+            <li><button type="button" class:list={['stage__label', { 'is-active': i === 0 }]} data-slide-btn={i} aria-label={`Afficher la démonstration ${p.category}`}>{p.category}</button></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero { padding-top: calc(var(--header-h) + clamp(40px, 8vw, 110px)); padding-bottom: clamp(40px, 6vw, 80px); position: relative; }
+  .hero__head { display: grid; gap: clamp(22px, 3vw, 36px); }
+  .hero :global(.hero__title) { max-width: 19ch; }
+  .hero__row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: end; }
+  .hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .stage { position: relative; margin-top: clamp(48px, 7vw, 96px); border-radius: var(--radius-l); overflow: hidden; padding: clamp(36px, 6vw, 88px) clamp(16px, 6vw, 96px) 0; isolation: isolate; }
+  .stage__bg { position: absolute; inset: 0; z-index: -1; background:
+      radial-gradient(60% 70% at 85% 10%, rgba(47,75,255,.22), transparent 70%),
+      radial-gradient(50% 60% at 10% 90%, rgba(194,99,47,.14), transparent 70%),
+      linear-gradient(180deg, #e9e8e4, #dedcd6); }
+  .stage__bg::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(12,12,13,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(12,12,13,.05) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%); }
+  .stage__devices { position: relative; max-width: 1020px; margin: 0 auto; padding-right: 10%; }
+  .stage__laptop, .stage__phone { will-change: transform; }
+  .stage__phone { position: absolute; right: 0; bottom: -2%; width: 21%; z-index: 2; }
+  .stage__slide { position: absolute; inset: 0; opacity: 0; transition: opacity .9s var(--ease); }
+  .stage__slide.is-active { opacity: 1; }
+
+  .chip { position: absolute; z-index: 3; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: rgba(255,255,255,.85); backdrop-filter: blur(12px); box-shadow: var(--shadow-s); font-size: .88rem; font-weight: 600; white-space: nowrap; animation: float 7s ease-in-out infinite; }
+  .chip :global(svg) { color: var(--accent); }
+  .chip--a { left: -4%; top: 18%; }
+  .chip--b { right: 2%; top: 6%; animation-delay: -2.3s; }
+  .chip--c { left: 36%; bottom: -2%; animation-delay: -4.6s; }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+  .stage__caption { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: clamp(28px, 4vw, 48px) calc(-1 * clamp(16px, 6vw, 96px)) 0; padding: 18px clamp(16px, 3vw, 32px); background: rgba(255,255,255,.55); backdrop-filter: blur(10px); border-top: 1px solid var(--line); }
+  .stage__tag { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+  .stage__labels { display: flex; gap: 6px; flex-wrap: wrap; }
+  .stage__label { padding: 6px 14px; border-radius: 999px; font-size: .88rem; font-weight: 500; color: var(--ink-2); transition: background-color .3s, color .3s; }
+  .stage__label:hover { background: rgba(12,12,13,.06); color: var(--ink); }
+  .stage__label.is-active { background: var(--ink); color: var(--bg); }
+
+  @media (max-width: 900px) {
+    .hero__row { grid-template-columns: 1fr; align-items: start; }
+    .chip--a { left: -2%; }
+  }
+  @media (max-width: 600px) {
+    .hero__ctas { flex-direction: column; align-items: stretch; }
+    .hero__ctas .btn { width: 100%; }
+    .chip { font-size: .72rem; padding: 7px 11px; gap: 6px; }
+    .chip :global(svg) { width: 14px; height: 14px; }
+    .chip--c { display: none; }
+    .stage__labels { display: none; }
+    .stage__phone { width: 26%; }
+    .stage__devices { padding-right: 12%; }
+  }
+</style>

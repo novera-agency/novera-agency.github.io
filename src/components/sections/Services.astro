@@ -1,0 +1,65 @@
+---
+import { services } from '../../data/content';
+import SectionHeading from '../SectionHeading.astro';
+import Icon from '../Icon.astro';
+const icons = ['layout', 'spark', 'compass'] as const;
+---
+<section class="section section--white" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <SectionHeading
+      eyebrow="Nos services"
+      title="Trois expertises pour *une seule ambition* : votre réussite en ligne."
+      intro="Que vous partiez de zéro ou que votre site ait besoin d’un second souffle, nous construisons un outil fiable, élégant et pensé pour vos clients."
+    />
+    <ol role="list" class="services">
+      {services.map((s, i) => (
+        <li class="service" id={`service-${s.id}`} data-reveal style={`--d:${i * 0.08}s`}>
+          <div class="service__head">
+            <span class="service__index">{s.index}</span>
+            <span class="service__icon"><Icon name={icons[i]} size={26} /></span>
+          </div>
+          <div class="service__body">
+            <h3 class="h3 service__title">{s.title}</h3>
+            <p class="service__lead">{s.lead}</p>
+            <p class="service__text">{s.text}</p>
+          </div>
+          <ul role="list" class="service__list">
+            {s.items.map((it) => <li><Icon name="check" size={18} />{it}</li>)}
+          </ul>
+        </li>
+      ))}
+    </ol>
+    <p class="services__note" data-reveal>
+      Nous mettons en œuvre les bonnes pratiques reconnues, sans promettre de résultat chiffré : aucun prestataire sérieux ne peut garantir un nombre de clients ou une position précise sur Google.
+    </p>
+  </div>
+</section>
+
+<style>
+  .services { border-top: 1px solid var(--line); }
+  .service { position: relative; display: grid; grid-template-columns: 180px minmax(0, 1.3fr) minmax(0, 1fr); gap: 48px; padding: clamp(36px, 5vw, 64px) 0; border-bottom: 1px solid var(--line); isolation: isolate; }
+  .service::before { content: ''; position: absolute; inset: 0 calc(-1 * clamp(12px, 2vw, 32px)); z-index: -1; border-radius: var(--radius); background: var(--bg); opacity: 0; transform: scaleY(.92); transition: opacity .5s var(--ease), transform .6s var(--ease); }
+  .service:hover::before { opacity: 1; transform: none; }
+  .service__head { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+  .service__index { font-size: .9rem; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .service__icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; background: var(--ink); color: var(--bg); transition: background-color .5s var(--ease), transform .6s var(--ease); }
+  .service:hover .service__icon { background: var(--accent); transform: rotate(-6deg); }
+  .service__body { display: grid; gap: 14px; align-content: start; }
+  .service__title { font-size: clamp(1.7rem, 2.8vw, 2.5rem); letter-spacing: -0.035em; }
+  .service__lead { font-weight: 600; font-size: 1.12rem; }
+  .service__text { color: var(--ink-2); max-width: 54ch; }
+  .service__list { display: grid; gap: 4px; align-content: start; }
+  .service__list li { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px dashed var(--line); font-weight: 500; }
+  .service__list li:last-child { border-bottom: 0; }
+  .service__list :global(svg) { color: var(--accent); flex: none; }
+  .services__note { margin-top: 40px; font-size: .92rem; color: var(--muted); max-width: 80ch; }
+
+  @media (max-width: 1000px) {
+    .service { grid-template-columns: 1fr 1fr; gap: 28px 40px; }
+    .service__head { grid-column: 1 / -1; flex-direction: row; align-items: center; }
+  }
+  @media (max-width: 680px) {
+    .service { grid-template-columns: 1fr; }
+    .service__icon { width: 52px; height: 52px; border-radius: 14px; }
+  }
+</style>

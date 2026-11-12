@@ -1,0 +1,30 @@
+---
+import { u } from '../../utils/url';
+import SplitText from '../SplitText.astro';
+import Icon from '../Icon.astro';
+---
+<section class="cta-wrap" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta" data-reveal="scale">
+      <div class="cta__glow" aria-hidden="true"></div>
+      <p class="eyebrow">Passons à l’action</p>
+      <SplitText as="h2" class="cta__title" text="Prêt à donner *une nouvelle dimension* à votre présence en ligne ?" />
+      <p class="cta__text">Parlons de votre projet. Que vous souhaitiez créer votre premier site ou moderniser celui que vous possédez déjà, nous pouvons étudier votre besoin.</p>
+      <a href={u('/#contact')} class="btn btn--light btn--lg cta__btn">Demander mon devis gratuit<Icon name="arrow" class="btn__icon" /></a>
+      <p class="cta__small">Gratuit et sans engagement</p>
+    </div>
+  </div>
+</section>
+<style>
+  .cta-wrap { padding-block: 0 var(--section); }
+  .cta { position: relative; overflow: hidden; isolation: isolate; display: grid; justify-items: center; text-align: center; gap: 26px; padding: clamp(64px, 10vw, 140px) clamp(20px, 6vw, 96px); border-radius: var(--radius-l); background: var(--ink); color: var(--on-dark); }
+  .cta .eyebrow { color: var(--on-dark-muted); }
+  .cta__glow { position: absolute; inset: -40%; z-index: -1; background: conic-gradient(from 180deg at 50% 50%, transparent 0deg, rgba(47,75,255,.55) 70deg, transparent 140deg, rgba(47,75,255,.25) 230deg, transparent 300deg); filter: blur(60px); animation: spin 18s linear infinite; opacity: .8; }
+  .cta__glow::after { content: ''; position: absolute; inset: 30%; background: var(--ink); filter: blur(40px); border-radius: 50%; }
+  @keyframes spin { to { transform: rotate(1turn); } }
+  .cta :global(.cta__title) { font-size: clamp(2.2rem, 5.4vw, 5rem); line-height: 1; letter-spacing: -0.045em; max-width: 18ch; }
+  .cta__text { color: var(--on-dark-muted); font-size: clamp(1.05rem, 1.3vw, 1.2rem); max-width: 58ch; }
+  .cta__btn { margin-top: 10px; }
+  .cta__small { font-size: .88rem; color: var(--on-dark-muted); }
+  @media (max-width: 560px) { .cta__btn { width: 100%; white-space: normal; } }
+</style>

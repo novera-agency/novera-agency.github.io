@@ -1,0 +1,46 @@
+---
+import { steps } from '../../data/content';
+import SectionHeading from '../SectionHeading.astro';
+---
+<section class="section" id="methode" aria-label="Notre méthode">
+  <div class="container">
+    <SectionHeading
+      eyebrow="Comment ça fonctionne ?"
+      title="Un processus clair, *en quatre étapes.*"
+      intro="Pas de surprise ni de jargon : vous savez à chaque instant où en est votre projet et ce qui vient ensuite."
+    />
+    <ol role="list" class="steps" data-steps>
+      <span class="steps__rail" aria-hidden="true"><span class="steps__progress" data-steps-progress></span></span>
+      {steps.map((s, i) => (
+        <li class="step" data-reveal style={`--d:${i * 0.1}s`}>
+          <span class="step__dot" aria-hidden="true"></span>
+          <span class="step__n">{s.n}</span>
+          <h3 class="step__title">{s.title}</h3>
+          <p class="step__text">{s.text}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+<style>
+  .steps { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .steps__rail { position: absolute; left: 0; right: 0; top: 7px; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
+  .steps__progress { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(var(--p, 0)); transition: transform .2s linear; }
+  .step { position: relative; display: grid; gap: 14px; align-content: start; padding-top: 48px; }
+  .step__dot { position: absolute; top: 0; left: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); box-shadow: inset 0 0 0 2px var(--ink); }
+  .step__n { font-size: clamp(3rem, 5vw, 4.6rem); font-weight: 600; letter-spacing: -0.05em; line-height: 1; color: transparent; -webkit-text-stroke: 1.2px var(--ink); transition: color .5s var(--ease); }
+  .step:hover .step__n { color: var(--ink); }
+  .step__title { font-size: 1.5rem; letter-spacing: -0.03em; }
+  .step__text { color: var(--ink-2); max-width: 32ch; }
+  @media (max-width: 960px) {
+    .steps { grid-template-columns: 1fr 1fr; row-gap: 48px; }
+    .steps__rail { display: none; }
+  }
+  @media (max-width: 600px) {
+    .steps { grid-template-columns: 1fr; row-gap: 0; padding-left: 36px; }
+    .steps__rail { display: block; left: 7px; right: auto; top: 8px; bottom: 8px; width: 2px; height: auto; }
+    .steps__progress { transform-origin: top; transform: scaleY(var(--p, 0)); }
+    .step { padding: 0 0 40px; }
+    .step__dot { left: -36px; top: 4px; }
+  }
+</style>

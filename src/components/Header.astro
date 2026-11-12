@@ -1,0 +1,92 @@
+---
+import { u } from '../utils/url';
+import { nav, site } from '../config/site';
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+---
+<header class="header" data-header>
+  <div class="container header__inner">
+    <Logo />
+    <nav class="header__nav" aria-label="Navigation principale">
+      <ul role="list">
+        {nav.map((item) => (
+          <li><a href={u(item.href)} class="header__link" data-nav-link>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <a href={`tel:${site.contact.phoneHref}`} class="header__phone" aria-label={`Appeler le ${site.contact.phone}`}>
+        <Icon name="phone" size={18} />
+        <span>{site.contact.phone}</span>
+      </a>
+      <a href={u('/#contact')} class="btn btn--sm header__cta">Devis gratuit<Icon name="arrow" class="btn__icon" /></a>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu" data-burger>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+    <div class="container mobile-menu__inner">
+      <ul role="list" class="mobile-menu__list">
+        {nav.map((item, i) => (
+          <li style={`--i:${i}`}><a href={u(item.href)} data-menu-link>{item.label}<Icon name="arrow-up-right" /></a></li>
+        ))}
+      </ul>
+      <div class="mobile-menu__footer">
+        <a href={u('/#contact')} class="btn btn--accent btn--lg" data-menu-link>Demander mon devis gratuit<Icon name="arrow" class="btn__icon" /></a>
+        <a href={`tel:${site.contact.phoneHref}`} class="mobile-menu__contact"><Icon name="phone" size={18} />{site.contact.phone}</a>
+        <a href={`mailto:${site.contact.email}`} class="mobile-menu__contact"><Icon name="mail" size={18} />{site.contact.email}</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed; inset: 0 0 auto; z-index: 100; height: var(--header-h);
+    display: flex; align-items: center;
+    transition: background-color .4s var(--ease), box-shadow .4s var(--ease), transform .5s var(--ease);
+  }
+  .header.is-scrolled { background: rgba(245, 244, 241, .78); backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px); box-shadow: 0 1px 0 var(--line); }
+  .header.is-hidden { transform: translateY(-100%); }
+  .header__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .header__nav ul { display: flex; gap: 4px; padding: 5px; border-radius: 999px; background: rgba(255,255,255,.55); box-shadow: inset 0 0 0 1px var(--line); backdrop-filter: blur(10px); }
+  .header__link { display: block; padding: 8px 16px; border-radius: 999px; font-size: .94rem; font-weight: 500; color: var(--ink-2); transition: background-color .3s var(--ease), color .3s var(--ease); }
+  .header__link:hover { color: var(--ink); background: rgba(12,12,13,.06); }
+  .header__link.is-active { color: var(--bg); background: var(--ink); }
+  .header__actions { display: flex; align-items: center; gap: 18px; }
+  .header__phone { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .94rem; transition: color .3s; }
+  .header__phone:hover { color: var(--accent); }
+
+  .burger { display: none; width: 48px; height: 48px; border-radius: 50%; background: var(--ink); position: relative; }
+  .burger span { position: absolute; left: 15px; right: 15px; height: 1.75px; background: var(--bg); border-radius: 2px; transition: transform .5s var(--ease), top .5s var(--ease); }
+  .burger span:nth-child(1) { top: 20px; }
+  .burger span:nth-child(2) { top: 27px; }
+  .burger[aria-expanded='true'] span:nth-child(1) { top: 23.5px; transform: rotate(45deg); }
+  .burger[aria-expanded='true'] span:nth-child(2) { top: 23.5px; transform: rotate(-45deg); }
+
+  .mobile-menu { position: fixed; inset: var(--header-h) 0 0; background: var(--bg); overflow-y: auto; opacity: 0; transition: opacity .4s var(--ease); }
+  .mobile-menu.is-open { opacity: 1; }
+  .mobile-menu__inner { display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; padding-block: 24px 32px; gap: 40px; }
+  .mobile-menu__list li { border-bottom: 1px solid var(--line); opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: calc(var(--i) * 50ms + 80ms); }
+  .mobile-menu.is-open .mobile-menu__list li { opacity: 1; transform: none; }
+  .mobile-menu__list a { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; font-size: clamp(1.8rem, 8vw, 2.6rem); font-weight: 600; letter-spacing: -0.04em; }
+  .mobile-menu__list svg { width: 28px; height: 28px; color: var(--muted); }
+  .mobile-menu__footer { display: grid; gap: 14px; }
+  .mobile-menu__footer .btn { width: 100%; white-space: normal; text-align: center; }
+  .mobile-menu__contact { display: flex; align-items: center; gap: 10px; color: var(--ink-2); font-weight: 500; padding: 4px 0; }
+
+  @media (max-width: 1080px) {
+    .header__phone span { display: none; }
+    .header__phone { width: 44px; height: 44px; justify-content: center; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--line-strong); }
+  }
+  @media (max-width: 920px) {
+    .header__nav { display: none; }
+    .burger { display: block; }
+  }
+  @media (max-width: 560px) {
+    .header__cta { display: none; }
+    .header__actions { gap: 10px; }
+  }
+</style>

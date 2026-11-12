@@ -1,0 +1,50 @@
+---
+import { site } from '../../config/site';
+import ContactForm from '../ContactForm.astro';
+import SplitText from '../SplitText.astro';
+import Icon from '../Icon.astro';
+interface Props { headingLevel?: 'h1' | 'h2' }
+const { headingLevel = 'h2' } = Astro.props;
+---
+<section class="section contact" id="contact" aria-label="Demande de devis">
+  <div class="container contact__inner">
+    <div class="contact__aside">
+      <p class="eyebrow" data-reveal>Demande de devis</p>
+      <SplitText as={headingLevel} class="h2" text="Parlons de *votre projet.*" />
+      <p class="lead" data-reveal style="--d:.2s">Décrivez-nous votre activité et vos attentes. Nous revenons vers vous pour échanger sur votre besoin et vous proposer une solution adaptée.</p>
+
+      <ol role="list" class="next" data-reveal style="--d:.3s">
+        <li><span>1</span>Nous étudions votre demande</li>
+        <li><span>2</span>Nous vous recontactons pour en parler</li>
+        <li><span>3</span>Vous recevez une proposition détaillée</li>
+      </ol>
+
+      <ul role="list" class="contact__info" data-reveal style="--d:.4s">
+        <li><a href={`mailto:${site.contact.email}`}><Icon name="mail" size={20} /><span><small>E-mail</small>{site.contact.email}</span></a></li>
+        <li><a href={`tel:${site.contact.phoneHref}`}><Icon name="phone" size={20} /><span><small>Téléphone</small>{site.contact.phone}</span></a></li>
+        <li><div><Icon name="clock" size={20} /><span><small>Disponibilité</small>{site.contact.hours}</span></div></li>
+      </ul>
+    </div>
+    <div class="contact__card" data-reveal="scale" style="--d:.15s">
+      <ContactForm />
+    </div>
+  </div>
+</section>
+<style>
+  .contact__inner { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+  .contact__aside { display: grid; gap: 26px; position: sticky; top: calc(var(--header-h) + 32px); }
+  .next { display: grid; gap: 10px; margin-top: 8px; }
+  .next li { display: flex; align-items: center; gap: 14px; font-weight: 500; }
+  .next span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--ink); color: var(--bg); font-size: .82rem; font-weight: 700; flex: none; }
+  .contact__info { display: grid; gap: 4px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .contact__info a, .contact__info div { display: flex; align-items: center; gap: 16px; padding: 10px 0; overflow-wrap: anywhere; }
+  .contact__info :global(svg) { flex: none; width: 44px; height: 44px; padding: 11px; border-radius: 50%; background: var(--surface); box-shadow: var(--shadow-s); transition: background-color .3s, color .3s; }
+  .contact__info a:hover :global(svg) { background: var(--accent); color: #fff; }
+  .contact__info span { display: grid; font-weight: 600; }
+  .contact__info small { font-size: .78rem; font-weight: 500; color: var(--muted); }
+  .contact__card { background: var(--surface); border-radius: var(--radius-l); padding: clamp(22px, 4vw, 52px); box-shadow: var(--shadow-s); }
+  @media (max-width: 960px) {
+    .contact__inner { grid-template-columns: 1fr; }
+    .contact__aside { position: static; }
+  }
+</style>

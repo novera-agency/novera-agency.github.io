@@ -1,0 +1,24 @@
+---
+/** Composition ordinateur + mobile pour un projet donné. */
+import type { Project } from '../../data/projects';
+import Laptop from './Laptop.astro';
+import Phone from './Phone.astro';
+import MiniSite from './MiniSite.astro';
+interface Props { project: Project; class?: string }
+const { project, class: cls = '' } = Astro.props;
+---
+<div class:list={['pair', cls]}>
+  <Laptop domain={project.domain} class="pair__laptop">
+    <MiniSite project={project} layout="desktop" />
+  </Laptop>
+  <div class="pair__phone">
+    <Phone><MiniSite project={project} layout="mobile" /></Phone>
+  </div>
+</div>
+<style>
+  .pair { position: relative; padding: 0 9% 6% 0; }
+  .pair__phone { position: absolute; right: 0; bottom: 0; width: 22%; transition: transform .8s var(--ease); }
+  :global(.project:hover) .pair__phone { transform: translateY(-4%) rotate(-1.5deg); }
+  :global(.project:hover) .pair :global(.pair__laptop) { transform: translateY(-1.5%); }
+  .pair :global(.pair__laptop) { transition: transform .8s var(--ease); }
+</style>

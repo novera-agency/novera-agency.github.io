@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Contact from '../components/sections/Contact.astro';
+---
+<BaseLayout title="Contact et demande de devis" description="Demandez votre devis gratuit pour la création ou la rénovation de votre site Internet professionnel.">
+  <div class="contact-page">
+    <Contact headingLevel="h1" />
+  </div>
+</BaseLayout>
+<style>
+  .contact-page :global(.contact) { padding-top: calc(var(--header-h) + clamp(48px, 7vw, 100px)); }
+</style>

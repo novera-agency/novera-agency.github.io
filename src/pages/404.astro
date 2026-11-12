@@ -1,0 +1,24 @@
+---
+import { u } from '../utils/url';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+---
+<BaseLayout title="Page introuvable" noindex>
+  <section class="nf">
+    <div class="container nf__inner">
+      <p class="nf__code" aria-hidden="true">404</p>
+      <h1 class="h2">Cette page est <span class="serif">introuvable.</span></h1>
+      <p class="lead">Le lien est peut-être erroné ou la page a été déplacée.</p>
+      <div class="nf__ctas">
+        <a href={u('/')} class="btn">Retour à l’accueil<Icon name="arrow" class="btn__icon" /></a>
+        <a href={u('/contact/')} class="btn btn--ghost">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .nf { min-height: 80vh; display: grid; align-items: center; padding: calc(var(--header-h) + 60px) 0 80px; }
+  .nf__inner { display: grid; gap: 24px; justify-items: start; }
+  .nf__code { font-size: clamp(6rem, 22vw, 16rem); font-weight: 700; letter-spacing: -0.07em; line-height: .8; color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+  .nf__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+</style>
