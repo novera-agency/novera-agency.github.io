@@ -1,4 +1,5 @@
 ---
+import { u } from '../utils/url';
 /**
  * Logo de l'agence. Si un fichier logo est défini dans
  * src/config/site.ts, il est affiché ; sinon un logotype texte.
@@ -8,9 +9,9 @@ interface Props { variant?: 'dark' | 'light'; class?: string }
 const { variant = 'dark', class: cls = '' } = Astro.props;
 const src = variant === 'light' ? (site.logoLight ?? site.logo) : site.logo;
 ---
-<a href="/" class:list={['logo', `logo--${variant}`, cls]} aria-label={`${site.name} — accueil`}>
+<a href={u('/')} class:list={['logo', `logo--${variant}`, cls]} aria-label={`${site.name} — accueil`}>
   {src ? (
-    <img src={src} alt={site.name} height="36" class="logo__img" />
+    <img src={u(src)} alt={site.name} height="36" class="logo__img" />
   ) : (
     <>
       <span class="logo__mark" aria-hidden="true">

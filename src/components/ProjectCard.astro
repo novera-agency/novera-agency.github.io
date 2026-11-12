@@ -1,4 +1,5 @@
 ---
+import { u } from '../utils/url';
 import type { Project } from '../data/projects';
 import DevicePair from './mockups/DevicePair.astro';
 import Icon from './Icon.astro';
@@ -6,7 +7,7 @@ interface Props { project: Project; index?: number }
 const { project: p, index = 0 } = Astro.props;
 ---
 <article class="project" data-category={p.categoryId} data-reveal style={`--d:${(index % 2) * 0.1}s; --tint:${p.theme.dark ? p.theme.bg : p.theme.photoA}`}>
-  <a href={`/realisations/#${p.slug}`} class="project__link" aria-label={`Voir le projet de démonstration ${p.category} — ${p.name}`}>
+  <a href={u(`/realisations/#${p.slug}`)} class="project__link" aria-label={`Voir le projet de démonstration ${p.category} — ${p.name}`}>
     <div class="project__visual">
       {p.demo && <span class="project__badge">Projet de démonstration</span>}
       <DevicePair project={p} />

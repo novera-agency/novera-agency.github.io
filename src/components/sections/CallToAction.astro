@@ -1,4 +1,5 @@
 ---
+import { u } from '../../utils/url';
 import SplitText from '../SplitText.astro';
 import Icon from '../Icon.astro';
 ---
@@ -9,7 +10,7 @@ import Icon from '../Icon.astro';
       <p class="eyebrow">Passons à l’action</p>
       <SplitText as="h2" class="cta__title" text="Prêt à donner *une nouvelle dimension* à votre présence en ligne ?" />
       <p class="cta__text">Parlons de votre projet. Que vous souhaitiez créer votre premier site ou moderniser celui que vous possédez déjà, nous pouvons étudier votre besoin.</p>
-      <a href="/#contact" class="btn btn--light btn--lg cta__btn">Demander mon devis gratuit<Icon name="arrow" class="btn__icon" /></a>
+      <a href={u('/#contact')} class="btn btn--light btn--lg cta__btn">Demander mon devis gratuit<Icon name="arrow" class="btn__icon" /></a>
       <p class="cta__small">Gratuit et sans engagement</p>
     </div>
   </div>

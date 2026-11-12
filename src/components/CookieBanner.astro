@@ -1,4 +1,5 @@
 ---
+import { u } from '../utils/url';
 /**
  * Bandeau de consentement : affiché uniquement si un outil de
  * mesure d'audience est configuré (src/config/site.ts → analytics).
@@ -12,7 +13,7 @@ const gaId = site.analytics.googleAnalyticsId;
     <p id="cookie-title" class="cookie__title">Votre vie privée</p>
     <p class="cookie__text">
       Nous souhaitons mesurer l’audience du site afin de l’améliorer. Ces cookies ne sont déposés qu’avec votre accord.
-      <a href="/politique-de-confidentialite/#cookies">En savoir plus</a>
+      <a href={u('/politique-de-confidentialite/#cookies')}>En savoir plus</a>
     </p>
     <div class="cookie__actions">
       <button type="button" class="btn btn--ghost btn--sm" data-cookie-choice="refuse">Refuser</button>

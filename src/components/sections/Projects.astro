@@ -1,4 +1,5 @@
 ---
+import { u } from '../../utils/url';
 import { projects, categories } from '../../data/projects';
 import SectionHeading from '../SectionHeading.astro';
 import ProjectCard from '../ProjectCard.astro';
@@ -25,7 +26,7 @@ const { showHeading = true } = Astro.props;
     </div>
     <div class="projects__foot" data-reveal>
       <p class="projects__disclaimer"><Icon name="alert" size={18} />Les projets présentés sont des créations de démonstration : les entreprises citées sont fictives et ne constituent pas des références clients.</p>
-      {showHeading && <a href="/realisations/" class="btn btn--ghost">Voir le détail des projets<Icon name="arrow" class="btn__icon" /></a>}
+      {showHeading && <a href={u('/realisations/')} class="btn btn--ghost">Voir le détail des projets<Icon name="arrow" class="btn__icon" /></a>}
     </div>
   </div>
 </section>

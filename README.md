@@ -13,6 +13,18 @@ npm run preview  # prévisualise la version générée
 
 Déposez ensuite le contenu du dossier `dist/` chez votre hébergeur.
 
+## Mise en ligne sur GitHub Pages
+
+Le déploiement est automatisé par `.github/workflows/deploy.yml` : à chaque modification de la branche `main`, le site est reconstruit et publié.
+
+1. Sur GitHub : **Settings → Pages → Build and deployment → Source : « GitHub Actions »**.
+2. Fusionnez votre travail dans `main` (ou lancez le workflow à la main depuis l’onglet **Actions**).
+3. Le site est publié sur `https://<compte>.github.io/<depot>/`.
+
+Les liens internes s’adaptent automatiquement au sous-dossier (`/<depot>/`) grâce à `src/utils/url.ts` : utilisez toujours `u('/chemin/')` pour un nouveau lien interne.
+
+**Nom de domaine personnalisé** : dans **Settings → Pages → Custom domain**, saisissez votre domaine et configurez les DNS indiqués par GitHub. Le site passera alors à la racine du domaine, sans autre modification.
+
 ## Personnaliser
 
 | Quoi | Où |

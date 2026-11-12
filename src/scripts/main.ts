@@ -1,6 +1,7 @@
 import { initContactForms } from './form';
 import { initConsent } from './consent';
 
+const HOME = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- Apparition au défilement ---------- */
@@ -78,9 +79,9 @@ function initActiveNav() {
   const path = location.pathname;
   const pageLink = links.find((a) => !a.hash && a.pathname === path);
   if (pageLink) { pageLink.classList.add('is-active'); pageLink.setAttribute('aria-current', 'page'); return; }
-  if (path !== '/') return;
+  if (path !== HOME && path !== HOME + 'index.html') return;
   const sections = links
-    .filter((a) => a.hash && a.pathname === '/')
+    .filter((a) => a.hash && a.pathname === HOME)
     .map((a) => ({ a, el: document.querySelector<HTMLElement>(a.hash) }))
     .filter((x): x is { a: HTMLAnchorElement; el: HTMLElement } => Boolean(x.el));
   const io = new IntersectionObserver(

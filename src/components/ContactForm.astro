@@ -1,4 +1,5 @@
 ---
+import { u } from '../utils/url';
 /**
  * Formulaire de demande de devis.
  * L'envoi est géré par src/scripts/form.ts selon la configuration
@@ -73,7 +74,7 @@ const action = provider === 'web3forms'
   <div class="field form__consent">
     <label class="check">
       <input type="checkbox" name="consentement" value="oui" required id="f-consent" />
-      <span>J’accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="/politique-de-confidentialite/" target="_blank">politique de confidentialité</a>. <span class="req" aria-hidden="true">*</span></span>
+      <span>J’accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href={u('/politique-de-confidentialite/')} target="_blank">politique de confidentialité</a>. <span class="req" aria-hidden="true">*</span></span>
     </label>
     <p class="field__error" id="f-consent-err"></p>
   </div>

@@ -1,4 +1,5 @@
 ---
+import { u } from '../utils/url';
 import LegalLayout from '../layouts/LegalLayout.astro';
 import Todo from '../components/Todo.astro';
 import { site } from '../config/site';
@@ -42,7 +43,7 @@ const l = site.legal;
   <p>Le site peut contenir des liens vers des sites tiers. {site.name} n’exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu.</p>
 
   <h2>Données personnelles et cookies</h2>
-  <p>Le traitement de vos données personnelles est décrit dans notre <a href="/politique-de-confidentialite/">politique de confidentialité</a>, qui précise également notre usage des cookies.</p>
+  <p>Le traitement de vos données personnelles est décrit dans notre <a href={u('/politique-de-confidentialite/')}>politique de confidentialité</a>, qui précise également notre usage des cookies.</p>
 
   <h2>Droit applicable</h2>
   <p>Les présentes mentions légales sont soumises au droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux français seront seuls compétents.</p>

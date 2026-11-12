@@ -1,4 +1,5 @@
 ---
+import { u } from '../utils/url';
 import { nav, site } from '../config/site';
 import { services } from '../data/content';
 import Logo from './Logo.astro';
@@ -13,20 +14,20 @@ const consentEnabled = Boolean(site.analytics.googleAnalyticsId);
       <div class="footer__brand">
         <Logo variant="light" />
         <p>{site.tagline}. Création et rénovation de sites Internet pour les artisans, commerçants et petites entreprises.</p>
-        <a href="/#contact" class="btn btn--light">Demander mon devis gratuit<Icon name="arrow" class="btn__icon" /></a>
+        <a href={u('/#contact')} class="btn btn--light">Demander mon devis gratuit<Icon name="arrow" class="btn__icon" /></a>
       </div>
       <div class="footer__cols">
         <div>
           <h2 class="footer__title">Navigation</h2>
           <ul role="list">
-            <li><a href="/">Accueil</a></li>
-            {nav.map((n) => <li><a href={n.href}>{n.label}</a></li>)}
+            <li><a href={u('/')}>Accueil</a></li>
+            {nav.map((n) => <li><a href={u(n.href)}>{n.label}</a></li>)}
           </ul>
         </div>
         <div>
           <h2 class="footer__title">Services</h2>
           <ul role="list">
-            {services.map((s) => <li><a href={`/#service-${s.id}`}>{s.title}</a></li>)}
+            {services.map((s) => <li><a href={u(`/#service-${s.id}`)}>{s.title}</a></li>)}
           </ul>
         </div>
         <div>
@@ -44,12 +45,12 @@ const consentEnabled = Boolean(site.analytics.googleAnalyticsId);
     <div class="footer__bottom">
       <p>© {year} {site.name}. Tous droits réservés.</p>
       <ul role="list">
-        <li><a href="/mentions-legales/">Mentions légales</a></li>
-        <li><a href="/politique-de-confidentialite/">Politique de confidentialité</a></li>
+        <li><a href={u('/mentions-legales/')}>Mentions légales</a></li>
+        <li><a href={u('/politique-de-confidentialite/')}>Politique de confidentialité</a></li>
         <li>
           {consentEnabled
             ? <button type="button" data-cookie-open>Gestion des cookies</button>
-            : <a href="/politique-de-confidentialite/#cookies">Cookies</a>}
+            : <a href={u('/politique-de-confidentialite/#cookies')}>Cookies</a>}
         </li>
       </ul>
     </div>
