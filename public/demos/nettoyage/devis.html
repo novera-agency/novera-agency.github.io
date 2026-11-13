@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Devis gratuit — Clairéo Services</title>
+<meta name="description" content="Estimez votre budget de nettoyage et demandez un devis gratuit à Clairéo Services, entreprise fictive de démonstration.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F2FAFB">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='18' r='11' fill='%2312A8C9'/%3E%3Ccircle cx='24' cy='7' r='4' fill='%23FFC94D'/%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/entreprise-nettoyage/"><span class="hide-s">Retour aux </span>réalisations</a></div>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="dock"><div class="capsule">
+  <a class="logo" href="index.html" aria-label="Clairéo Services, accueil"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="18" r="11" fill="#12A8C9"/><circle cx="12" cy="14" r="3" fill="#fff" opacity=".7"/><circle cx="24" cy="7" r="4" fill="#FFC94D"/></svg><b>Clair<em>éo</em></b></a>
+  <nav aria-label="Navigation principale" style="display:contents"><ul class="links">
+    <li><a href="index.html">Accueil</a></li><li><a href="offres.html">Nos offres</a></li><li><a href="methode.html">Notre méthode</a></li><li><a href="devis.html" aria-current="page">Devis</a></li>
+  </ul></nav>
+  <a class="btn btn--ink btn--sm" href="devis.html">Devis gratuit</a>
+</div></header>
+
+<main id="contenu">
+<div class="wrap page">
+  <div class="ph-head"><span class="eyebrow">Devis gratuit</span><h1>Parlons de <em>vos locaux.</em></h1><p class="lead">Estimez votre budget, puis laissez-nous vos coordonnées : nous revenons vers vous avec un devis précis.</p></div>
+  <div class="split">
+    <div class="panel panel--ink"><h2 style="font-size:1.8rem">Estimation rapide</h2><div class="row"><div><label class="lab" for="dt">Type de locaux</label><select class="sel" id="dt"><option value="0">Bureaux</option><option value="1">Commerce</option><option value="2">Parties communes</option><option value="3">Fin de chantier</option></select></div>
+      <div><label class="lab" for="df">Fréquence</label><select class="sel" id="df"><option value="1">1 passage / semaine</option><option value="2">2 passages / semaine</option><option value="3" selected>3 passages / semaine</option><option value="5">5 passages / semaine</option></select></div></div>
+    <div><label class="lab" for="ds">Surface : <span id="dsv">150</span> m²</label><input class="rng" id="ds" type="range" min="20" max="1000" step="10" value="150"></div>
+    <div class="result" aria-live="polite"><div><span>Estimation mensuelle</span><br><b id="dout">—</b></div><span>Exemple fictif, hors taxes.<br>Devis précis gratuit.</span></div></div>
+    <form class="panel form" data-demo novalidate>
+      <div class="fields">
+        <div class="field"><label for="nom">Nom</label><input class="input" id="nom" name="nom" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="soc">Société</label><input class="input" id="soc" name="soc" type="text" autocomplete="organization"></div>
+        <div class="field"><label for="email">E-mail</label><input class="input" id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="tel">Téléphone</label><input class="input" id="tel" name="tel" type="tel" autocomplete="tel" required></div>
+        <div class="field field--full"><label for="msg">Vos locaux</label><textarea class="input" id="msg" name="msg" required minlength="10" placeholder="Surface, horaires d’accès, fréquence souhaitée…"></textarea></div>
+      </div>
+      <button class="btn" type="submit" style="justify-self:start">Envoyer ma demande</button>
+      <p class="form-note">Formulaire de démonstration : aucune donnée n’est envoyée ni conservée.</p>
+      <div class="form-status" data-status role="status" hidden></div>
+    </form>
+  </div>
+  <div class="panel" style="margin-top:16px;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,40px)">
+    <div><h3>Nous joindre</h3><p style="margin-top:8px">3 rue des Fontaines, ville fictive<br>01 99 00 00 08 · bonjour@claireo-services.example</p><p class="note" style="margin-top:8px">Coordonnées fictives : cette entreprise n’existe pas.</p></div>
+    <table class="hours" id="hours"><tbody><tr data-days="1,2,3,4,5"><th>Lundi – vendredi</th><td>7h – 19h</td></tr><tr data-days="6"><th>Samedi</th><td>8h – 12h</td></tr><tr data-days="0"><th>Dimanche</th><td>Fermé</td></tr></tbody></table>
+  </div>
+</div>
+</main>
+
+<footer class="foot"><div class="wrap foot-in">
+  <span><b>Clairéo Services</b><br>Entreprise de nettoyage fictive présentée à titre de démonstration.</span>
+  <span>01 99 00 00 08 · bonjour@claireo-services.example · 3 rue des Fontaines, ville fictive<br>© <span data-year>2026</span> — Site de démonstration. Entreprise, adresse, tarifs et références fictifs.</span>
+</div></footer>
+<p class="photo-note" style="--note-ink:#51707F">Les photos de ce site sont des images d’illustration libres de droits (fausses photos) : ce ne sont pas des photos de l’entreprise, qui est fictive. <a href="../credits.html">Crédits photos</a></p>
+<div class="qbar"><a class="btn" href="devis.html">Demander un devis gratuit</a></div>
+<script src="../demo.js" defer></script>
+<script src="site.js" defer></script>
+</body>
+</html>

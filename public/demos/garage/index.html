@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garage Central Motors — Entretien et réparation auto</title>
+<meta name="description" content="Garage Central Motors, garage fictif : entretien, réparation, pneus, pré-contrôle technique et prise de rendez-vous. Site de démonstration.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E0F11">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E0F11'/%3E%3Cpath d='M8 24 14 8h4l6 16h-4l-1-3h-6l-1 3Z' fill='%23E10600'/%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/barlow-condensed-latin-700-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/garage-automobile/"><span class="hide-s">Retour aux </span>réalisations</a></div>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="head"><div class="wrap head-in" style="max-width:none">
+  <a class="logo" href="index.html" aria-label="Garage Central Motors, accueil"><i><b>C</b></i><span>Central Motors<small>Garage · Entretien · Réparation</small></span></a>
+  <nav aria-label="Navigation principale" style="display:contents"><ul class="nav">
+    <li><a href="index.html" aria-current="page">Accueil</a></li><li><a href="forfaits.html">Forfaits</a></li><li><a href="atelier.html">L’atelier</a></li><li><a href="rendez-vous.html">Rendez-vous</a></li>
+  </ul></nav>
+  <p class="state" id="state"><i></i><span id="state-txt">Atelier ouvert</span></p>
+  <a class="rdv" href="rendez-vous.html"><span>Prendre RDV</span></a>
+</div></header>
+
+<main id="contenu">
+<section class="hero">
+  <div class="hero-copy">
+    <p class="mono">Garage indépendant · Toutes marques</p>
+    <h1>Votre voiture, <em>notre atelier.</em></h1>
+    <p class="lead">Entretien, réparation, pneus, pré-contrôle technique. Un devis annoncé avant les travaux, des pièces tracées et un suivi clair de votre véhicule.</p>
+    <div class="cta"><a class="btn" href="rendez-vous.html">Prendre rendez-vous</a><a class="btn btn--ghost" href="forfaits.html">Voir les forfaits</a></div>
+    <div class="dash" aria-labelledby="dtitle">
+      <div class="dash-top"><span class="mono" id="dtitle">Un voyant s’est allumé ?</span><span class="mono" style="color:var(--muted)">Touchez-le</span></div>
+      <div class="lights" role="radiogroup" aria-label="Voyant allumé"><label class="light"><input type="radio" name="l" value="huile"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h8l2-3h4M7 11v5a3 3 0 0 0 3 3h5a3 3 0 0 0 3-3v-5M18 8l3 3M5 8h4"/></svg>Huile</span></label><label class="light"><input type="radio" name="l" value="frein"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v6M12 16.500v.01M4 8a9 9 0 0 0 0 8M20 8a9 9 0 0 1 0 8"/></svg>Freins</span></label><label class="light"><input type="radio" name="l" value="batterie"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="11" rx="2"/><path d="M7 8V6h3v2M14 8V6h3v2M8 13h3M9.500 11.500v3M15 13h2"/></svg>Batterie</span></label><label class="light"><input type="radio" name="l" value="moteur"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9h3l1-2h5l1 2h2v3h2v4h-2v2H8l-2-3H3v-4h3Z"/></svg>Moteur</span></label></div>
+      <div class="diag" id="diag" aria-live="polite"><p>Sélectionnez un voyant pour savoir ce qu’il signifie et ce qu’il faut faire.</p></div>
+    </div>
+  </div>
+  <figure class="ph"><img src="../photos/garage-hero.webp" alt="Compartiment moteur d’une voiture rouge" loading="lazy" decoding="async"><span class="ph-tag">Photo d’illustration (fausse photo)</span></figure>
+</section>
+<section class="fgrid" aria-label="Forfaits les plus demandés">
+  <a class="fcard" href="forfaits.html#vidange"><h3>Vidange</h3><p>Huile, filtre à huile et contrôle des niveaux.</p><span class="p">79 €<small>dès</small></span></a>
+  <a class="fcard" href="forfaits.html#freins"><h3>Freinage</h3><p>Plaquettes avant et contrôle du circuit.</p><span class="p">189 €<small>dès</small></span></a>
+  <a class="fcard" href="forfaits.html#pneus"><h3>Pneus</h3><p>Montage, équilibrage et géométrie.</p><span class="p">320 €<small>dès</small></span></a>
+  <a class="fcard" href="forfaits.html#controle"><h3>Pré-contrôle</h3><p>Les points vérifiés avant le contrôle technique.</p><span class="p">59 €</span></a>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap foot-in">
+  <span><b>Garage Central Motors</b><br>Garage fictif présenté à titre de démonstration.</span>
+  <span>01 99 00 00 07 · atelier@central-motors.example · 18 avenue de l’Industrie, ville fictive<br>© <span data-year>2026</span> — Site de démonstration. Garage, adresse, horaires et tarifs fictifs.</span>
+</div></footer>
+<p class="photo-note" style="--note-ink:#A5ABB3">Les photos de ce site sont des images d’illustration libres de droits (fausses photos) : ce ne sont pas des photos du garage, qui est fictif. <a href="../credits.html">Crédits photos</a></p>
+<div class="qbar"><a class="btn" href="rendez-vous.html">Prendre rendez-vous</a></div>
+<script src="../demo.js" defer></script>
+<script src="site.js" defer></script>
+</body>
+</html>

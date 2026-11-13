@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rendez-vous — Garage Central Motors</title>
+<meta name="description" content="Prenez rendez-vous à l’atelier de Garage Central Motors, garage fictif de démonstration.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E0F11">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E0F11'/%3E%3Cpath d='M8 24 14 8h4l6 16h-4l-1-3h-6l-1 3Z' fill='%23E10600'/%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/barlow-condensed-latin-700-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/garage-automobile/"><span class="hide-s">Retour aux </span>réalisations</a></div>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="head"><div class="wrap head-in" style="max-width:none">
+  <a class="logo" href="index.html" aria-label="Garage Central Motors, accueil"><i><b>C</b></i><span>Central Motors<small>Garage · Entretien · Réparation</small></span></a>
+  <nav aria-label="Navigation principale" style="display:contents"><ul class="nav">
+    <li><a href="index.html">Accueil</a></li><li><a href="forfaits.html">Forfaits</a></li><li><a href="atelier.html">L’atelier</a></li><li><a href="rendez-vous.html" aria-current="page">Rendez-vous</a></li>
+  </ul></nav>
+  <p class="state" id="state"><i></i><span id="state-txt">Atelier ouvert</span></p>
+  <a class="rdv" href="rendez-vous.html"><span>Prendre RDV</span></a>
+</div></header>
+
+<main id="contenu">
+<div class="wrap page">
+  <div class="ph-head"><p class="mono">Rendez-vous</p><h1>Réservez <em>votre créneau.</em></h1><p class="lead">Indiquez votre véhicule et la prestation souhaitée. Nous confirmons le créneau et le prix avant votre venue.</p></div>
+  <div class="two">
+    <form class="form box" data-demo novalidate>
+      <div class="fields">
+        <div class="field field--full"><label for="plaque">Immatriculation</label><input class="input plate" id="plaque" name="plaque" type="text" maxlength="9" placeholder="AB-123-CD" autocomplete="off" required pattern="[A-Za-z]{2}-?[0-9]{3}-?[A-Za-z]{2}"></div>
+        <div class="field"><label for="marque">Marque</label><select class="input" id="marque" name="marque" required><option value="" disabled selected>Choisissez</option><option>Renault</option><option>Peugeot</option><option>Citroën</option><option>Volkswagen</option><option>Toyota</option><option>Dacia</option><option>Autre</option></select></div>
+        <div class="field"><label for="presta">Prestation</label><select class="input" id="presta" name="presta" required><option value="" disabled selected>Choisissez</option><option>Vidange</option><option>Freinage</option><option>Pneus</option><option>Pré-contrôle technique</option><option>Révision complète</option><option>Climatisation</option><option>Voyant allumé / diagnostic</option><option>Autre demande</option></select></div>
+        <div class="field"><label for="date">Date souhaitée</label><input class="input" id="date" name="date" type="date" required></div>
+        <div class="field"><label for="cre">Créneau</label><select class="input" id="cre" name="cre" required><option value="" disabled selected>Choisissez</option><option>Matin (8h – 12h)</option><option>Après-midi (14h – 18h)</option></select></div>
+        <div class="field"><label for="nom">Nom</label><input class="input" id="nom" name="nom" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="tel">Téléphone</label><input class="input" id="tel" name="tel" type="tel" autocomplete="tel" required></div>
+        <div class="field field--full"><label for="msg">Précisions</label><textarea class="input" id="msg" name="msg" placeholder="Bruit, voyant, kilométrage…"></textarea></div>
+      </div>
+      <button class="btn" type="submit" style="justify-self:start">Envoyer ma demande</button>
+      <p class="form-note">Formulaire de démonstration : aucune donnée n’est envoyée ni conservée.</p>
+      <div class="form-status" data-status role="status" hidden></div>
+    </form>
+    <div style="display:grid;gap:16px"><figure class="ph" style="aspect-ratio:4/3"><img src="../photos/garage-moteur.webp" alt="Disque et étrier de frein d’une voiture" loading="lazy" decoding="async"><span class="ph-tag">Photo d’illustration (fausse photo)</span></figure><div class="box"><h2>Une urgence ?</h2><p>Voyant rouge, bruit inquiétant, panne : appelez-nous avant de reprendre la route.</p><p style="font-family:var(--disp);font-weight:700;font-style:italic;font-size:2.4rem;line-height:1">01 99 00 00 07</p></div></div>
+  </div>
+</div>
+</main>
+
+<footer class="foot"><div class="wrap foot-in">
+  <span><b>Garage Central Motors</b><br>Garage fictif présenté à titre de démonstration.</span>
+  <span>01 99 00 00 07 · atelier@central-motors.example · 18 avenue de l’Industrie, ville fictive<br>© <span data-year>2026</span> — Site de démonstration. Garage, adresse, horaires et tarifs fictifs.</span>
+</div></footer>
+<p class="photo-note" style="--note-ink:#A5ABB3">Les photos de ce site sont des images d’illustration libres de droits (fausses photos) : ce ne sont pas des photos du garage, qui est fictif. <a href="../credits.html">Crédits photos</a></p>
+<div class="qbar"><a class="btn" href="rendez-vous.html">Prendre rendez-vous</a></div>
+<script src="../demo.js" defer></script>
+<script src="site.js" defer></script>
+</body>
+</html>

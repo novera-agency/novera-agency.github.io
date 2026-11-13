@@ -64,7 +64,7 @@ Une page d'accueil courte qui donne envie, puis une page par sujet : `/services/
 
 ## Sites de démonstration
 
-Six sites statiques indépendants dans `public/demos/<nom>/`. Chacun a sa propre architecture, sa navigation et ses interactions, avec une page d'accueil qui donne envie et une page par sujet :
+Neuf sites statiques indépendants dans `public/demos/<nom>/`. Chacun a sa propre architecture, sa navigation et ses interactions, avec une page d'accueil qui donne envie et une page par sujet :
 
 | Dossier | Concept | Pages |
 | --- | --- | --- |
@@ -73,6 +73,9 @@ Six sites statiques indépendants dans `public/demos/<nom>/`. Chacun a sa propre
 | `restaurant/` | couverture plein écran, repères en chiffres romains, carte à onglets | accueil, carte, maison, réserver |
 | `kebab/` | application de commande, panier conservé d'une page à l'autre | accueil, carte, panier, infos |
 | `coiffure/` | magazine de mode, réservation en 4 étapes avec créneaux | accueil, prestations, salon, réserver |
+| `artisan/` | chantier : béton, noir et orange, estimateur de budget | accueil, chantiers, savoir-faire, devis |
+| `garage/` | tableau de bord : voyants interactifs, forfaits, rendez-vous | accueil, forfaits, atelier, rendez-vous |
+| `nettoyage/` | capsule flottante, bulles, calculateur de budget | accueil, offres, méthode, devis |
 | `epicerie/` | recherche, catalogue filtrable, produits de saison | accueil, catalogue, paniers, infos |
 
 Ils ne partagent que `public/demos/shared.css` (bandeau de démonstration, accessibilité), `public/demos/demo.js` (apparition au défilement, formulaires de démonstration) et les polices auto-hébergées de `public/demos/fonts/`.

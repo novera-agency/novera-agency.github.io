@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Devis gratuit — Maison Duret Rénovation</title>
+<meta name="description" content="Estimez votre budget et demandez un devis gratuit à Maison Duret Rénovation, entreprise fictive de démonstration.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1C1B19">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F26A1B'/%3E%3Ctext x='16' y='24' font-family='Arial Black,sans-serif' font-size='22' text-anchor='middle' fill='%231C1B19'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/archivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/artisan-batiment/"><span class="hide-s">Retour aux </span>réalisations</a></div>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="head"><div class="head-in">
+  <a class="logo" href="index.html" aria-label="Maison Duret Rénovation, accueil"><i>D</i><span><b>Maison Duret</b><small>Rénovation · Maçonnerie</small></span></a>
+  <nav aria-label="Navigation principale" style="display:contents"><ul class="tabs">
+    <li><a href="index.html">Accueil</a></li><li><a href="chantiers.html">Chantiers</a></li><li><a href="savoir-faire.html">Savoir-faire</a></li><li><a href="devis.html" aria-current="page">Devis</a></li>
+  </ul></nav>
+  <a class="devis" href="devis.html">Devis gratuit</a>
+</div></header>
+
+<main id="contenu">
+<div class="wrap page">
+  <div class="ph-head"><span class="tag">Devis gratuit</span><h1>Votre projet, <em>chiffré.</em></h1><p class="lead">Obtenez une fourchette de budget en quelques secondes, puis demandez un devis détaillé gratuit.</p></div>
+  <div class="split">
+    <form class="form" data-demo novalidate>
+      <div class="fields">
+        <div class="field"><label for="nom">Nom</label><input class="input" id="nom" name="nom" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="tel">Téléphone</label><input class="input" id="tel" name="tel" type="tel" autocomplete="tel" required></div>
+        <div class="field"><label for="email">E-mail</label><input class="input" id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="ville">Commune du chantier</label><input class="input" id="ville" name="ville" type="text" required></div>
+        <div class="field field--full"><label for="msg">Votre projet</label><textarea class="input" id="msg" name="msg" required minlength="15" placeholder="Type de travaux, surface, délais souhaités…"></textarea></div>
+      </div>
+      <button class="btn btn--or" type="submit" style="justify-self:start">Envoyer ma demande <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="form-note">Formulaire de démonstration : aucune donnée n’est envoyée ni conservée.</p>
+      <div class="form-status" data-status role="status" hidden></div>
+      <div class="info"><h2>Nous trouver</h2><p>5 impasse des Artisans, ville fictive<br>01 99 00 00 06 · contact@maison-duret.example</p>
+        <table class="hours" id="hours"><tbody><tr data-days="1,2,3,4,5"><th>Lundi – vendredi</th><td>7h30 – 18h</td></tr><tr data-days="6"><th>Samedi</th><td>Sur rendez-vous</td></tr><tr data-days="0"><th>Dimanche</th><td>Fermé</td></tr></tbody></table>
+        <p class="note" style="font-size:.84rem;color:var(--muted)">Coordonnées fictives : cette entreprise n’existe pas.</p></div>
+    </form>
+    <aside class="est" aria-label="Estimateur de budget">
+      <h2>Estimer mon budget</h2>
+      <div><label for="e-type">Type de travaux</label><select id="e-type"><option value="0">Rénovation complète</option><option value="1">Cuisine</option><option value="2">Salle de bain</option><option value="3">Peinture et sols</option></select></div>
+      <div><label for="e-surf">Surface : <span id="e-surf-v">40</span> m²</label><input id="e-surf" type="range" min="5" max="200" step="1" value="40"></div>
+      <div><label>Niveau de finition</label><div class="opts" id="e-lvl">
+        <label class="opt"><input type="radio" name="lvl" value="0.9"><span>Essentiel</span></label><label class="opt"><input type="radio" name="lvl" value="1" checked><span>Confort</span></label><label class="opt"><input type="radio" name="lvl" value="1.25"><span>Premium</span></label></div></div>
+      <div class="out" aria-live="polite"><span>Budget estimé</span><b id="e-out">—</b><span>Estimation indicative et fictive, hors fournitures spécifiques. Seul le devis fait foi.</span></div>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="foot"><div class="wrap foot-in">
+  <span><b>Maison Duret Rénovation</b><br>Entreprise de rénovation fictive présentée à titre de démonstration.</span>
+  <span>01 99 00 00 06 · contact@maison-duret.example · 5 impasse des Artisans, ville fictive<br>© <span data-year>2026</span> — Site de démonstration. Entreprise, adresse, tarifs et chantiers fictifs.</span>
+</div></footer>
+<p class="photo-note" style="--note-ink:#5F5B54">Les photos de ce site sont des images d’illustration libres de droits (fausses photos) : ce ne sont pas des chantiers de l’entreprise, qui est fictive. <a href="../credits.html">Crédits photos</a></p>
+<div class="qbar"><a class="btn btn--or" href="devis.html">Devis gratuit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<script src="../demo.js" defer></script>
+<script src="site.js" defer></script>
+</body>
+</html>
