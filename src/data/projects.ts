@@ -382,29 +382,35 @@ const all: Project[] = [
     category: 'Salon de coiffure',
     categoryId: 'coiffure',
     name: 'Atelier Solène',
-    domain: 'atelier-solene.fr',
+    domain: 'atelier-solene.example',
+    url: '/demos/coiffure/',
+    screenshots: {
+      desktop: '/images/coiffure-desktop.webp',
+      mobile: '/images/coiffure-mobile.webp',
+      alt: 'Aperçu du site de démonstration Atelier Solène, salon de coiffure',
+    },
     summary:
-      'Site raffiné pour un salon de coiffure : prestations et tarifs, univers du salon et prise de rendez-vous accessible depuis chaque page.',
-    goals: ['Refléter l’univers du salon', 'Afficher clairement les tarifs', 'Faciliter la prise de rendez-vous'],
-    features: ['Carte des prestations', 'Lien de réservation', 'Galerie du salon', 'Horaires et accès'],
+      'Un site de salon façon magazine de mode : une accueil à grande photo, la carte des prestations en onglets, la présentation de l’équipe et surtout une vraie réservation en ligne en quatre étapes, avec créneaux et total en direct.',
+    goals: ['Donner envie de pousser la porte du salon', 'Afficher clairement prestations et tarifs', 'Permettre de réserver en quelques touches'],
+    features: ['Réservation en 4 étapes avec créneaux', 'Carte des prestations en onglets', 'Prochain créneau libre sur l’accueil', 'Quatre pages courtes'],
     theme: {
-      bg: '#F6EEEA', surface: '#FFFFFF', ink: '#2A1C1A', muted: '#7D6863',
-      accent: '#8E4E43', accentInk: '#FFFFFF',
-      photoA: '#D8B9AC', photoB: '#7A5048', serif: true, dark: false,
+      bg: '#F5F0E9', surface: '#FFFFFF', ink: '#1B1614', muted: '#6F625B',
+      accent: '#B4533A', accentInk: '#FFFFFF',
+      photoA: '#EBD3CA', photoB: '#B4533A', serif: true, dark: false,
     },
     site: {
-      nav: ['Prestations', 'Tarifs', 'Le salon', 'Rendez-vous'],
-      kicker: 'Coiffure & coloration',
-      headline: 'L’art de sublimer chaque style.',
-      cta: 'Prendre rendez-vous',
-      cards: ['Coupe', 'Couleur', 'Soins'],
+      nav: ['Prestations', 'Le salon', 'Réserver'],
+      kicker: 'Coiffure · Couleur · Soin',
+      headline: 'Votre style, notre geste.',
+      cta: 'Réserver',
+      cards: ['Coupe', 'Couleur', 'Soin'],
       illustration: 'scissors',
     },
   },
 ];
 
 /** Ordre d'affichage : les projets en ligne d'abord, puis les maquettes générées. */
-const order = ['revizstmg', 'quickfix-ia', 'boucherie', 'boulangerie', 'restaurant', 'kebab', 'epicerie', 'paysagiste'];
+const order = ['revizstmg', 'quickfix-ia', 'boucherie', 'boulangerie', 'restaurant', 'kebab', 'epicerie', 'paysagiste', 'salon-de-coiffure'];
 export const projects: Project[] = [...all].sort((a, b) => {
   const ia = order.indexOf(a.slug), ib = order.indexOf(b.slug);
   return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);

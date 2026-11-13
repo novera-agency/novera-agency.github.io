@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réserver — Atelier Solène</title>
+<meta name="description" content="Réservez un rendez-vous en ligne chez Atelier Solène, salon de coiffure fictif de démonstration.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F5F0E9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231B1614'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='20' font-style='italic' text-anchor='middle' fill='%23EBD3CA'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/bodoni-moda-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/salon-de-coiffure/"><span class="hide-s">Retour aux </span>réalisations</a></div>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="mast"><div class="wrap mast-in">
+  <ul class="lnav"><li><a href="prestations.html">Prestations</a></li><li><a href="salon.html">Le salon</a></li></ul>
+  <a class="logo" href="index.html" aria-label="Atelier Solène, accueil"><b>Atelier Solène</b><small>Coiffure · Couleur · Soin</small></a>
+  <ul class="rnav"><li><a class="res" href="reserver.html" aria-current="page">Réserver</a></li></ul>
+</div></header>
+
+<main id="contenu">
+<div class="wrap page">
+  <div class="ph-head"><p class="k">Réservation en ligne</p><h1>Votre <em>rendez-vous.</em></h1></div>
+  <div class="book">
+    <form class="steps" id="bk" data-demo novalidate>
+      <section class="step" id="s1"><h2><b>1</b>La prestation</h2><div class="choices"><label class="opt"><input type="radio" name="svc" value="0" data-p="58" data-d="60" data-n="Coupe femme + brushing"><span><b>Coupe femme + brushing</b><small>60 min</small><em>58 €</em></span></label><label class="opt"><input type="radio" name="svc" value="1" data-p="32" data-d="30" data-n="Coupe homme"><span><b>Coupe homme</b><small>30 min</small><em>32 €</em></span></label><label class="opt"><input type="radio" name="svc" value="2" data-p="42" data-d="45" data-n="Coupe + barbe"><span><b>Coupe + barbe</b><small>45 min</small><em>42 €</em></span></label><label class="opt"><input type="radio" name="svc" value="3" data-p="20" data-d="30" data-n="Coupe enfant (– 12 ans)"><span><b>Coupe enfant (– 12 ans)</b><small>30 min</small><em>20 €</em></span></label><label class="opt"><input type="radio" name="svc" value="4" data-p="30" data-d="30" data-n="Brushing"><span><b>Brushing</b><small>30 min</small><em>30 €</em></span></label><label class="opt"><input type="radio" name="svc" value="5" data-p="62" data-d="90" data-n="Couleur racines"><span><b>Couleur racines</b><small>90 min</small><em>62 €</em></span></label><label class="opt"><input type="radio" name="svc" value="6" data-p="120" data-d="150" data-n="Balayage"><span><b>Balayage</b><small>150 min</small><em>120 €</em></span></label><label class="opt"><input type="radio" name="svc" value="7" data-p="24" data-d="20" data-n="Soin profond"><span><b>Soin profond</b><small>20 min</small><em>24 €</em></span></label></div></section>
+      <section class="step locked" id="s2"><h2><b>2</b>Avec qui ?</h2><div class="pros"><label class="opt"><input type="radio" name="pro" value="any" checked><span><i class="ini">?</i><b>Peu importe</b></span></label><label class="opt"><input type="radio" name="pro" value="Solène" ><span><i class="ini">S</i><b>Solène</b></span></label><label class="opt"><input type="radio" name="pro" value="Karim" ><span><i class="ini">K</i><b>Karim</b></span></label><label class="opt"><input type="radio" name="pro" value="Inès" ><span><i class="ini">I</i><b>Inès</b></span></label></div></section>
+      <section class="step locked" id="s3"><h2><b>3</b>Quand ?</h2><div class="days" id="days" role="radiogroup" aria-label="Jour"></div><div class="slots" id="slots" role="radiogroup" aria-label="Horaire"></div><p class="note" id="slot-note" style="margin-top:12px">Choisissez d’abord une prestation et un jour.</p></section>
+      <section class="step locked" id="s4"><h2><b>4</b>Vos coordonnées</h2>
+        <div class="fields"><div class="field"><label for="nom">Nom</label><input class="input" id="nom" name="nom" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="tel">Téléphone</label><input class="input" id="tel" name="tel" type="tel" autocomplete="tel" required></div>
+          <div class="field field--full"><label for="msg">Précisions (facultatif)</label><textarea class="input" id="msg" name="msg" rows="2" placeholder="Longueur, couleur actuelle, allergie…"></textarea></div></div></section>
+    </form>
+    <aside class="recap" aria-label="Récapitulatif">
+      <span class="k">Votre rendez-vous</span>
+      <dl><div><dt>Prestation</dt><dd id="r-svc">—</dd></div><div><dt>Avec</dt><dd id="r-pro">—</dd></div><div><dt>Date</dt><dd id="r-when">—</dd></div></dl>
+      <div class="tot"><span class="k">Total estimé</span><b id="r-tot">0 €</b></div>
+      <button type="submit" form="bk" id="r-btn" disabled>Confirmer</button>
+      <p class="form-note">Démonstration : aucune réservation n’est enregistrée.</p>
+      <div class="form-status" id="r-status" role="status" hidden></div>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer class="foot"><div class="wrap foot-in">
+  <span><b>Atelier Solène</b><br>Salon de coiffure fictif présenté à titre de démonstration.</span>
+  <span>12 rue des Lilas, ville fictive · 01 99 00 00 05<br>© <span data-year>2026</span> — Site de démonstration. Salon, équipe, adresse et tarifs fictifs.</span>
+</div></footer>
+<p class="photo-note" style="--note-ink:#6F625B">Les photos de ce site sont des images d’illustration libres de droits (fausses photos) : ce ne sont pas des photos du salon, qui est fictif. <a href="../credits.html">Crédits photos</a></p>
+<div class="rbar"><a class="res res--terra" href="reserver.html">Réserver un rendez-vous</a></div>
+<script src="../demo.js" defer></script>
+<script src="site.js" defer></script>
+</body>
+</html>

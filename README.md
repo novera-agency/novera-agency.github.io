@@ -64,7 +64,7 @@ Une page d'accueil courte qui donne envie, puis une page par sujet : `/services/
 
 ## Sites de démonstration
 
-Cinq sites statiques indépendants dans `public/demos/<nom>/`. Chacun a sa propre architecture, sa navigation et ses interactions, avec une page d'accueil qui donne envie et une page par sujet :
+Six sites statiques indépendants dans `public/demos/<nom>/`. Chacun a sa propre architecture, sa navigation et ses interactions, avec une page d'accueil qui donne envie et une page par sujet :
 
 | Dossier | Concept | Pages |
 | --- | --- | --- |
@@ -72,6 +72,7 @@ Cinq sites statiques indépendants dans `public/demos/<nom>/`. Chacun a sa propr
 | `boulangerie/` | « gazette » à bandeau centré, fournées en direct, ardoise | une, carte, commande |
 | `restaurant/` | couverture plein écran, repères en chiffres romains, carte à onglets | accueil, carte, maison, réserver |
 | `kebab/` | application de commande, panier conservé d'une page à l'autre | accueil, carte, panier, infos |
+| `coiffure/` | magazine de mode, réservation en 4 étapes avec créneaux | accueil, prestations, salon, réserver |
 | `epicerie/` | recherche, catalogue filtrable, produits de saison | accueil, catalogue, paniers, infos |
 
 Ils ne partagent que `public/demos/shared.css` (bandeau de démonstration, accessibilité), `public/demos/demo.js` (apparition au défilement, formulaires de démonstration) et les polices auto-hébergées de `public/demos/fonts/`.
