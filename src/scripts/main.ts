@@ -29,19 +29,9 @@ function initReveal() {
 function initHeader() {
   const header = document.querySelector<HTMLElement>('[data-header]');
   if (!header) return;
-  let lastY = window.scrollY;
-  const onScroll = () => {
-    const y = window.scrollY;
-    header.classList.toggle('is-scrolled', y > 20);
-    const menuOpen = document.body.classList.contains('menu-open');
-    header.classList.toggle('is-hidden', !menuOpen && y > 400 && y > lastY + 4);
-    if (y < lastY - 4 || y < 400) header.classList.remove('is-hidden');
-    lastY = y;
-  };
+  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 20);
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
-  // Révèle l'en-tête lorsqu'un élément y reçoit le focus clavier
-  header.addEventListener('focusin', () => header.classList.remove('is-hidden'));
 }
 
 /* ---------- Menu mobile ---------- */

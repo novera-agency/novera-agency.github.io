@@ -26,7 +26,9 @@ import Icon from './Icon.astro';
     </div>
   </div>
 
-  <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
     <div class="container mobile-menu__inner">
       <ul role="list" class="mobile-menu__list">
         {nav.map((item, i) => (
@@ -40,7 +42,6 @@ import Icon from './Icon.astro';
       </div>
     </div>
   </div>
-</header>
 
 <style>
   .header {
@@ -49,7 +50,7 @@ import Icon from './Icon.astro';
     transition: background-color .4s var(--ease), box-shadow .4s var(--ease), transform .5s var(--ease);
   }
   .header.is-scrolled { background: rgba(245, 244, 241, .78); backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px); box-shadow: 0 1px 0 var(--line); }
-  .header.is-hidden { transform: translateY(-100%); }
+  :global(body.menu-open) .header { background: var(--bg); box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; z-index: 120; }
   .header__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .header__nav ul { display: flex; gap: 4px; padding: 5px; border-radius: 999px; background: rgba(255,255,255,.55); box-shadow: inset 0 0 0 1px var(--line); backdrop-filter: blur(10px); }
   .header__link { display: block; padding: 8px 16px; border-radius: 999px; font-size: .94rem; font-weight: 500; color: var(--ink-2); transition: background-color .3s var(--ease), color .3s var(--ease); }
@@ -59,14 +60,14 @@ import Icon from './Icon.astro';
   .header__phone { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .94rem; transition: color .3s; }
   .header__phone:hover { color: var(--accent); }
 
-  .burger { display: none; width: 48px; height: 48px; border-radius: 50%; background: var(--ink); position: relative; }
+  .burger { touch-action: manipulation; -webkit-tap-highlight-color: transparent; display: none; width: 48px; height: 48px; border-radius: 50%; background: var(--ink); position: relative; }
   .burger span { position: absolute; left: 15px; right: 15px; height: 1.75px; background: var(--bg); border-radius: 2px; transition: transform .5s var(--ease), top .5s var(--ease); }
   .burger span:nth-child(1) { top: 20px; }
   .burger span:nth-child(2) { top: 27px; }
   .burger[aria-expanded='true'] span:nth-child(1) { top: 23.5px; transform: rotate(45deg); }
   .burger[aria-expanded='true'] span:nth-child(2) { top: 23.5px; transform: rotate(-45deg); }
 
-  .mobile-menu { position: fixed; inset: var(--header-h) 0 0; background: var(--bg); overflow-y: auto; opacity: 0; transition: opacity .4s var(--ease); }
+  .mobile-menu { position: fixed; inset: 0; z-index: 90; padding-top: var(--header-h); background: var(--bg); overflow-y: auto; overscroll-behavior: contain; opacity: 0; transition: opacity .3s var(--ease); }
   .mobile-menu.is-open { opacity: 1; }
   .mobile-menu__inner { display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; padding-block: 24px 32px; gap: 40px; }
   .mobile-menu__list li { border-bottom: 1px solid var(--line); opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: calc(var(--i) * 50ms + 80ms); }
