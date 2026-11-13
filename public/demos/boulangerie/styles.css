@@ -118,3 +118,9 @@ textarea.input{min-height:100px;resize:vertical;background-image:repeating-linea
   .rowf{grid-template-columns:1fr;gap:0}.rowf label{padding-bottom:0}
   .strap ul{justify-content:flex-start}
 }
+
+/* Photos */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-bottom:clamp(28px,4vw,52px)}
+.duo .ph{border:3px double var(--ink)}
+.fig .ph{border:3px double var(--ink)}
+@media (max-width:640px){.duo{grid-template-columns:1fr}}

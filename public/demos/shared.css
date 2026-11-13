@@ -12,6 +12,13 @@ button,input,select,textarea{font:inherit;color:inherit}
 .demo-bar a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .demo-bar a::before{content:'← '}
 @media (max-width:560px){.hide-s{display:none}}
+/* Photos d'illustration : étiquette visible sur chaque image + mention de bas de page */
+.ph{position:relative;margin:0;overflow:hidden;background:#d9d5cc}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph-tag{position:absolute;right:10px;bottom:10px;z-index:2;max-width:calc(100% - 20px);padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.68);color:#fff;font:600 10.5px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.02em;backdrop-filter:blur(4px);pointer-events:none}
+.photo-note{margin:0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));text-align:center;font:500 12px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--note-ink,#6b6b6b)}
+.photo-note a{color:inherit;text-decoration:underline;text-underline-offset:3px;font-weight:700}
+@media (max-width:900px){.photo-note{padding-bottom:84px}}
 .skip-link{position:absolute;left:12px;top:-80px;z-index:1100;background:#000;color:#fff;padding:10px 16px;border-radius:8px;transition:top .2s}
 .skip-link:focus{top:calc(var(--bar) + 8px)}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

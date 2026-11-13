@@ -178,3 +178,21 @@ textarea.input{min-height:110px;resize:vertical}
   .search{grid-row:3}
   .infos{grid-template-columns:1fr}
 }
+
+/* Photos : rayons et paniers */
+.tile,.banner-card{position:relative;overflow:hidden;background-size:cover;background-position:center;isolation:isolate}
+.tile::after,.banner-card::after{content:'Photo d’illustration (fausse photo)';position:absolute;right:10px;top:10px;z-index:2;padding:4px 9px;border-radius:999px;background:rgba(0,0,0,.62);color:#fff;font:600 10px/1.2 system-ui,sans-serif;letter-spacing:.02em}
+.tile.c-fl{background-image:linear-gradient(0deg,rgba(61,74,42,.9),rgba(61,74,42,.1)),url('../photos/epicerie-legumes.webp')}
+.tile.c-cr{background-image:linear-gradient(0deg,rgba(217,162,54,.92),rgba(217,162,54,.08)),url('../photos/epicerie-fromages.webp')}
+.tile.c-ep{background-image:linear-gradient(0deg,rgba(110,47,74,.9),rgba(110,47,74,.1)),url('../photos/epicerie-epices.webp')}
+.tile.c-vr{background-image:linear-gradient(0deg,rgba(90,110,60,.9),rgba(90,110,60,.1)),url('../photos/epicerie-vrac.webp')}
+.tile.c-cv{background-image:linear-gradient(0deg,rgba(210,73,42,.9),rgba(210,73,42,.1)),url('../photos/epicerie-cave.webp')}
+.tile.c-cr b,.tile.c-cr span{color:#1f2418}
+.banner-card{background-image:linear-gradient(90deg,rgba(61,74,42,.95) 20%,rgba(61,74,42,.35)),url('../photos/epicerie-marche.webp')}
+.tagcard .band{height:92px;background-size:cover;background-position:center}
+.tagcard.c-fl .band{background-image:linear-gradient(0deg,rgba(61,74,42,.88),rgba(61,74,42,.3)),url('../photos/epicerie-legumes.webp')}
+.tagcard.c-cr .band{background-image:linear-gradient(0deg,rgba(217,162,54,.9),rgba(217,162,54,.3)),url('../photos/epicerie-fromages.webp')}
+.tagcard.c-ep .band{background-image:linear-gradient(0deg,rgba(110,47,74,.88),rgba(110,47,74,.3)),url('../photos/epicerie-epices.webp')}
+.tagcard.c-vr .band{background-image:linear-gradient(0deg,rgba(90,110,60,.88),rgba(90,110,60,.3)),url('../photos/epicerie-vrac.webp')}
+.tagcard.c-cv .band{background-image:linear-gradient(0deg,rgba(210,73,42,.88),rgba(210,73,42,.3)),url('../photos/epicerie-cave.webp')}
+.ph.wide{margin-bottom:28px}

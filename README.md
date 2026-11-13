@@ -78,6 +78,7 @@ Ils ne partagent que `public/demos/shared.css` (bandeau de démonstration, acces
 
 - Entreprises, adresses, téléphones, horaires et prix y sont **fictifs** ; chaque page porte un bandeau « Site de démonstration » et une balise `noindex`.
 - Leurs formulaires et paniers **n'envoient rien** et le disent à l'écran.
+- Les **photos** sont des images d’illustration libres de droits (Wikimédia Commons), dans `public/demos/photos/`, signalées « fausses photos » sur chaque image et en bas de page. Auteurs et licences : `public/demos/credits.html`. Pour en ajouter une, indiquer son auteur et sa licence dans cette page.
 - Pour ajouter un projet : créer la fiche dans `src/data/projects.ts` (champs `url`, `screenshots`) et les captures dans `public/images/`.
 
 ## Arborescence du dépôt

@@ -110,3 +110,14 @@ textarea.input{min-height:84px;resize:vertical}
   .legal{position:static;margin-top:36px}
 }
 @media (max-width:560px){.fields{grid-template-columns:1fr}.tabs button{padding:10px 12px}}
+
+/* Photos */
+body{--note-ink:#A99C8C}
+.bgph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3;filter:saturate(.75) contrast(1.05);pointer-events:none}
+.cover::after{content:'';position:absolute;inset:0;background:radial-gradient(70% 70% at 50% 50%,rgba(26,14,17,.2),rgba(26,14,17,.92));pointer-events:none}
+.cover>*{z-index:2}
+.cover::before{z-index:1}
+.phl{position:absolute;left:var(--edge);right:auto;bottom:60px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:980px}
+.ph{border:1px solid var(--line)}
+@media (max-width:620px){.duo{grid-template-columns:1fr}.phl{bottom:96px}}

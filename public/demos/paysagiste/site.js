@@ -37,6 +37,8 @@
       $('#s-line').textContent = s.l;
       $('#s-tasks').innerHTML = s.t.map((x) => '<li>' + x + '</li>').join('');
     }
+    const ph = $('#s-photo');
+    if (ph) { ph.src = '../photos/paysagiste-' + k + '.webp'; ph.alt = 'Jardin : ' + seasons[k].n.toLowerCase(); }
     try { sessionStorage.setItem('verdance-season', k); } catch (e) { /* stockage indisponible */ }
   };
   btns.forEach((b) => b.addEventListener('click', () => setSeason(b.dataset.seasonBtn)));

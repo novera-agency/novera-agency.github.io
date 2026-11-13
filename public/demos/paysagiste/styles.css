@@ -132,3 +132,9 @@ textarea.input{min-height:96px;resize:vertical}
   .route,.fields{grid-template-columns:1fr}
   .pick-btns{flex-wrap:wrap;border-radius:22px}
 }
+
+/* Photos */
+.ph.wide{aspect-ratio:21/8;border-radius:26px}
+.sphoto{justify-self:stretch;aspect-ratio:4/5;border-radius:28px;box-shadow:0 30px 60px -36px rgba(20,37,26,.5)}
+.sphoto img{transition:opacity .5s}
+@media (max-width:1100px){.sphoto{aspect-ratio:16/10}}
