@@ -28,13 +28,13 @@ const icons = ['layout', 'spark', 'compass'] as const;
   .head h2 { max-width: 16ch; }
   .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .card { position: relative; display: grid; gap: 14px; align-content: start; padding: clamp(24px, 3vw, 34px); border-radius: var(--radius); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
-  .card:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1px var(--line-strong), 0 26px 44px -30px rgba(12, 12, 13, .4); }
+  @media (hover: hover) { .card:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1px var(--line-strong), 0 26px 44px -30px rgba(12, 12, 13, .4); } }
   .card__icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: var(--ink); color: var(--bg); transition: background-color .4s var(--ease); }
-  .card:hover .card__icon { background: var(--accent); }
+  @media (hover: hover) { .card:hover .card__icon { background: var(--accent); } }
   .card h3 { font-size: 1.55rem; }
   .card p { color: var(--ink-2); }
   .card__more { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; margin-top: 6px; }
   .card__more :global(svg) { transition: transform .4s var(--ease); }
-  .card:hover .card__more :global(svg) { transform: translateX(4px); }
+  @media (hover: hover) { .card:hover .card__more :global(svg) { transform: translateX(4px); } }
   @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
 </style>

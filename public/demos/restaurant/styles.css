@@ -19,13 +19,13 @@ p{margin:0}
 /* Repères fixes */
 .brand{position:fixed;z-index:60;left:var(--edge);top:calc(var(--bar) + 22px);text-decoration:none;color:var(--ivory)}
 .reserve{position:fixed;z-index:60;right:var(--edge);top:calc(var(--bar) + 22px);color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px;transition:color .3s,border-color .3s}
-.reserve:hover{color:var(--ivory);border-color:var(--ivory)}
+@media (hover:hover){.reserve:hover{color:var(--ivory);border-color:var(--ivory)}}
 .chapters{position:fixed;z-index:60;right:clamp(14px,2.4vw,32px);top:50%;transform:translateY(-50%);display:grid;gap:10px;margin:0;padding:0;list-style:none}
 .chapters a{display:flex;align-items:center;justify-content:flex-end;gap:14px;text-decoration:none;color:var(--muted)}
 .chapters .lab{opacity:0;transform:translateX(8px);transition:opacity .35s,transform .35s;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
 .chapters .num{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);font-family:var(--serif);font-size:1rem;background:var(--bg);transition:background-color .3s,color .3s,border-color .3s}
-.chapters a:hover .lab,.chapters a[aria-current] .lab{opacity:1;transform:none}
-.chapters a:hover .num{border-color:var(--gold);color:var(--ivory)}
+@media (hover:hover){.chapters a:hover .lab,.chapters a[aria-current] .lab{opacity:1;transform:none}}
+@media (hover:hover){.chapters a:hover .num{border-color:var(--gold);color:var(--ivory)}}
 .chapters a[aria-current] .num{background:var(--gold);color:#1A0E11;border-color:var(--gold)}
 
 .chapter{min-height:calc(100svh - var(--bar));scroll-snap-align:start;position:relative;padding:clamp(96px,12vw,150px) calc(var(--edge) + 56px) clamp(64px,8vw,110px) var(--edge);display:grid;align-content:center}
@@ -43,7 +43,7 @@ p{margin:0}
 .cover .cta{position:relative;display:flex;gap:14px 26px;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:clamp(28px,4vw,48px)}
 .cover .btn{text-decoration:none;display:inline-block}
 .ghost{color:var(--ivory);text-decoration:none;padding:15px 4px;border-bottom:1px solid var(--gold);transition:color .3s,letter-spacing .5s}
-.ghost:hover{color:var(--gold);letter-spacing:.34em}
+@media (hover:hover){.ghost:hover{color:var(--gold);letter-spacing:.34em}}
 
 /* II — Carte */
 .carte{background:var(--bg2);grid-template-columns:.8fr 1.2fr;gap:clamp(28px,6vw,100px);align-items:center}
@@ -52,7 +52,7 @@ p{margin:0}
 .carte .intro{color:var(--muted);margin-top:18px;max-width:36ch}
 .tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:18px}
 .tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:12px 18px;margin-bottom:-1px;cursor:pointer;color:var(--muted);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:color .3s,border-color .3s}
-.tabs button:hover{color:var(--ivory)}
+@media (hover:hover){.tabs button:hover{color:var(--ivory)}}
 .tabs button[aria-selected='true']{color:var(--gold);border-color:var(--gold)}
 .panel[hidden]{display:none}
 .dish{display:flex;align-items:baseline;gap:12px;padding-top:12px}
@@ -91,7 +91,7 @@ select.input option{background:#241218;color:var(--ivory)}
 textarea.input{min-height:84px;resize:vertical}
 .input::-webkit-calendar-picker-indicator{filter:invert(.85)}
 .btn{justify-self:start;padding:16px 32px;background:var(--gold);color:#1A0E11;border:0;font-size:.76rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background-color .3s,letter-spacing .5s}
-.btn:hover{background:#ecd3a4;letter-spacing:.26em}
+@media (hover:hover){.btn:hover{background:#ecd3a4;letter-spacing:.26em}}
 .form-note{font-size:.8rem;color:var(--muted)}
 .form-status{--status-bg:rgba(216,188,138,.14);--status-ink:var(--ivory);border:1px solid var(--gold);border-radius:0}
 .legal{position:absolute;left:var(--edge);right:calc(var(--edge) + 56px);bottom:20px;font-size:.78rem;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}

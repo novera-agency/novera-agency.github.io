@@ -18,6 +18,6 @@ const { eyebrow, title, intro } = Astro.props;
   .ph { padding: calc(var(--header-h) + clamp(48px, 8vw, 110px)) 0 clamp(40px, 6vw, 80px); }
   .ph .container { display: grid; gap: 28px; }
   .ph__crumbs { display: flex; gap: 10px; font-size: .9rem; color: var(--muted); }
-  .ph__crumbs a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+  @media (hover: hover) { .ph__crumbs a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; } }
   .ph :global(.ph__title) { max-width: 16ch; font-size: clamp(2.6rem, 6vw, 5.6rem); }
 </style>

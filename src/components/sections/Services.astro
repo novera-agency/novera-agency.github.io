@@ -41,11 +41,11 @@ const { show = true } = Astro.props;
   .services { border-top: 1px solid var(--line); }
   .service { position: relative; display: grid; grid-template-columns: 180px minmax(0, 1.3fr) minmax(0, 1fr); gap: 48px; padding: clamp(36px, 5vw, 64px) 0; border-bottom: 1px solid var(--line); isolation: isolate; }
   .service::before { content: ''; position: absolute; inset: 0 calc(-1 * clamp(12px, 2vw, 32px)); z-index: -1; border-radius: var(--radius); background: var(--bg); opacity: 0; transform: scaleY(.92); transition: opacity .5s var(--ease), transform .6s var(--ease); }
-  .service:hover::before { opacity: 1; transform: none; }
+  @media (hover: hover) { .service:hover::before { opacity: 1; transform: none; } }
   .service__head { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
   .service__index { font-size: .9rem; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
   .service__icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; background: var(--ink); color: var(--bg); transition: background-color .5s var(--ease), transform .6s var(--ease); }
-  .service:hover .service__icon { background: var(--accent); transform: rotate(-6deg); }
+  @media (hover: hover) { .service:hover .service__icon { background: var(--accent); transform: rotate(-6deg); } }
   .service__body { display: grid; gap: 14px; align-content: start; }
   .service__title { font-size: clamp(1.7rem, 2.8vw, 2.5rem); letter-spacing: -0.035em; }
   .service__lead { font-weight: 600; font-size: 1.12rem; }

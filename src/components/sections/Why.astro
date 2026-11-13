@@ -32,9 +32,9 @@ const { show = true } = Astro.props;
   .why__punch { font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 500; color: var(--on-dark-muted); letter-spacing: -0.02em; }
   .why__grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(245,244,241,.12); border-left: 1px solid rgba(245,244,241,.12); position: relative; }
   .reason { position: relative; display: grid; gap: 14px; align-content: start; padding: clamp(28px, 3.4vw, 44px); border-right: 1px solid rgba(245,244,241,.12); border-bottom: 1px solid rgba(245,244,241,.12); transition: background-color .5s var(--ease); }
-  .reason:hover { background: rgba(245,244,241,.04); }
+  @media (hover: hover) { .reason:hover { background: rgba(245,244,241,.04); } }
   .reason__icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: rgba(245,244,241,.08); color: var(--on-dark); margin-bottom: 10px; transition: background-color .5s var(--ease), transform .6s var(--ease); }
-  .reason:hover .reason__icon { background: var(--accent); transform: translateY(-4px); }
+  @media (hover: hover) { .reason:hover .reason__icon { background: var(--accent); transform: translateY(-4px); } }
   .reason__title { font-size: 1.28rem; letter-spacing: -0.025em; }
   .reason__text { color: var(--on-dark-muted); font-size: .98rem; }
   @media (max-width: 960px) { .why__grid { grid-template-columns: repeat(2, 1fr); } }

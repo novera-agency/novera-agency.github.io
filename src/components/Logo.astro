@@ -27,7 +27,7 @@ const src = variant === 'light' ? (site.logoLight ?? site.logo) : site.logo;
   .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.14rem; letter-spacing: -0.03em; color: var(--ink); --logo-cut: var(--bg); }
   .logo--light { color: var(--on-dark); --logo-cut: var(--dark); }
   .logo__mark { display: inline-flex; transition: transform .6s var(--ease); }
-  .logo:hover .logo__mark { transform: rotate(-8deg) scale(1.05); }
+  @media (hover: hover) { .logo:hover .logo__mark { transform: rotate(-8deg) scale(1.05); } }
   .logo__mark svg path { transition: fill .3s; }
   .logo__text b { font-weight: 800; letter-spacing: 0.02em; }
   .logo__rest { font-weight: 500; opacity: .7; }

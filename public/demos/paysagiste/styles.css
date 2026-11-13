@@ -26,11 +26,11 @@ p{margin:0}
 .rail-nav{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px}
 .rail-nav a{writing-mode:vertical-rl;transform:rotate(180deg);padding:18px 10px;font-size:.78rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;color:var(--muted);position:relative;transition:color .3s}
 .rail-nav a::after{content:'';position:absolute;right:3px;top:50%;width:2px;height:0;background:var(--accent);transform:translateY(-50%);transition:height .5s cubic-bezier(.22,1,.36,1)}
-.rail-nav a:hover,.rail-nav a[aria-current]{color:var(--ink)}
+@media (hover:hover){.rail-nav a:hover,.rail-nav a[aria-current]{color:var(--ink)}}
 .rail-nav a[aria-current]::after{height:34px}
 .dots{display:grid;gap:10px}
 .dot{width:18px;height:18px;border-radius:50%;border:2px solid transparent;cursor:pointer;background:var(--c);transition:transform .3s,box-shadow .3s}
-.dot:hover{transform:scale(1.2)}
+@media (hover:hover){.dot:hover{transform:scale(1.2)}}
 .dot[aria-pressed='true']{box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--ink)}
 
 .shell{margin-left:var(--rail)}
@@ -44,7 +44,7 @@ section{padding-inline:var(--pad)}
 .pick{display:grid;gap:10px;justify-items:end}
 .pick-btns{display:flex;gap:6px;padding:5px;border-radius:999px;background:rgba(20,37,26,.07)}
 .pick-btns button{padding:10px 18px;border-radius:999px;border:0;background:transparent;font-weight:600;font-size:.92rem;cursor:pointer;transition:background-color .3s,color .3s}
-.pick-btns button:hover{background:rgba(20,37,26,.08)}
+@media (hover:hover){.pick-btns button:hover{background:rgba(20,37,26,.08)}}
 .pick-btns button[aria-pressed='true']{background:var(--accent);color:var(--accent-ink)}
 
 /* Plan interactif */
@@ -53,7 +53,7 @@ section{padding-inline:var(--pad)}
 .plan-fig svg{width:100%;height:auto}
 .plan-fig .shape{transition:fill .7s}
 .hot{position:absolute;width:42px;height:42px;margin:-21px 0 0 -21px;border-radius:50%;border:2px solid #fff;background:rgba(20,37,26,.82);color:#fff;font-weight:700;cursor:pointer;display:grid;place-items:center;transition:transform .3s,background-color .3s}
-.hot:hover{transform:scale(1.12)}
+@media (hover:hover){.hot:hover{transform:scale(1.12)}}
 .hot[aria-pressed='true']{background:var(--accent);animation:ring 2.4s ease-out infinite}
 @keyframes ring{0%{box-shadow:0 0 0 0 rgba(255,255,255,.65)}80%,100%{box-shadow:0 0 0 16px rgba(255,255,255,0)}}
 .panel{display:grid;gap:18px;padding:clamp(8px,1vw,16px) 0;position:sticky;top:calc(var(--bar) + 24px)}
@@ -87,7 +87,7 @@ section{padding-inline:var(--pad)}
 .go{display:flex;gap:12px;flex-wrap:wrap;padding:0 var(--pad) clamp(40px,6vw,80px)}
 .go .btn{background:var(--accent);color:var(--accent-ink);transition:background-color .7s,transform .4s,box-shadow .4s;text-decoration:none}
 .go .btn--ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
-.go .btn--ghost:hover{background:var(--ink);color:var(--bg);box-shadow:inset 0 0 0 1.5px var(--ink)}
+@media (hover:hover){.go .btn--ghost:hover{background:var(--ink);color:var(--bg);box-shadow:inset 0 0 0 1.5px var(--ink)}}
 .plan{padding-bottom:clamp(24px,3vw,40px)}
 /* Étude */
 .etude{min-height:calc(100svh - var(--bar) - 70px);align-content:center;background:var(--accent);color:var(--accent-ink);padding-block:clamp(56px,8vw,110px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,96px);transition:background-color .7s}
@@ -106,7 +106,7 @@ section{padding-inline:var(--pad)}
 select.input option{color:#14251A}
 textarea.input{min-height:96px;resize:vertical}
 .btn{justify-self:start;display:inline-flex;align-items:center;gap:12px;padding:16px 30px;border-radius:999px;border:0;background:#fff;color:var(--accent);font-weight:700;font-size:1rem;cursor:pointer;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(0,0,0,.5)}
+@media (hover:hover){.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(0,0,0,.5)}}
 .form-note{font-size:.84rem;opacity:.75}
 .form-status{--status-bg:rgba(255,255,255,.16);--status-ink:#fff;border:1px solid rgba(255,255,255,.4)}
 .foot{padding-block:28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.86rem;color:var(--muted)}

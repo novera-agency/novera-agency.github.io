@@ -101,7 +101,7 @@ const action = provider === 'web3forms'
   .choice__box :global(svg) { grid-row: span 2; width: 40px; height: 40px; padding: 9px; border-radius: 12px; background: var(--surface); transition: background-color .3s, color .3s; }
   .choice__box b { font-size: 1.05rem; letter-spacing: -0.02em; }
   .choice__box small { font-size: .84rem; color: var(--muted); }
-  .choice:hover .choice__box { box-shadow: inset 0 0 0 1px var(--line-strong); }
+  @media (hover: hover) { .choice:hover .choice__box { box-shadow: inset 0 0 0 1px var(--line-strong); } }
   .choice input:checked + .choice__box { background: var(--surface); box-shadow: inset 0 0 0 2px var(--ink); }
   .choice input:checked + .choice__box :global(svg) { background: var(--accent); color: #fff; }
   .choice input:focus-visible + .choice__box { outline: 2px solid var(--accent); outline-offset: 3px; }

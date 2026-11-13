@@ -27,8 +27,8 @@ p{margin:0}
 .strap ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;overflow-x:auto;scrollbar-width:none}
 .strap li+li{border-left:1px solid var(--ink)}
 .strap a{display:block;padding:14px clamp(14px,2.4vw,34px);text-decoration:none;white-space:nowrap;transition:background-color .25s,color .25s}
-.strap a:hover,.strap a[aria-current='page']{background:var(--ink);color:var(--paper)}
-.strap .order a{color:var(--poppy)}.strap .order a:hover{background:var(--poppy);color:#fff}
+@media (hover:hover){.strap a:hover,.strap a[aria-current='page']{background:var(--ink);color:var(--paper)}}
+@media (hover:hover){.strap .order a{color:var(--poppy)}.strap .order a:hover{background:var(--poppy);color:#fff}}
 
 /* Une */
 .front{display:grid;grid-template-columns:1fr 1.25fr 1fr;border-bottom:3px double var(--ink)}
@@ -91,7 +91,7 @@ p{margin:0}
 .input:focus{border-bottom-color:var(--poppy);background:rgba(179,38,30,.05)}
 textarea.input{min-height:100px;resize:vertical;background-image:repeating-linear-gradient(transparent 0 31px,rgba(29,26,23,.35) 31px 32px);line-height:32px;border-bottom:0}
 .btn{margin-top:22px;display:inline-flex;gap:10px;align-items:center;padding:15px 28px;background:var(--ink);color:var(--paper);border:0;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.82rem;cursor:pointer;transition:background-color .25s}
-.btn:hover{background:var(--poppy)}
+@media (hover:hover){.btn:hover{background:var(--poppy)}}
 .form-note{font-size:.82rem;color:var(--muted);margin-top:12px}
 .form-status{--status-bg:#fff;--status-ink:var(--ink);border:2px solid var(--ink);border-radius:0}
 .info{padding:clamp(24px,4vw,48px);display:grid;gap:26px;align-content:start}

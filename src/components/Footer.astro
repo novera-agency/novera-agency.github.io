@@ -66,7 +66,7 @@ const consentEnabled = Boolean(site.analytics.googleAnalyticsId);
   .footer__title { font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; color: var(--on-dark-muted); font-weight: 600; margin-bottom: 18px; }
   .footer__cols ul { display: grid; gap: 10px; }
   .footer__cols a, .footer__bottom a, .footer__bottom button { color: var(--on-dark); opacity: .85; transition: opacity .3s, color .3s; overflow-wrap: anywhere; }
-  .footer__cols a:hover, .footer__bottom a:hover, .footer__bottom button:hover { opacity: 1; color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+  @media (hover: hover) { .footer__cols a:hover, .footer__bottom a:hover, .footer__bottom button:hover { opacity: 1; color: #fff; text-decoration: underline; text-underline-offset: 4px; } }
   .footer__plain { color: var(--on-dark-muted); font-size: .95rem; }
   .footer__social { text-transform: capitalize; }
   .footer__word { font-size: clamp(4rem, 21vw, 19rem); font-weight: 800; letter-spacing: -0.04em; line-height: .8; white-space: nowrap; color: rgba(245,244,241,.07); user-select: none; padding-bottom: 8px; transform: translateY(14%); }

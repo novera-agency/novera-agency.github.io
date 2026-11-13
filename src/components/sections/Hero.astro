@@ -100,7 +100,7 @@ const showcase = ['artisan-batiment', 'restaurant', 'garage-automobile', 'paysag
   .stage__tag { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
   .stage__labels { display: flex; gap: 6px; flex-wrap: wrap; }
   .stage__label { padding: 6px 14px; border-radius: 999px; font-size: .88rem; font-weight: 500; color: var(--ink-2); transition: background-color .3s, color .3s; }
-  .stage__label:hover { background: rgba(12,12,13,.06); color: var(--ink); }
+  @media (hover: hover) { .stage__label:hover { background: rgba(12,12,13,.06); color: var(--ink); } }
   .stage__label.is-active { background: var(--ink); color: var(--bg); }
 
   @media (max-width: 900px) {

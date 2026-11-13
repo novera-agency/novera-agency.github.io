@@ -39,7 +39,7 @@ const { headingLevel = 'h2' } = Astro.props;
   .contact__info { display: grid; gap: 4px; padding-top: 22px; border-top: 1px solid var(--line); }
   .contact__info a, .contact__info div { display: flex; align-items: center; gap: 16px; padding: 10px 0; overflow-wrap: anywhere; }
   .contact__info :global(svg) { flex: none; width: 44px; height: 44px; padding: 11px; border-radius: 50%; background: var(--surface); box-shadow: var(--shadow-s); transition: background-color .3s, color .3s; }
-  .contact__info a:hover :global(svg) { background: var(--accent); color: #fff; }
+  @media (hover: hover) { .contact__info a:hover :global(svg) { background: var(--accent); color: #fff; } }
   .contact__info span { display: grid; font-weight: 600; }
   .contact__info small { font-size: .78rem; font-weight: 500; color: var(--muted); }
   .contact__card { background: var(--surface); border-radius: var(--radius-l); padding: clamp(22px, 4vw, 52px); box-shadow: var(--shadow-s); }
