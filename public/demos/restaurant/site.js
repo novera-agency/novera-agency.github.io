@@ -1,4 +1,4 @@
-/* La Table d'Aurèle : onglets de la carte, repères de chapitres. */
+/* La Table d'Aurèle : onglets de la carte (clavier compris), date minimale de réservation. */
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -20,17 +20,6 @@
       if (k) { e.preventDefault(); select(tabs[(i + k + tabs.length) % tabs.length], true); }
     });
   });
-
-  const links = $$('.chapters a');
-  const targets = links.map((a) => $(a.getAttribute('href')));
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((es) => {
-      es.forEach((e) => {
-        if (e.isIntersecting) links.forEach((a, i) => a.setAttribute('aria-current', String(targets[i] === e.target)));
-      });
-    }, { rootMargin: '-40% 0px -50% 0px' });
-    targets.forEach((t) => t && io.observe(t));
-  }
 
   const d = $('#date');
   if (d) d.min = new Date().toISOString().slice(0, 10);

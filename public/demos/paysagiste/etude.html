@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demander une étude — Verdance Paysage</title>
+<meta name="description" content="Demandez une étude gratuite pour votre jardin. Verdance Paysage, entreprise fictive de démonstration.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#3A8040">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%233A8040'/%3E%3Cpath d='M9 22c0-7 5-12 14-12 0 8-4 13-11 13-1.500 0-2.500-.4-3-1Z' fill='%23CFE7A2'/%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-season="printemps">
+<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/paysagiste/"><span class="hide-s">Retour aux </span>réalisations</a></div>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<aside class="rail" aria-label="Navigation">
+  <a class="rail-logo" href="index.html" aria-label="Verdance Paysage, accueil">
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 23c0-8 6-14 17-14 0 9-5 15-13 15-1.800 0-3-.4-4-1Z" fill="#fff"/><path d="M8 25c4-5 8-8 12-10" stroke="rgba(0,0,0,.35)" stroke-width="1.600" stroke-linecap="round"/></svg>
+  </a>
+  <nav class="rail-nav" aria-label="Pages"><a href="index.html">Le plan</a><a href="saisons.html">Saisons</a><a href="methode.html">Méthode</a><a href="etude.html" aria-current="page">Étude</a></nav>
+  <div class="dots" role="group" aria-label="Saison">
+    <button class="dot" style="--c:#A9D17A" data-season-btn="printemps" aria-label="Printemps" aria-pressed="true"></button>
+    <button class="dot" style="--c:#F5B83A" data-season-btn="ete" aria-label="Été" aria-pressed="false"></button>
+    <button class="dot" style="--c:#D2701F" data-season-btn="automne" aria-label="Automne" aria-pressed="false"></button>
+    <button class="dot" style="--c:#A8C6D6" data-season-btn="hiver" aria-label="Hiver" aria-pressed="false"></button>
+  </div>
+</aside>
+<div class="shell">
+<main id="contenu">
+  <section class="etude" id="etude" aria-labelledby="e-title">
+    <div>
+      <p class="eyebrow" style="color:var(--soft)">Étude gratuite</p>
+      <h2 id="e-title" style="margin-top:14px">Parlons de <em>votre jardin.</em></h2>
+      <p class="lead">Décrivez votre terrain et vos envies. Nous revenons vers vous pour fixer une visite.</p>
+      <dl>
+        <div><dt>E-mail</dt><dd>contact@verdance-paysage.example</dd></div>
+        <div><dt>Téléphone</dt><dd>01 99 00 00 00</dd></div>
+        <div><dt>Zone d’intervention</dt><dd>Chartres et rayon de 30 km (exemple)</dd></div>
+      </dl>
+    </div>
+    <form class="form" data-demo novalidate>
+      <div class="fields">
+        <div class="field"><label for="nom">Nom et prénom</label><input class="input" id="nom" name="nom" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="email">E-mail</label><input class="input" id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="projet">Projet</label><select class="input" id="projet" name="projet" required><option value="" selected disabled>Choisissez</option><option>Création d’un jardin</option><option>Terrasse ou allée</option><option>Plantations ou haie</option><option>Entretien régulier</option><option>Arrosage ou éclairage</option></select></div>
+        <div class="field"><label for="surface">Surface</label><select class="input" id="surface" name="surface"><option value="" selected>Je ne sais pas</option><option>Moins de 200 m²</option><option>200 à 500 m²</option><option>500 à 1 000 m²</option><option>Plus de 1 000 m²</option></select></div>
+        <div class="field field--full"><label for="message">Votre projet</label><textarea class="input" id="message" name="message" required minlength="20"></textarea></div>
+      </div>
+      <button class="btn" type="submit">Demander mon étude</button>
+      <p class="form-note">Formulaire de démonstration : aucune donnée n’est envoyée ni conservée.</p>
+      <div class="form-status" data-status role="status" hidden></div>
+    </form>
+  </section>
+</main>
+  <footer class="foot" style="padding-inline:var(--pad)">
+    <span>© <span data-year>2026</span> Verdance Paysage — Site de démonstration.</span><span>Entreprise, adresse et coordonnées fictives.</span>
+  </footer>
+</div>
+<script src="../demo.js" defer></script>
+<script src="site.js" defer></script>
+</body>
+</html>

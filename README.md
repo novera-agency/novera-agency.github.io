@@ -58,25 +58,29 @@ Par défaut, aucun cookie n’est déposé (polices auto-hébergées, aucun trac
 - [ ] Configurer l’envoi du formulaire et faire un essai réel
 - [ ] Remplacer les projets de démonstration par de vraies réalisations dès que possible (avec l’accord des clients)
 
+## Structure du site principal
+
+Une page d'accueil courte qui donne envie, puis une page par sujet : `/services/`, `/realisations/` (grille filtrable), `/realisations/<projet>/` (une page par réalisation), `/pourquoi-nous/`, `/methode/`, `/contact/`. Les projets se déclarent dans `src/data/projects.ts` : les pages se génèrent toutes seules.
+
 ## Sites de démonstration
 
-Cinq sites statiques indépendants dans `public/demos/<nom>/`, chacun avec sa propre architecture, sa navigation et ses interactions (volontairement différentes) :
+Cinq sites statiques indépendants dans `public/demos/<nom>/`. Chacun a sa propre architecture, sa navigation et ses interactions, avec une page d'accueil qui donne envie et une page par sujet :
 
-| Dossier | Concept |
-| --- | --- |
-| `paysagiste/` | une page, plan de jardin interactif, saisons qui recolorent le site, rail vertical |
-| `boulangerie/` | « gazette » à bandeau centré, fournées en direct, carte sur ardoise, bon de commande (2 pages) |
-| `restaurant/` | chapitres plein écran, carte à onglets, repères en chiffres romains |
-| `kebab/` | application de commande : options, panier fonctionnel, total en direct |
-| `epicerie/` | catalogue avec recherche, rayons, filtres et produits de saison (2 pages) |
+| Dossier | Concept | Pages |
+| --- | --- | --- |
+| `paysagiste/` | plan de jardin interactif, saisons qui recolorent le site, rail vertical | accueil, saisons, méthode, étude |
+| `boulangerie/` | « gazette » à bandeau centré, fournées en direct, ardoise | une, carte, commande |
+| `restaurant/` | couverture plein écran, repères en chiffres romains, carte à onglets | accueil, carte, maison, réserver |
+| `kebab/` | application de commande, panier conservé d'une page à l'autre | accueil, carte, panier, infos |
+| `epicerie/` | recherche, catalogue filtrable, produits de saison | accueil, catalogue, paniers, infos |
 
 Ils ne partagent que `public/demos/shared.css` (bandeau de démonstration, accessibilité), `public/demos/demo.js` (apparition au défilement, formulaires de démonstration) et les polices auto-hébergées de `public/demos/fonts/`.
 
 - Entreprises, adresses, téléphones, horaires et prix y sont **fictifs** ; chaque page porte un bandeau « Site de démonstration » et une balise `noindex`.
-- Leurs formulaires et paniers **n’envoient rien** et le disent à l’écran.
+- Leurs formulaires et paniers **n'envoient rien** et le disent à l'écran.
 - Pour ajouter un projet : créer la fiche dans `src/data/projects.ts` (champs `url`, `screenshots`) et les captures dans `public/images/`.
 
-## Structure
+## Arborescence du dépôt
 
 ```
 src/

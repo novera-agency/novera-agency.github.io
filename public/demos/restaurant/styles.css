@@ -10,7 +10,6 @@
   --bg:#1A0E11;--bg2:#241218;--wine:#5B1B2A;--ivory:#F2E9DA;--gold:#D8BC8A;--muted:#B5A394;--line:rgba(242,233,218,.16);--focus:#D8BC8A;
   --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;--edge:clamp(20px,5vw,84px);
 }
-html{scroll-snap-type:y proximity}
 body{margin:0;background:var(--bg);color:var(--ivory);font-family:var(--sans);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--serif);font-weight:300;margin:0;line-height:.95;text-wrap:balance}
 em{font-style:italic;color:var(--gold)}
@@ -25,9 +24,9 @@ p{margin:0}
 .chapters a{display:flex;align-items:center;justify-content:flex-end;gap:14px;text-decoration:none;color:var(--muted)}
 .chapters .lab{opacity:0;transform:translateX(8px);transition:opacity .35s,transform .35s;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
 .chapters .num{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);font-family:var(--serif);font-size:1rem;background:var(--bg);transition:background-color .3s,color .3s,border-color .3s}
-.chapters a:hover .lab,.chapters a[aria-current='true'] .lab{opacity:1;transform:none}
+.chapters a:hover .lab,.chapters a[aria-current] .lab{opacity:1;transform:none}
 .chapters a:hover .num{border-color:var(--gold);color:var(--ivory)}
-.chapters a[aria-current='true'] .num{background:var(--gold);color:#1A0E11;border-color:var(--gold)}
+.chapters a[aria-current] .num{background:var(--gold);color:#1A0E11;border-color:var(--gold)}
 
 .chapter{min-height:calc(100svh - var(--bar));scroll-snap-align:start;position:relative;padding:clamp(96px,12vw,150px) calc(var(--edge) + 56px) clamp(64px,8vw,110px) var(--edge);display:grid;align-content:center}
 
@@ -41,9 +40,10 @@ p{margin:0}
 .cover .sub{color:var(--muted);position:relative}
 .cover .meta{position:relative;display:flex;gap:10px 44px;flex-wrap:wrap;justify-content:center;margin-top:clamp(36px,6vw,72px);font-size:.84rem;color:var(--muted)}
 .cover .meta b{display:block;font-family:var(--serif);font-weight:400;font-size:1.4rem;color:var(--ivory)}
-.cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:grid;justify-items:center;gap:8px;color:var(--muted)}
-.cue::after{content:'';width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:drop 2.2s ease-in-out infinite}
-@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.cover .cta{position:relative;display:flex;gap:14px 26px;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:clamp(28px,4vw,48px)}
+.cover .btn{text-decoration:none;display:inline-block}
+.ghost{color:var(--ivory);text-decoration:none;padding:15px 4px;border-bottom:1px solid var(--gold);transition:color .3s,letter-spacing .5s}
+.ghost:hover{color:var(--gold);letter-spacing:.34em}
 
 /* II — Carte */
 .carte{background:var(--bg2);grid-template-columns:.8fr 1.2fr;gap:clamp(28px,6vw,100px);align-items:center}

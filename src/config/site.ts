@@ -114,9 +114,9 @@ export const site = {
 };
 
 export const nav = [
-  { label: 'Services', href: '/#services' },
+  { label: 'Services', href: '/services/' },
   { label: 'Réalisations', href: '/realisations/' },
-  { label: 'Pourquoi nous', href: '/#pourquoi' },
-  { label: 'Méthode', href: '/#methode' },
+  { label: 'Pourquoi nous', href: '/pourquoi-nous/' },
+  { label: 'Méthode', href: '/methode/' },
   { label: 'Contact', href: '/contact/' },
 ];

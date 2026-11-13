@@ -3,14 +3,16 @@ import { services } from '../../data/content';
 import SectionHeading from '../SectionHeading.astro';
 import Icon from '../Icon.astro';
 const icons = ['layout', 'spark', 'compass'] as const;
+interface Props { show?: boolean }
+const { show = true } = Astro.props;
 ---
 <section class="section section--white" id="services" aria-labelledby="services-title">
   <div class="container">
-    <SectionHeading
+    {show && (<SectionHeading
       eyebrow="Nos services"
       title="Trois expertises pour *une seule ambition* : votre réussite en ligne."
       intro="Que vous partiez de zéro ou que votre site ait besoin d’un second souffle, nous construisons un outil fiable, élégant et pensé pour vos clients."
-    />
+    />)}
     <ol role="list" class="services">
       {services.map((s, i) => (
         <li class="service" id={`service-${s.id}`} data-reveal style={`--d:${i * 0.08}s`}>

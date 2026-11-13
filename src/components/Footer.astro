@@ -14,7 +14,7 @@ const consentEnabled = Boolean(site.analytics.googleAnalyticsId);
       <div class="footer__brand">
         <Logo variant="light" />
         <p>{site.tagline}. Création et rénovation de sites Internet pour les artisans, commerçants et petites entreprises.</p>
-        <a href={u('/#contact')} class="btn btn--light">Demander mon devis gratuit<Icon name="arrow" class="btn__icon" /></a>
+        <a href={u('/contact/')} class="btn btn--light">Demander mon devis gratuit<Icon name="arrow" class="btn__icon" /></a>
       </div>
       <div class="footer__cols">
         <div>
@@ -27,7 +27,7 @@ const consentEnabled = Boolean(site.analytics.googleAnalyticsId);
         <div>
           <h2 class="footer__title">Services</h2>
           <ul role="list">
-            {services.map((s) => <li><a href={u(`/#service-${s.id}`)}>{s.title}</a></li>)}
+            {services.map((s) => <li><a href={u(`/services/#service-${s.id}`)}>{s.title}</a></li>)}
           </ul>
         </div>
         <div>

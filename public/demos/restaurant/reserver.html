@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réserver une table — La Table d’Aurèle</title>
+<meta name="description" content="Réservez une table à La Table d’Aurèle, restaurant fictif de démonstration.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1A0E11">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A0E11'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23D8BC8A' stroke-width='1.500'/%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/cormorant-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/restaurant/"><span class="hide-s">Retour aux </span>réalisations</a></div>
+<a class="skip-link" href="#resa-titre">Aller au contenu</a>
+
+<a class="brand small" href="index.html" aria-label="La Table d’Aurèle, accueil">La Table d’Aurèle</a>
+<a class="reserve small" href="reserver.html">Réserver</a>
+<nav aria-label="Pages">
+  <ol class="chapters">
+    <li><a href="index.html"><span class="lab">Accueil</span><span class="num">I</span></a></li>
+    <li><a href="carte.html"><span class="lab">La carte</span><span class="num">II</span></a></li>
+    <li><a href="maison.html"><span class="lab">La maison</span><span class="num">III</span></a></li>
+    <li><a href="reserver.html" aria-current="page"><span class="lab">Réserver</span><span class="num">IV</span></a></li>
+  </ol>
+</nav>
+
+<main>
+  <section class="chapter reserver" id="reserver" aria-labelledby="resa-titre">
+    <div>
+      <p class="small" style="color:var(--gold)">IV · Réservation</p>
+      <h2 id="resa-titre" style="margin-top:18px">Une table <em>vous attend.</em></h2>
+      <dl>
+        <div><dt>Horaires</dt><dd>Mardi – samedi<br>Déjeuner 12h – 14h · Dîner 19h – 22h</dd></div>
+        <div><dt>Adresse</dt><dd>14 place des Tilleuls, ville fictive</dd></div>
+        <div><dt>Contact</dt><dd>reservation@table-aurele.example<br>01 99 00 00 02</dd></div>
+      </dl>
+    </div>
+    <form class="form" data-demo novalidate>
+      <div class="fields">
+        <div class="field"><label for="nom">Nom</label><input class="input" id="nom" name="nom" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="email">E-mail</label><input class="input" id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="date">Date</label><input class="input" id="date" name="date" type="date" required></div>
+        <div class="field"><label for="heure">Heure</label><select class="input" id="heure" name="heure" required><option value="" selected disabled>Choisissez</option><option>12h00</option><option>12h30</option><option>13h00</option><option>13h30</option><option>19h00</option><option>19h30</option><option>20h00</option><option>20h30</option><option>21h00</option></select></div>
+        <div class="field"><label for="couverts">Convives</label><select class="input" id="couverts" name="couverts" required><option value="" selected disabled>Choisissez</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+        <div class="field"><label for="tel">Téléphone</label><input class="input" id="tel" name="tel" type="tel" autocomplete="tel" required></div>
+        <div class="field field--full"><label for="notes">Allergies, occasion particulière</label><textarea class="input" id="notes" name="notes" placeholder="Facultatif"></textarea></div>
+      </div>
+      <button class="btn" type="submit">Envoyer la demande</button>
+      <p class="form-note">Formulaire de démonstration : aucune donnée n’est envoyée ni conservée. Groupes de plus de 8 personnes : nous appeler.</p>
+      <div class="form-status" data-status role="status" hidden></div>
+    </form>
+    <p class="legal"><span>© <span data-year>2026</span> La Table d’Aurèle — Site de démonstration.</span><span>Établissement, adresse, horaires et prix fictifs.</span></p>
+  </section>
+</main>
+
+<script src="../demo.js" defer></script>
+<script src="site.js" defer></script>
+</body>
+</html>

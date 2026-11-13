@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Maison Levain — Boulangerie artisanale</title>
-<meta name="description" content="Maison Levain, boulangerie fictive : fournées du jour, carte sur ardoise et précommande. Site de démonstration.">
+<meta name="description" content="Maison Levain, boulangerie fictive : la une du jour et les fournées en direct. Site de démonstration.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#EEEAE0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231D1A17'/%3E%3Cpath d='M5 21c0-7 5-11 11-11s11 4 11 11z' fill='%23D9A441'/%3E%3C/svg%3E">
@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/#boulangerie"><span class="hide-s">Retour aux </span>réalisations</a></div>
+<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/boulangerie/"><span class="hide-s">Retour aux </span>réalisations</a></div>
 <a class="skip-link" href="#une">Aller au contenu</a>
 
 <div class="wrap">
@@ -25,9 +25,9 @@
 </div>
 <nav class="strap caps" aria-label="Navigation principale">
   <ul class="wrap" style="padding-inline:0">
-    <li><a href="index.html#une">À la une</a></li>
+    <li><a href="index.html" aria-current="page">À la une</a></li>
     <li><a href="index.html#fournees">Au four</a></li>
-    <li><a href="index.html#ardoise">La carte</a></li>
+    <li><a href="carte.html">La carte</a></li>
     <li><a href="commande.html#infos">Infos</a></li>
     <li class="order"><a href="commande.html#bon">Précommander</a></li>
   </ul>
@@ -70,29 +70,11 @@
     </aside>
   </section>
 
-  <section class="slate-wrap" id="ardoise" aria-labelledby="carte-titre">
-    <div class="slate reveal"><div class="slate-in">
-      <h2 id="carte-titre">La carte du jour</h2>
-      <p class="sub">Écrite à la craie chaque matin. Prix d’exemple.</p>
-      <div class="board">
-        <div><h3>Les pains</h3><ul>
-          <li>Baguette tradition<i></i><span>1,30</span></li><li>Pain de campagne<i></i><span>4,60</span></li><li>Pain complet<i></i><span>3,80</span></li><li>Pain aux céréales<i></i><span>4,10</span></li><li>Seigle aux noix<i></i><span>4,40</span></li></ul></div>
-        <div><h3>Viennoiseries</h3><ul>
-          <li>Croissant pur beurre<i></i><span>1,40</span></li><li>Pain au chocolat<i></i><span>1,60</span></li><li>Chausson aux pommes<i></i><span>1,90</span></li><li>Pain aux raisins<i></i><span>1,90</span></li><li>Brioche tressée<i></i><span>3,20</span></li></ul></div>
-        <div><h3>Pâtisseries</h3><ul>
-          <li>Éclair au chocolat<i></i><span>3,40</span></li><li>Tarte au citron<i></i><span>3,90</span></li><li>Paris-Brest<i></i><span>4,20</span></li><li>Cookie pépites<i></i><span>2,20</span></li></ul></div>
-        <div><h3>Le midi</h3><small>Du mardi au samedi, 11h30 – 14h</small><ul>
-          <li>Jambon-beurre<i></i><span>4,80</span></li><li>Poulet rôti<i></i><span>5,90</span></li><li>Végétarien<i></i><span>5,60</span></li></ul>
-          <p class="circle">Formule 8,90 €</p></div>
-      </div>
-      <p class="slate-note">Allergènes : gluten, œufs, lait, fruits à coque et sésame présents dans l’atelier. Liste détaillée sur demande en boutique.</p>
-    </div></div>
-  </section>
-
-  <section class="ads" aria-label="Petites annonces">
-    <article class="ad reveal"><h3>Précommande</h3><p>Un gâteau d’anniversaire, un plateau de viennoiseries ? Commandez la veille, on le met de côté.</p><a href="commande.html#bon">Remplir un bon de commande</a></article>
-    <article class="ad reveal" style="--d:.07s"><h3>Au levain, vraiment</h3><p>Notre levain est entretenu chaque jour : acidité douce, mie souple, meilleure conservation.</p></article>
-    <article class="ad reveal" style="--d:.14s"><h3>Passez nous voir</h3><p>Mardi au samedi, 6h30 – 19h30. Dimanche, 7h – 13h. Fermé le lundi.</p><a href="commande.html#infos">Horaires et accès</a></article>
+  <div style="height:clamp(28px,4vw,52px)"></div>
+  <section class="ads" aria-label="Pour aller plus loin">
+    <article class="ad"><h3>La carte du jour</h3><p>Pains, viennoiseries, pâtisseries et formule du midi, écrits à la craie chaque matin.</p><a href="carte.html">Lire la carte</a></article>
+    <article class="ad"><h3>Précommande</h3><p>Un gâteau d’anniversaire, un plateau de viennoiseries ? Commandez la veille, on le met de côté.</p><a href="commande.html#bon">Remplir un bon de commande</a></article>
+    <article class="ad"><h3>Passez nous voir</h3><p>Mardi au samedi, 6h30 – 19h30. Dimanche, 7h – 13h. Fermé le lundi.</p><a href="commande.html#infos">Horaires et accès</a></article>
   </section>
 </main>
 

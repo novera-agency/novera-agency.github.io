@@ -77,7 +77,7 @@ function initMobileMenu() {
 function initActiveNav() {
   const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-nav-link]')];
   const path = location.pathname;
-  const pageLink = links.find((a) => !a.hash && a.pathname === path);
+  const pageLink = links.find((a) => !a.hash && (a.pathname === path || (a.pathname !== HOME && path.startsWith(a.pathname))));
   if (pageLink) { pageLink.classList.add('is-active'); pageLink.setAttribute('aria-current', 'page'); return; }
   if (path !== HOME && path !== HOME + 'index.html') return;
   const sections = links

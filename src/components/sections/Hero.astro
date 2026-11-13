@@ -1,6 +1,7 @@
 ---
 import { projects } from '../../data/projects';
 import SplitText from '../SplitText.astro';
+import { u } from '../../utils/url';
 import Icon from '../Icon.astro';
 import Laptop from '../mockups/Laptop.astro';
 import Phone from '../mockups/Phone.astro';
@@ -21,8 +22,8 @@ const showcase = ['artisan-batiment', 'restaurant', 'garage-automobile', 'paysag
           Nous créons et modernisons des sites Internet professionnels conçus pour valoriser votre activité, renforcer votre crédibilité et vous aider à attirer de nouveaux clients.
         </p>
         <div class="hero__ctas" data-reveal style="--d:.55s">
-          <a href="#contact" class="btn btn--lg" data-set-project="creation">Créer mon site Internet<Icon name="arrow" class="btn__icon" /></a>
-          <a href="#contact" class="btn btn--ghost btn--lg" data-set-project="renovation">Rénover mon site<Icon name="arrow" class="btn__icon" /></a>
+          <a href={u('/contact/?projet=creation')} class="btn btn--lg">Créer mon site Internet<Icon name="arrow" class="btn__icon" /></a>
+          <a href={u('/contact/?projet=renovation')} class="btn btn--ghost btn--lg">Rénover mon site<Icon name="arrow" class="btn__icon" /></a>
         </div>
       </div>
     </div>

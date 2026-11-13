@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Process from '../components/sections/Process.astro';
+import CallToAction from '../components/sections/CallToAction.astro';
+---
+<BaseLayout title="Notre méthode en quatre étapes" description="Échange, proposition, création, livraison : le déroulement d’un projet de site Internet avec NOVERA Agency.">
+  <PageHero
+    eyebrow="Méthode"
+    title="Un processus clair, *en quatre étapes.*"
+    intro="Pas de surprise ni de jargon : vous savez à chaque instant où en est votre projet et ce qui vient ensuite."
+  />
+  <Process show={false} />
+  <div style="height:clamp(24px,4vw,56px)"></div>
+  <CallToAction />
+</BaseLayout>

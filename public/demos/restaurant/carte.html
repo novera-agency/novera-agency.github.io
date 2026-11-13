@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La carte — La Table d’Aurèle</title>
+<meta name="description" content="Entrées, plats, desserts et vins au verre de La Table d’Aurèle, restaurant fictif de démonstration.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1A0E11">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A0E11'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23D8BC8A' stroke-width='1.500'/%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/cormorant-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/restaurant/"><span class="hide-s">Retour aux </span>réalisations</a></div>
+<a class="skip-link" href="#carte-titre">Aller au contenu</a>
+
+<a class="brand small" href="index.html" aria-label="La Table d’Aurèle, accueil">La Table d’Aurèle</a>
+<a class="reserve small" href="reserver.html">Réserver</a>
+<nav aria-label="Pages">
+  <ol class="chapters">
+    <li><a href="index.html"><span class="lab">Accueil</span><span class="num">I</span></a></li>
+    <li><a href="carte.html" aria-current="page"><span class="lab">La carte</span><span class="num">II</span></a></li>
+    <li><a href="maison.html"><span class="lab">La maison</span><span class="num">III</span></a></li>
+    <li><a href="reserver.html"><span class="lab">Réserver</span><span class="num">IV</span></a></li>
+  </ol>
+</nav>
+
+<main>
+  <section class="chapter carte" id="carte" aria-labelledby="carte-titre">
+    <div>
+      <span class="big-n" aria-hidden="true">II</span>
+      <h2 id="carte-titre" class="reveal">La <em>carte.</em></h2>
+      <p class="intro reveal" style="--d:.1s">Elle change au rythme des saisons et des arrivages. Prix en euros, service compris.</p>
+    </div>
+    <div>
+      <div class="tabs" role="tablist" aria-label="Sections de la carte">
+        <button role="tab" id="t-ent" aria-controls="p-ent" aria-selected="true">Entrées</button>
+        <button role="tab" id="t-pla" aria-controls="p-pla" aria-selected="false" tabindex="-1">Plats</button>
+        <button role="tab" id="t-des" aria-controls="p-des" aria-selected="false" tabindex="-1">Desserts</button>
+        <button role="tab" id="t-vin" aria-controls="p-vin" aria-selected="false" tabindex="-1">Vins au verre</button>
+      </div>
+      <div class="panel" id="p-ent" role="tabpanel" aria-labelledby="t-ent">
+        <div class="dish"><b>Velouté de potimarron</b><i></i><span>12</span></div><p class="desc">Noisettes torréfiées, huile de courge.</p>
+        <div class="dish"><b>Œuf parfait</b><i></i><span>13</span></div><p class="desc">Crème de champignons, croûtons de pain de campagne.</p>
+        <div class="dish"><b>Betteraves rôties</b><i></i><span>12</span></div><p class="desc">Fromage frais, noix, vinaigrette au miel.</p>
+        <div class="dish"><b>Terrine de campagne</b><i></i><span>13</span></div><p class="desc">Pickles de légumes, pain grillé.</p>
+      </div>
+      <div class="panel" id="p-pla" role="tabpanel" aria-labelledby="t-pla" hidden>
+        <div class="dish"><b>Volaille fermière</b><i></i><span>27</span></div><p class="desc">Jus corsé, purée de céleri, légumes racines.</p>
+        <div class="dish"><b>Dos de cabillaud</b><i></i><span>29</span></div><p class="desc">Beurre blanc, poireaux fondants, pommes de terre grenaille.</p>
+        <div class="dish"><b>Joue de bœuf braisée</b><i></i><span>28</span></div><p class="desc">Cuisson longue au vin rouge, polenta crémeuse.</p>
+        <div class="dish"><b>Risotto d’orge aux champignons</b><i></i><span>23</span></div><p class="desc">Plat végétarien. Parmesan, persil, huile de noisette.</p>
+      </div>
+      <div class="panel" id="p-des" role="tabpanel" aria-labelledby="t-des" hidden>
+        <div class="dish"><b>Tarte fine aux pommes</b><i></i><span>11</span></div><p class="desc">Glace vanille, caramel au beurre salé.</p>
+        <div class="dish"><b>Chocolat &amp; sarrasin</b><i></i><span>12</span></div><p class="desc">Crémeux, crumble, fleur de sel.</p>
+        <div class="dish"><b>Fromages affinés</b><i></i><span>10</span></div><p class="desc">Trois fromages, confiture de saison.</p>
+      </div>
+      <div class="panel" id="p-vin" role="tabpanel" aria-labelledby="t-vin" hidden>
+        <div class="dish"><b>Blanc de vigneron</b><i></i><span>8</span></div><p class="desc">Sec et vif, pour les entrées et le poisson.</p>
+        <div class="dish"><b>Rouge de caractère</b><i></i><span>9</span></div><p class="desc">Fruité, tannins souples, pour les viandes braisées.</p>
+        <div class="dish"><b>Rosé de saison</b><i></i><span>7</span></div><p class="desc">Léger et frais.</p>
+        <p class="note">L’abus d’alcool est dangereux pour la santé. À consommer avec modération.</p>
+      </div>
+      <div class="formules">
+        <div><b>Menu du midi</b><strong>24</strong> · mardi – vendredi</div>
+        <div><b>Menu dégustation</b><strong>55</strong> · cinq services</div>
+      </div>
+      <p class="note">Allergènes sur demande auprès de la salle. Plats et prix d’exemple, fictifs.</p>
+    </div>
+    <p class="legal"><span>© <span data-year>2026</span> La Table d’Aurèle — Site de démonstration.</span><span>Établissement, adresse, horaires et prix fictifs.</span></p>
+  </section>
+</main>
+
+<script src="../demo.js" defer></script>
+<script src="site.js" defer></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Comptoir Mirabelle — Épicerie fine de quartier</title>
-<meta name="description" content="Comptoir Mirabelle, épicerie fictive : catalogue avec recherche, rayons, produits de saison et paniers. Site de démonstration.">
+<meta name="description" content="Comptoir Mirabelle, épicerie fictive : recherchez un produit, découvrez les produits de saison et les rayons. Site de démonstration.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#F2EEE2">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='18' r='11' fill='%23D9A236'/%3E%3Cpath d='M16 7c1-3 4-4 7-3-1 3-4 4-7 3Z' fill='%233D4A2A'/%3E%3C/svg%3E">
@@ -13,52 +13,56 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/#epicerie"><span class="hide-s">Retour aux </span>réalisations</a></div>
-<a class="skip-link" href="#catalogue">Aller au catalogue</a>
+<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/epicerie/"><span class="hide-s">Retour aux </span>réalisations</a></div>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
 
 <header class="bar">
   <a class="logo" href="index.html" aria-label="Comptoir Mirabelle, accueil">
     <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="18" r="11" fill="#D9A236"/><path d="M16 7c1-3 4-4 7-3-1 3-4 4-7 3Z" fill="#3D4A2A"/></svg>
     <span>Comptoir Mirabelle</span>
   </a>
-  <div class="search" role="search">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.500-3.500"/></svg>
-    <label class="sr-only" for="q">Rechercher un produit</label>
-    <input id="q" type="search" placeholder="Rechercher : tomates, comté, miel…" autocomplete="off">
-    <kbd aria-hidden="true">/</kbd>
-  </div>
+  <form class="search" role="search" action="catalogue.html" method="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.500-3.500"/></svg><label class="sr-only" for="q">Rechercher un produit</label><input id="q" name="q" type="search" placeholder="Rechercher : tomates, comté, miel…" autocomplete="off"><kbd aria-hidden="true">/</kbd></form>
   <div class="right">
+    <nav class="nav" aria-label="Navigation principale"><a href="catalogue.html">Catalogue</a><a href="paniers.html">Paniers</a><a href="infos.html">Infos</a></nav>
     <p class="status" id="status"><i></i><span id="status-txt">Ouvert</span></p>
-    <a class="link" href="infos.html">Paniers &amp; infos</a>
   </div>
 </header>
 
-<div class="shelves">
-  <div class="in">
-    <div class="tabs" role="tablist" aria-label="Rayons" id="tabs"></div>
-    <div class="toggles" role="group" aria-label="Filtres">
-      <button type="button" data-f="saison" aria-pressed="false">De saison</button>
-      <button type="button" data-f="local" aria-pressed="false">Local</button>
-      <button type="button" data-f="bio" aria-pressed="false">Bio</button>
-    </div>
-  </div>
-</div>
-
-<main id="catalogue">
-  <div class="top">
+<main id="contenu">
+  <section class="top">
     <h1>Que cherchez-vous <em>aujourd’hui ?</em></h1>
-    <p class="hints">Essayez : <button type="button" data-s="tomates">tomates</button><button type="button" data-s="fromage">fromage</button><button type="button" data-s="miel">miel</button><button type="button" data-s="vrac">vrac</button></p>
-  </div>
-  <p class="count" id="count" role="status" aria-live="polite"></p>
-  <div class="grid" id="grid"></div>
-  <p class="note">Catalogue d’exemple : produits, origines et prix fictifs. L’abus d’alcool est dangereux pour la santé.</p>
+    <p class="hints">Essayez : <a href="catalogue.html?q=tomates">tomates</a><a href="catalogue.html?q=fromage">fromage</a><a href="catalogue.html?q=miel">miel</a><a href="catalogue.html?q=vrac">vrac</a></p>
+  </section>
+
+  <section class="block" aria-labelledby="saison">
+    <div class="bh"><h2 id="saison">De saison <em id="mois">ce mois-ci</em></h2><a class="more-link" href="catalogue.html?saison=1">Tous les produits de saison <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="strip" id="strip"></div>
+  </section>
+
+  <section class="block" aria-labelledby="rayons">
+    <div class="bh"><h2 id="rayons">Les rayons</h2><a class="more-link" href="catalogue.html">Tout le catalogue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="tiles">
+      <a class="tile c-fl" href="catalogue.html?rayon=fl"><b>Fruits &amp; légumes</b><span id="n-fl">12 produits</span></a>
+      <a class="tile c-cr" href="catalogue.html?rayon=cr"><b>Crèmerie</b><span id="n-cr">6 produits</span></a>
+      <a class="tile c-ep" href="catalogue.html?rayon=ep"><b>Épicerie</b><span id="n-ep">6 produits</span></a>
+      <a class="tile c-vr" href="catalogue.html?rayon=vr"><b>Vrac</b><span id="n-vr">6 produits</span></a>
+      <a class="tile c-cv" href="catalogue.html?rayon=cv"><b>Cave</b><span id="n-cv">5 produits</span></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <a class="banner-card" href="paniers.html">
+      <span class="label">Cette semaine</span>
+      <b>Le panier du marché, <em>à retirer en boutique.</em></b>
+      <span class="go">Voir les paniers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </section>
 </main>
 
 <footer class="foot">
   <span><strong>Comptoir Mirabelle</strong><br>Épicerie fine de quartier — commerce fictif présenté à titre de démonstration.</span>
   <span>Lundi – samedi 8h – 20h · Dimanche 9h – 13h<br>© <span data-year>2026</span> — Site de démonstration. Commerce, adresse et prix fictifs.</span>
 </footer>
-
 <script src="../demo.js" defer></script>
 <script src="site.js" defer></script>
 </body>

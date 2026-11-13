@@ -1,12 +1,14 @@
-/* Comptoir Mirabelle : catalogue filtrable (recherche, rayons, saison), statut d'ouverture, horaires du jour. */
+/* Comptoir Mirabelle : statut d'ouverture, accueil (saison, rayons), catalogue filtrable avec pagination. */
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const now = new Date();
   const mins = now.getHours() * 60 + now.getMinutes();
   const day = now.getDay();
+  const norm = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const fmt = (n) => n.toFixed(2).replace('.', ',');
 
-  // Statut d'ouverture (toutes pages)
+  // ---- Statut d'ouverture, horaires du jour, date minimale
   const st = $('#status');
   if (st) {
     const [a, b] = day === 0 ? [540, 780] : [480, 1200];
@@ -16,13 +18,13 @@
   }
   $$('#hours tr').forEach((tr) => { if (tr.dataset.days.split(',').includes(String(day))) tr.classList.add('today'); });
   const rd = $('#retrait'); if (rd) rd.min = now.toISOString().slice(0, 10);
+  document.addEventListener('keydown', (e) => {
+    const q = $('#q');
+    if (q && e.key === '/' && !/input|textarea|select/i.test(document.activeElement.tagName)) { e.preventDefault(); q.focus(); }
+  });
 
-  const grid = $('#grid');
-  if (!grid) return;
-
-  const SHELVES = [['all', 'Tout'], ['fl', 'Fruits & légumes'], ['cr', 'Crèmerie'], ['ep', 'Épicerie'], ['vr', 'Vrac'], ['cv', 'Cave']];
+  // ---- Données (exemples)
   const LABEL = { fl: 'Fruits & légumes', cr: 'Crèmerie', ep: 'Épicerie', vr: 'Vrac', cv: 'Cave' };
-  // m : mois de saison (0 = janvier)
   const P = [
     ['Tomates anciennes', 'fl', 4.9, '/ kg', ['Local'], [5, 6, 7, 8, 9]],
     ['Carottes', 'fl', 2.6, '/ kg', ['Bio'], [4, 5, 6, 7, 8, 9, 10]],
@@ -61,9 +63,23 @@
     ['Cidre brut', 'cv', 4.2, '/ 75 cl', ['Local'], []],
   ].map(([n, c, p, u, t, m]) => ({ n, c, p, u, t, m, s: m.includes(now.getMonth()) }));
 
-  const norm = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-  const fmt = (n) => n.toFixed(2).replace('.', ',');
-  const state = { shelf: 'all', q: '', saison: false, local: false, bio: false };
+  // ---- Accueil : produits de saison et compteurs de rayons
+  const strip = $('#strip');
+  if (strip) {
+    const mois = now.toLocaleDateString('fr-FR', { month: 'long' });
+    $('#mois').textContent = 'en ' + mois;
+    strip.innerHTML = P.filter((p) => p.s).map((p) => `<a class="sp c-${p.c}" href="catalogue.html?q=${encodeURIComponent(p.n)}"><b>${p.n}</b><span>${fmt(p.p)} € ${p.u}</span></a>`).join('');
+    Object.keys(LABEL).forEach((k) => { const el = $('#n-' + k); if (el) el.textContent = P.filter((p) => p.c === k).length + ' produits'; });
+  }
+
+  // ---- Catalogue
+  const grid = $('#grid');
+  if (!grid) return;
+  const PAGE = 12;
+  const params = new URLSearchParams(location.search);
+  const state = { shelf: LABEL[params.get('rayon')] ? params.get('rayon') : 'all', q: norm((params.get('q') || '').trim()), saison: params.get('saison') === '1', local: false, bio: false, shown: PAGE };
+  const input = $('#q'); if (input) input.value = params.get('q') || '';
+  const SHELVES = [['all', 'Tout'], ['fl', 'Fruits & légumes'], ['cr', 'Crèmerie'], ['ep', 'Épicerie'], ['vr', 'Vrac'], ['cv', 'Cave']];
 
   const match = (p, ignoreShelf) => {
     if (!ignoreShelf && state.shelf !== 'all' && p.c !== state.shelf) return false;
@@ -78,7 +94,8 @@
   };
 
   const tabs = $('#tabs');
-  tabs.innerHTML = SHELVES.map(([id, l]) => `<button role="tab" type="button" data-shelf="${id}" aria-selected="${id === 'all'}"><span>${l}</span><span class="n">0</span></button>`).join('');
+  tabs.innerHTML = SHELVES.map(([id, l]) => `<button role="tab" type="button" data-shelf="${id}" aria-selected="false"><span>${l}</span><span class="n">0</span></button>`).join('');
+  $$('.toggles button').forEach((b) => b.setAttribute('aria-pressed', String(!!state[b.dataset.f])));
 
   function render() {
     const list = P.filter((p) => match(p)).sort((a, b) => Number(b.s) - Number(a.s));
@@ -87,17 +104,22 @@
       b.setAttribute('aria-selected', String(id === state.shelf));
       $('.n', b).textContent = P.filter((p) => match(p, true) && (id === 'all' || p.c === id)).length;
     });
-    $('#count').textContent = list.length + ' produit' + (list.length > 1 ? 's' : '') + (state.q ? ' pour « ' + $('#q').value.trim() + ' »' : '') + ' · ' + P.filter((p) => p.s).length + ' de saison ce mois-ci';
-    grid.innerHTML = list.length ? list.map((p, i) => `
+    const shown = list.slice(0, state.shown);
+    $('#count').textContent = list.length + ' produit' + (list.length > 1 ? 's' : '') + (state.q && input ? ' pour « ' + input.value.trim() + ' »' : '') + ' · ' + P.filter((p) => p.s).length + ' de saison ce mois-ci';
+    grid.innerHTML = shown.length ? shown.map((p, i) => `
       <article class="tagcard c-${p.c}" style="animation-delay:${Math.min(i, 14) * 25}ms">
         <div class="band"><span>${LABEL[p.c]}</span>${p.s ? '<span class="ps">De saison</span>' : ''}</div>
         <div class="body"><h2 class="name">${p.n}</h2>
           <div class="badges">${p.t.map((t) => `<span class="badge">${t}</span>`).join('')}</div>
           <p class="price">${fmt(p.p)} €<small>${p.u}</small></p></div>
       </article>`).join('') : `<div class="empty"><h2>Rien ne correspond.</h2><p>Essayez un autre mot, ou retirez un filtre.</p></div>`;
+    const more = $('#more');
+    more.hidden = list.length <= state.shown;
+    more.textContent = 'Afficher plus de produits (' + (list.length - state.shown) + ')';
   }
+  const reset = () => { state.shown = PAGE; render(); };
 
-  tabs.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { state.shelf = b.dataset.shelf; render(); } });
+  tabs.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) { state.shelf = b.dataset.shelf; reset(); } });
   tabs.addEventListener('keydown', (e) => {
     const bs = $$('button', tabs), i = bs.indexOf(document.activeElement);
     const k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
@@ -106,12 +128,9 @@
   $$('.toggles button').forEach((b) => b.addEventListener('click', () => {
     state[b.dataset.f] = !state[b.dataset.f];
     b.setAttribute('aria-pressed', String(state[b.dataset.f]));
-    render();
+    reset();
   }));
-  $('#q').addEventListener('input', (e) => { state.q = norm(e.target.value.trim()); render(); });
-  $$('.hints button').forEach((b) => b.addEventListener('click', () => { $('#q').value = b.dataset.s; state.q = norm(b.dataset.s); render(); }));
-  document.addEventListener('keydown', (e) => {
-    if (e.key === '/' && !/input|textarea|select/i.test(document.activeElement.tagName)) { e.preventDefault(); $('#q').focus(); }
-  });
+  input.addEventListener('input', (e) => { state.q = norm(e.target.value.trim()); reset(); });
+  $('#more').addEventListener('click', () => { state.shown += PAGE; render(); });
   render();
 })();

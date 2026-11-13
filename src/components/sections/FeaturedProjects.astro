@@ -1,0 +1,29 @@
+---
+import { projects } from '../../data/projects';
+import { u } from '../../utils/url';
+import ProjectCard from '../ProjectCard.astro';
+import Icon from '../Icon.astro';
+const featured = ['boulangerie', 'restaurant', 'kebab']
+  .map((slug) => projects.find((p) => p.slug === slug)!)
+  .filter(Boolean);
+---
+<section class="section section--white fz" aria-labelledby="featured-title">
+  <div class="container">
+    <div class="head">
+      <div>
+        <p class="eyebrow" data-reveal>Réalisations</p>
+        <h2 id="featured-title" class="h2" data-reveal style="--d:.08s;margin-top:18px">Un site pour <span class="serif">chaque métier.</span></h2>
+      </div>
+      <a href={u('/realisations/')} class="btn" data-reveal>Voir toutes les réalisations<Icon name="arrow" class="btn__icon" /></a>
+    </div>
+    <div class="grid">
+      {featured.map((p, i) => <ProjectCard project={p} index={i} />)}
+    </div>
+  </div>
+</section>
+<style>
+  .fz { padding-block: clamp(48px, 6vw, 88px); }
+  .head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(32px, 4vw, 56px); }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  @media (max-width: 1000px) { .grid { grid-template-columns: 1fr; } }
+</style>

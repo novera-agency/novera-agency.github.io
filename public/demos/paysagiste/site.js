@@ -1,4 +1,4 @@
-/* Verdance Paysage : plan interactif, saisons, navigation par sections. */
+/* Verdance Paysage : plan interactif, saisons (mémorisées d'une page à l'autre). */
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -19,6 +19,7 @@
     $('#p-ideal').textContent = spots[n].i;
   };
   hots.forEach((h, k) => h.addEventListener('click', () => showSpot(k)));
+  if (hots.length) showSpot(0);
 
   const seasons = {
     printemps: { n: 'Printemps', l: 'Le moment de créer.', t: ['Plantation des vivaces et des arbustes', 'Semis et regarnissage de la pelouse', 'Création de massifs, de terrasses et d’allées'] },
@@ -30,25 +31,18 @@
   const setSeason = (k) => {
     document.body.dataset.season = k;
     btns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.seasonBtn === k)));
-    const s = seasons[k];
-    $('#s-name').textContent = s.n;
-    $('#s-line').textContent = s.l;
-    $('#s-tasks').innerHTML = s.t.map((x) => '<li>' + x + '</li>').join('');
+    if ($('#s-name')) {
+      const s = seasons[k];
+      $('#s-name').textContent = s.n;
+      $('#s-line').textContent = s.l;
+      $('#s-tasks').innerHTML = s.t.map((x) => '<li>' + x + '</li>').join('');
+    }
+    try { sessionStorage.setItem('verdance-season', k); } catch (e) { /* stockage indisponible */ }
   };
   btns.forEach((b) => b.addEventListener('click', () => setSeason(b.dataset.seasonBtn)));
-  const m = new Date().getMonth();
-  setSeason(m >= 2 && m <= 4 ? 'printemps' : m >= 5 && m <= 7 ? 'ete' : m >= 8 && m <= 10 ? 'automne' : 'hiver');
 
-  // Lien actif du rail
-  const links = $$('.rail-nav a');
-  const targets = links.map((a) => $(a.getAttribute('href')));
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((es) => {
-      es.forEach((e) => {
-        if (!e.isIntersecting) return;
-        links.forEach((a, i) => a.setAttribute('aria-current', String(targets[i] === e.target)));
-      });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    targets.forEach((t) => t && io.observe(t));
-  }
+  const m = new Date().getMonth();
+  let saved = null;
+  try { saved = sessionStorage.getItem('verdance-season'); } catch (e) { /* stockage indisponible */ }
+  setSeason(saved && seasons[saved] ? saved : m >= 2 && m <= 4 ? 'printemps' : m >= 5 && m <= 7 ? 'ete' : m >= 8 && m <= 10 ? 'automne' : 'hiver');
 })();

@@ -19,7 +19,7 @@ import Icon from './Icon.astro';
         <Icon name="phone" size={18} />
         <span>{site.contact.phone}</span>
       </a>}
-      <a href={u('/#contact')} class="btn btn--sm header__cta">Devis gratuit<Icon name="arrow" class="btn__icon" /></a>
+      <a href={u('/contact/')} class="btn btn--sm header__cta">Devis gratuit<Icon name="arrow" class="btn__icon" /></a>
       <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu" data-burger>
         <span></span><span></span>
       </button>
@@ -34,7 +34,7 @@ import Icon from './Icon.astro';
         ))}
       </ul>
       <div class="mobile-menu__footer">
-        <a href={u('/#contact')} class="btn btn--accent btn--lg" data-menu-link>Demander mon devis gratuit<Icon name="arrow" class="btn__icon" /></a>
+        <a href={u('/contact/')} class="btn btn--accent btn--lg" data-menu-link>Demander mon devis gratuit<Icon name="arrow" class="btn__icon" /></a>
         {site.contact.phone && <a href={`tel:${site.contact.phoneHref}`} class="mobile-menu__contact"><Icon name="phone" size={18} />{site.contact.phone}</a>}
         <a href={`mailto:${site.contact.email}`} class="mobile-menu__contact"><Icon name="mail" size={18} />{site.contact.email}</a>
       </div>

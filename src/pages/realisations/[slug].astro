@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DevicePair from '../../components/mockups/DevicePair.astro';
+import CallToAction from '../../components/sections/CallToAction.astro';
+import Icon from '../../components/Icon.astro';
+import SplitText from '../../components/SplitText.astro';
+import { projects } from '../../data/projects';
+import { u } from '../../utils/url';
+
+export function getStaticPaths() {
+  return projects.map((p, i) => ({
+    params: { slug: p.slug },
+    props: { project: p, prev: projects[(i - 1 + projects.length) % projects.length], next: projects[(i + 1) % projects.length], n: i + 1 },
+  }));
+}
+const { project: p, prev, next, n } = Astro.props;
+const badge = p.badge ?? (p.demo ? 'Projet de démonstration' : '');
+const siteHref = p.url ? (p.url.startsWith('/') ? u(p.url) : p.url) : '';
+---
+<BaseLayout title={`${p.name} — ${p.category}`} description={p.summary}>
+  <section class="head">
+    <div class="container">
+      <nav class="crumbs" aria-label="Fil d’Ariane" data-reveal>
+        <a href={u('/')}>Accueil</a><span aria-hidden="true">/</span><a href={u('/realisations/')}>Réalisations</a><span aria-hidden="true">/</span><span aria-current="page">{p.name}</span>
+      </nav>
+      <p class="meta" data-reveal><span>{String(n).padStart(2, '0')}</span>{p.category}{badge && <em>{badge}</em>}</p>
+      <SplitText as="h1" class="display title" text={p.name} />
+      <p class="lead" data-reveal style="--d:.3s">{p.summary}</p>
+      <div class="actions" data-reveal style="--d:.4s">
+        {siteHref && <a href={siteHref} class="btn btn--lg" target="_blank" rel="noopener noreferrer">{p.demo ? 'Voir le site de démonstration' : 'Voir le site en ligne'}<Icon name="arrow-up-right" class="btn__icon" /></a>}
+        <a href={u('/contact/?projet=creation')} class="btn btn--ghost btn--lg">Un projet similaire ?<Icon name="arrow" class="btn__icon" /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="stage" data-reveal="scale" style={`--tint:${p.theme.dark ? p.theme.bg : p.theme.photoA}`}>
+      <DevicePair project={p} />
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="cols">
+      <div data-reveal>
+        <h2 class="label">Objectifs</h2>
+        <ul role="list">{p.goals.map((g) => <li><Icon name="check" size={18} />{g}</li>)}</ul>
+      </div>
+      <div data-reveal style="--d:.08s">
+        <h2 class="label">Fonctionnalités</h2>
+        <ul role="list">{p.features.map((f) => <li><Icon name="check" size={18} />{f}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <nav class="container pn" aria-label="Autres réalisations">
+    <a href={u(`/realisations/${prev.slug}/`)} class="pn__link"><span>Précédent</span><b>{prev.name}</b></a>
+    <a href={u(`/realisations/${next.slug}/`)} class="pn__link pn__link--next"><span>Suivant</span><b>{next.name}</b></a>
+  </nav>
+
+  <div style="height:clamp(56px,8vw,110px)"></div>
+  <CallToAction />
+</BaseLayout>
+
+<style>
+  .head { padding: calc(var(--header-h) + clamp(40px, 7vw, 90px)) 0 clamp(32px, 5vw, 56px); }
+  .head .container { display: grid; gap: 22px; justify-items: start; }
+  .crumbs { display: flex; gap: 10px; flex-wrap: wrap; font-size: .9rem; color: var(--muted); }
+  .crumbs a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+  .meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: .9rem; color: var(--muted); font-weight: 500; }
+  .meta span { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .meta em { font-style: normal; padding: 4px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: .76rem; font-weight: 700; letter-spacing: .04em; }
+  .head :global(.title) { font-size: clamp(2.8rem, 7vw, 6rem); max-width: 16ch; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
+  .stage { padding: clamp(32px, 6vw, 80px) clamp(20px, 6vw, 96px) clamp(24px, 4vw, 48px); border-radius: var(--radius-l); background: radial-gradient(80% 80% at 80% 0%, color-mix(in srgb, var(--tint) 45%, transparent), transparent 70%), color-mix(in srgb, var(--tint) 18%, var(--bg-2)); }
+  .stage :global(.pair) { max-width: 1000px; margin-inline: auto; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); }
+  .label { font-family: var(--font-sans); font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+  .cols ul { display: grid; gap: 12px; }
+  .cols li { display: flex; gap: 12px; align-items: flex-start; font-size: 1.1rem; font-weight: 500; }
+  .cols :global(svg) { flex: none; color: var(--accent); margin-top: 5px; }
+  .pn { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .pn__link { display: grid; gap: 6px; padding: 26px 28px; border-radius: var(--radius); box-shadow: inset 0 0 0 1px var(--line-strong); transition: background-color .4s var(--ease), color .4s var(--ease); }
+  .pn__link--next { text-align: right; }
+  .pn__link span { font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); transition: color .4s; }
+  .pn__link b { font-family: var(--font-display, inherit); font-size: 1.5rem; letter-spacing: -.03em; }
+  .pn__link:hover { background: var(--ink); color: var(--bg); }
+  .pn__link:hover span { color: rgba(245, 244, 241, .6); }
+  @media (max-width: 760px) { .cols, .pn { grid-template-columns: 1fr; } .pn__link--next { text-align: left; } .actions .btn { width: 100%; justify-content: center; } }
+</style>

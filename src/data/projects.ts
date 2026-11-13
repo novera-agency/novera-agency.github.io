@@ -160,9 +160,9 @@ const all: Project[] = [
       alt: 'Aperçu du site de démonstration Maison Levain',
     },
     summary:
-      'Une « gazette du fournil » : bandeau de journal centré, une à trois colonnes, fournées du jour qui se mettent à jour selon l’heure, carte sur ardoise et bon de précommande. Aucun menu caché.',
+      'Une « gazette du fournil » : la une et les fournées du jour en accueil, puis la carte sur ardoise et le bon de précommande sur leurs propres pages. Les fournées se mettent à jour selon l’heure.',
     goals: ['Donner une identité de commerce de quartier', 'Informer sur les horaires de sortie de four', 'Faciliter la précommande'],
-    features: ['Fournées du jour en temps réel', 'Carte sur ardoise avec prix', 'Bon de commande de précommande', 'Date et statut d’ouverture en direct'],
+    features: ['Fournées du jour en temps réel', 'Carte sur ardoise avec prix', 'Bon de précommande', 'Trois pages courtes'],
     theme: {
       bg: '#FBF6EC', surface: '#FFFFFF', ink: '#2A1B12', muted: '#6F5B4B',
       accent: '#B8741A', accentInk: '#FFFFFF',
@@ -191,9 +191,9 @@ const all: Project[] = [
       alt: 'Aperçu du site de démonstration Anatolia Kebab',
     },
     summary:
-      'Une vraie application de commande : carte par catégories, fenêtre d’options (viande, sauces, menu), panier avec quantités et total, retrait à l’heure choisie. Barre de panier fixe sur mobile.',
+      'Une application de commande en quatre écrans : accueil, carte par catégories, panier et infos. Options de produits, panier conservé d’une page à l’autre, total en direct, barre d’onglets en bas sur mobile.',
     goals: ['Permettre de commander en quelques secondes', 'Afficher les prix clairement, options comprises', 'Offrir une expérience pensée pour le mobile'],
-    features: ['Panier fonctionnel avec total en direct', 'Options de produit dans une fenêtre dédiée', 'Onglets de catégories', 'Statut ouvert / fermé'],
+    features: ['Panier conservé d’une page à l’autre', 'Options de produit dans une fenêtre dédiée', 'Catégories en onglets', 'Statut ouvert / fermé'],
     theme: {
       bg: '#171412', surface: '#FFFFFF', ink: '#FFFFFF', muted: '#B9AFA3',
       accent: '#E5352B', accentInk: '#FFFFFF',
@@ -222,9 +222,9 @@ const all: Project[] = [
       alt: 'Aperçu du site de démonstration Comptoir Mirabelle',
     },
     summary:
-      'Un catalogue de produits avec recherche, rayons en onglets et filtres (de saison, local, bio). Les produits de saison sont mis en avant selon le mois, chaque produit a son étiquette de prix. Une seconde page pour les paniers et les infos.',
+      'Un accueil qui donne envie (recherche, produits de saison, rayons), puis un catalogue filtrable, une page paniers et une page infos. Les produits de saison changent avec le mois.',
     goals: ['Aider à trouver un produit rapidement', 'Mettre en avant les produits de saison', 'Proposer des paniers à retirer en boutique'],
-    features: ['Recherche instantanée', 'Rayons et filtres combinables', 'Produits de saison selon le mois', 'Commande de panier'],
+    features: ['Recherche depuis l’accueil', 'Catalogue avec filtres et pagination', 'Produits de saison selon le mois', 'Commande de panier'],
     theme: {
       bg: '#EFEBDD', surface: '#FBF9F1', ink: '#1F2418', muted: '#5E6350',
       accent: '#3E4A2B', accentInk: '#FFFFFF',
@@ -303,9 +303,9 @@ const all: Project[] = [
       alt: 'Aperçu du site de démonstration La Table d’Aurèle',
     },
     summary:
-      'Un livre à chapitres plein écran : couverture, carte à onglets, principes de la maison et réservation. Pas de barre de menu, seulement des repères en chiffres romains sur le bord de l’écran.',
-    goals: ['Créer une ambiance dès la couverture', 'Rendre la carte lisible sur téléphone', 'Encourager la réservation'],
-    features: ['Chapitres plein écran', 'Carte à onglets (entrées, plats, desserts, vins)', 'Repères de navigation en chiffres romains', 'Formulaire de réservation'],
+      'Une couverture plein écran qui donne envie, puis une page par chapitre : la carte à onglets, la maison et la réservation. Pas de barre de menu : des repères en chiffres romains sur le bord de l’écran.',
+    goals: ['Créer une ambiance dès la première seconde', 'Rendre la carte lisible sur téléphone', 'Encourager la réservation'],
+    features: ['Couverture plein écran', 'Carte à onglets (entrées, plats, desserts, vins)', 'Repères de navigation en chiffres romains', 'Formulaire de réservation'],
     theme: {
       bg: '#14110F', surface: '#1D1916', ink: '#F2EADF', muted: '#A99C8C',
       accent: '#C9A46B', accentInk: '#16110C',
@@ -334,9 +334,9 @@ const all: Project[] = [
       alt: 'Aperçu du site de démonstration Verdance Paysage',
     },
     summary:
-      'Une seule page autour d’un plan de jardin interactif : chaque point du plan est une prestation, et le choix de la saison recolore tout le site. Navigation par un rail vertical, formulaire d’étude en fin de page.',
+      'Un accueil qui donne envie : un plan de jardin interactif où chaque point est une prestation. Puis une page par sujet : les saisons (qui recolorent tout le site), la méthode et la demande d’étude. Navigation par un rail vertical.',
     goals: ['Montrer les prestations sur un plan plutôt que dans une liste', 'Faire vivre le site au fil des saisons', 'Recueillir des demandes d’étude'],
-    features: ['Plan de jardin cliquable', 'Saisons qui changent les couleurs et le contenu', 'Rail de navigation vertical', 'Formulaire d’étude'],
+    features: ['Plan de jardin cliquable', 'Saisons mémorisées d’une page à l’autre', 'Quatre pages courtes', 'Formulaire d’étude'],
     theme: {
       bg: '#F2F4ED', surface: '#FFFFFF', ink: '#14241A', muted: '#566559',
       accent: '#2C5A3A', accentInk: '#FFFFFF',

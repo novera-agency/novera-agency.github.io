@@ -1,14 +1,16 @@
 ---
 import { steps } from '../../data/content';
 import SectionHeading from '../SectionHeading.astro';
+interface Props { show?: boolean }
+const { show = true } = Astro.props;
 ---
 <section class="section" id="methode" aria-label="Notre méthode">
   <div class="container">
-    <SectionHeading
+    {show && (<SectionHeading
       eyebrow="Comment ça fonctionne ?"
       title="Un processus clair, *en quatre étapes.*"
       intro="Pas de surprise ni de jargon : vous savez à chaque instant où en est votre projet et ce qui vient ensuite."
-    />
+    />)}
     <ol role="list" class="steps" data-steps>
       <span class="steps__rail" aria-hidden="true"><span class="steps__progress" data-steps-progress></span></span>
       {steps.map((s, i) => (

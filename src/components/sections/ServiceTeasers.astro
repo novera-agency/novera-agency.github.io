@@ -1,0 +1,40 @@
+---
+import { services } from '../../data/content';
+import { u } from '../../utils/url';
+import Icon from '../Icon.astro';
+const icons = ['layout', 'spark', 'compass'] as const;
+---
+<section class="section tz" aria-labelledby="teasers-title">
+  <div class="container">
+    <div class="head">
+      <h2 id="teasers-title" class="h2" data-reveal>Ce que nous faisons pour <span class="serif">votre activité.</span></h2>
+      <a href={u('/services/')} class="btn btn--ghost" data-reveal>Tous nos services<Icon name="arrow" class="btn__icon" /></a>
+    </div>
+    <div class="grid">
+      {services.map((s, i) => (
+        <a class="card" href={u(`/services/#service-${s.id}`)} data-reveal style={`--d:${i * 0.08}s`}>
+          <span class="card__icon"><Icon name={icons[i]} size={24} /></span>
+          <h3>{s.title}</h3>
+          <p>{s.lead}</p>
+          <span class="card__more">En savoir plus<Icon name="arrow" size={18} /></span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  .tz { padding-block: clamp(48px, 6vw, 88px); }
+  .head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(32px, 4vw, 56px); }
+  .head h2 { max-width: 16ch; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { position: relative; display: grid; gap: 14px; align-content: start; padding: clamp(24px, 3vw, 34px); border-radius: var(--radius); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+  .card:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1px var(--line-strong), 0 26px 44px -30px rgba(12, 12, 13, .4); }
+  .card__icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: var(--ink); color: var(--bg); transition: background-color .4s var(--ease); }
+  .card:hover .card__icon { background: var(--accent); }
+  .card h3 { font-size: 1.55rem; }
+  .card p { color: var(--ink-2); }
+  .card__more { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; margin-top: 6px; }
+  .card__more :global(svg) { transition: transform .4s var(--ease); }
+  .card:hover .card__more :global(svg) { transform: translateX(4px); }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+</style>
