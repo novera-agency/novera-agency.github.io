@@ -3,123 +3,76 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anatolia Kebab — Sandwichs et grillades à emporter</title>
-<meta name="description" content="Anatolia Kebab, snack fictif : kebabs, dürüms, assiettes grillées et frites maison. Site de démonstration.">
+<title>Anatolia Kebab — Commande à emporter</title>
+<meta name="description" content="Anatolia Kebab, snack fictif : carte, options, panier et commande à emporter. Site de démonstration.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#171412">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23FFB81C'/%3E%3Cpath d='M16 5c4 0 6 6 7 13 .6 4 .8 6-1 8H10c-1.800-2-1.600-4-1-8 1-7 3-13 7-13Z' fill='%23E5352B'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#FFD23F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23FFD23F'/%3E%3Cpath d='M16 5c4 0 6 6 7 13 .6 4 .8 6-1 8H10c-1.800-2-1.600-4-1-8 1-7 3-13 7-13Z' fill='%23E5352B'/%3E%3C/svg%3E">
 <link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../shared.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="demo-bar">Site de démonstration conçu par NOVERA Agency<a href="../../realisations/#kebab">Retour aux réalisations</a></div>
-<a class="skip-link" href="#main">Aller au contenu</a>
+<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/#kebab"><span class="hide-s">Retour aux </span>réalisations</a></div>
+<a class="skip-link" href="#menu">Aller à la carte</a>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="index.html" aria-label="Anatolia Kebab, accueil">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#FFB81C"/><path d="M16 5c4 0 6 6 7 13 .6 4 .8 6-1 8H10c-1.800-2-1.600-4-1-8 1-7 3-13 7-13Z" fill="#E5352B"/></svg>
-      Anatolia <span>Kebab</span>
-    </a>
-    <nav class="nav" aria-label="Navigation principale">
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="carte.html">La carte</a></li>
-        <li><a href="contact.html">Commander</a></li>
-        <li class="nav-cta"><a href="carte.html#composer">Composer mon sandwich</a></li>
-      </ul>
-    </nav>
-    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
-  </div>
+<header class="appbar">
+  <a class="logo" href="#top" aria-label="Anatolia Kebab">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#FFD23F"/><path d="M16 5c4 0 6 6 7 13 .6 4 .8 6-1 8H10c-1.800-2-1.600-4-1-8 1-7 3-13 7-13Z" fill="#E5352B"/></svg>
+    Anatolia <span>Kebab</span>
+  </a>
+  <p class="status" id="status"><i></i><span id="status-txt">Ouvert · jusqu’à 23h</span></p>
+  <button class="cartbtn" id="cart-open" type="button" aria-controls="cart">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6zM9 8a3 3 0 0 1 6 0"/></svg>
+    <span class="sr-only">Panier :</span><b id="count">0</b><span id="total-top">0,00 €</span>
+  </button>
 </header>
 
-<main id="main">
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <span class="pill reveal">Kebab · Grill · À emporter</span>
-        <h1 class="reveal" style="--d:.08s">Grillé à la broche. <em>Servi bien chaud.</em></h1>
-        <p class="lead reveal" style="--d:.16s">Viande tranchée à la commande, pain chaud, crudités croquantes et sauces maison. Simple, généreux, rapide.</p>
-        <div class="hero-actions reveal" style="--d:.24s">
-          <a class="btn btn--light" href="carte.html#composer">Composer mon sandwich <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn--ghost" href="carte.html">Voir la carte</a>
+<main id="top">
+  <section class="banner" aria-label="Accueil">
+    <h1>Faim<em>?</em></h1>
+    <div class="box eta"><b>Prêt en 10 min</b><span>Commande à emporter, préparée à la minute (exemple).</span></div>
+  </section>
+
+  <nav class="cats" aria-label="Catégories de la carte"><ul id="cats"></ul></nav>
+
+  <div class="layout">
+    <div id="menu"></div>
+
+    <aside class="box cart" id="cart" aria-label="Mon panier">
+      <h2>Mon panier <button class="cart-close" id="cart-close" type="button" aria-label="Fermer le panier">✕</button></h2>
+      <ul class="lines" id="lines"></ul>
+      <p class="empty" id="empty">Votre panier est vide. Ajoutez un sandwich pour commencer.</p>
+      <div class="total"><span>Total</span><b id="total">0,00 €</b></div>
+      <form class="co" id="co" novalidate>
+        <div class="row2">
+          <div><label for="nom">Prénom</label><input class="in" id="nom" name="nom" type="text" autocomplete="given-name" required></div>
+          <div><label for="tel">Téléphone</label><input class="in" id="tel" name="tel" type="tel" autocomplete="tel" required></div>
         </div>
-      </div>
-      <div class="spit reveal" style="--d:.15s">
-        <svg viewBox="0 0 240 400" role="img" aria-label="Illustration d’une broche de kebab">
-          <defs><linearGradient id="meat" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7A3B1E"/><stop offset=".5" stop-color="#B5622F"/><stop offset="1" stop-color="#6A3118"/></linearGradient></defs>
-          <rect x="117" y="6" width="6" height="388" rx="3" fill="#C9C2BA"/>
-          <ellipse cx="120" cy="372" rx="92" ry="14" fill="#000" fill-opacity=".35"/>
-          <g class="cone">
-            <path d="M120 34c32 0 52 46 66 140 8 56 12 100 4 156H50c-8-56-4-100 4-156C68 80 88 34 120 34Z" fill="url(#meat)"/>
-            <path d="M74 120c30 10 62 10 92 0M64 170c36 12 76 12 112 0M58 224c40 14 84 14 124 0M54 280c42 14 90 14 132 0" stroke="#E6A15B" stroke-opacity=".55" stroke-width="5" stroke-linecap="round" fill="none"/>
-            <path d="M98 60c-6 30-12 70-14 120" stroke="#F2C08A" stroke-opacity=".35" stroke-width="6" stroke-linecap="round" fill="none"/>
-            <circle cx="120" cy="30" r="12" fill="#E5352B"/>
-          </g>
-          <path d="M42 346h156v14c0 8-6 14-14 14H56c-8 0-14-6-14-14z" fill="#3A332D"/>
-        </svg>
-        <div class="sticker sticker--a"><span>7j/7<small>11h – 23h</small></span></div>
-        <div class="sticker sticker--b"><span>Sauces<br>maison</span></div>
-      </div>
-    </div>
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Kebab</span><span>Dürüm</span><span>Assiette grillée</span><span>Falafel</span><span>Frites maison</span><span>Sauce blanche</span><span>Harissa</span><span>Baklava</span>
-        <span>Kebab</span><span>Dürüm</span><span>Assiette grillée</span><span>Falafel</span><span>Frites maison</span><span>Sauce blanche</span><span>Harissa</span><span>Baklava</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="classiques">
-    <div class="container">
-      <div class="head"><h2 id="classiques" class="reveal">Les <span style="color:var(--red)">incontournables.</span></h2><a class="btn btn--ghost reveal" href="carte.html" style="color:var(--ink)">Toute la carte</a></div>
-      <div class="cards">
-        <article class="card reveal"><div class="card-top"><h3>Le Kebab</h3><span class="price">8,50 €</span></div><p>Galette chaude, viande de la broche, salade, tomate, oignon et la sauce de ton choix.</p><div class="tags"><span class="tag">Veau</span><span class="tag">Poulet</span><span class="tag">Mixte</span></div></article>
-        <article class="card card--hot reveal" style="--d:.07s"><div class="card-top"><h3>Le Dürüm</h3><span class="price" style="color:var(--char)">8,90 €</span></div><p>Galette fine roulée, plus de viande, plus de sauce. Le plus demandé à midi.</p><div class="tags"><span class="tag">Roulé</span><span class="tag">Bien garni</span></div></article>
-        <article class="card reveal" style="--d:.14s"><div class="card-top"><h3>L’Assiette</h3><span class="price">12,50 €</span></div><p>Viande grillée, frites maison, salade fraîche, pain et sauce. Pour les grosses faims.</p><div class="tags"><span class="tag">Frites</span><span class="tag">Salade</span><span class="tag">Pain</span></div></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section how" aria-labelledby="commander">
-    <div class="container how-grid">
-      <div style="display:grid;gap:22px;justify-items:start">
-        <span class="pill reveal">À emporter</span>
-        <h2 id="commander" class="reveal" style="--d:.08s">Commander, c’est <span style="color:var(--saffron)">rapide.</span></h2>
-        <p class="lead reveal" style="--d:.16s">Prépare ton sandwich en ligne, passe le récupérer : il sort de la broche à ton arrivée.</p>
-        <a class="btn btn--light reveal" href="contact.html">Commander</a>
-      </div>
-      <ol class="steps">
-        <li class="reveal"><div><b>Compose</b><span>Pain, viande, sauces, suppléments : tu vois le prix en direct.</span></div></li>
-        <li class="reveal" style="--d:.07s"><div><b>Choisis l’heure</b><span>Retrait à l’heure qui t’arrange, midi ou soir.</span></div></li>
-        <li class="reveal" style="--d:.14s"><div><b>Récupère</b><span>Ton sandwich est préparé à la minute, bien chaud.</span></div></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="horaires">
-    <div class="container">
-      <h2 id="horaires" class="reveal" style="margin-bottom:clamp(24px,4vw,44px)">Quand passer ?</h2>
-      <div class="hours-strip">
-        <div class="hs reveal"><b>Midi</b><span>11h – 15h, tous les jours</span></div>
-        <div class="hs reveal" style="--d:.07s"><b>Soir</b><span>18h – 23h, tous les jours</span></div>
-        <div class="hs reveal" style="--d:.14s"><b>À emporter ou sur place</b><span>Quelques places assises (exemple)</span></div>
-      </div>
-    </div>
-  </section>
+        <div><label for="heure">Heure de retrait</label><input class="in" id="heure" name="heure" type="time" required></div>
+        <button class="btn" id="submit" type="submit" disabled>Valider ma commande</button>
+        <p class="note">Démonstration : aucune commande n’est envoyée.</p>
+        <div class="form-status" id="co-status" role="status" hidden></div>
+      </form>
+    </aside>
+  </div>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-brand"><a class="logo" href="index.html">Anatolia <span>Kebab</span></a><p>Snack fictif présenté à titre de démonstration.</p></div>
-      <div><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="carte.html">La carte</a></li><li><a href="contact.html">Commander</a></li></ul></div>
-      <div><h4>Horaires</h4><ul><li>Midi : 11h – 15h</li><li>Soir : 18h – 23h</li><li>Tous les jours</li></ul></div>
-    </div>
-    <p class="foot-bottom">© <span data-year>2026</span> Anatolia Kebab — Site de démonstration. Établissement, adresse, horaires et prix fictifs.</p>
-  </div>
-</footer>
+<div class="backdrop" id="backdrop"></div>
+<button class="cartbar" id="cartbar" type="button" aria-controls="cart"><span><b id="count-m">0</b>Voir mon panier</span><span id="total-m">0,00 €</span></button>
+
+<dialog id="opt" aria-labelledby="opt-title">
+  <form method="dialog" class="opt-in" id="opt-form">
+    <h2 id="opt-title">Kebab</h2>
+    <fieldset id="f-meat"><legend>La viande</legend><div class="chips" id="meats"></div></fieldset>
+    <fieldset id="f-sauce"><legend>Les sauces (2 maximum)</legend><div class="chips" id="sauces"></div></fieldset>
+    <fieldset id="f-menu"><legend>En plus</legend><div class="chips"><label class="chip"><input type="checkbox" id="menu-opt"><span>Menu frites + boisson (+ 3,00 €)</span></label></div></fieldset>
+    <div class="opt-foot"><div class="qty"><button type="button" id="q-minus" aria-label="Diminuer">−</button><span id="q" aria-live="polite">1</span><button type="button" id="q-plus" aria-label="Augmenter">+</button></div><button class="btn" id="opt-add" type="submit" value="add">Ajouter · 8,50 €</button></div>
+    <button class="cancel" type="submit" value="cancel" formnovalidate>Annuler</button>
+  </form>
+</dialog>
+
 <script src="../demo.js" defer></script>
+<script src="site.js" defer></script>
 </body>
 </html>

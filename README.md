@@ -60,11 +60,21 @@ Par défaut, aucun cookie n’est déposé (polices auto-hébergées, aucun trac
 
 ## Sites de démonstration
 
-Les sites de démonstration (paysagiste, boulangerie, restaurant, kebab, épicerie) sont des sites statiques indépendants dans `public/demos/<nom>/`, avec leurs propres styles. Ils partagent seulement `public/demos/shared.css`, `public/demos/demo.js` et les polices auto-hébergées de `public/demos/fonts/`.
+Cinq sites statiques indépendants dans `public/demos/<nom>/`, chacun avec sa propre architecture, sa navigation et ses interactions (volontairement différentes) :
+
+| Dossier | Concept |
+| --- | --- |
+| `paysagiste/` | une page, plan de jardin interactif, saisons qui recolorent le site, rail vertical |
+| `boulangerie/` | « gazette » à bandeau centré, fournées en direct, carte sur ardoise, bon de commande (2 pages) |
+| `restaurant/` | chapitres plein écran, carte à onglets, repères en chiffres romains |
+| `kebab/` | application de commande : options, panier fonctionnel, total en direct |
+| `epicerie/` | catalogue avec recherche, rayons, filtres et produits de saison (2 pages) |
+
+Ils ne partagent que `public/demos/shared.css` (bandeau de démonstration, accessibilité), `public/demos/demo.js` (apparition au défilement, formulaires de démonstration) et les polices auto-hébergées de `public/demos/fonts/`.
 
 - Entreprises, adresses, téléphones, horaires et prix y sont **fictifs** ; chaque page porte un bandeau « Site de démonstration » et une balise `noindex`.
-- Leurs formulaires **n’envoient rien** et le disent à l’écran.
-- Pour ajouter un projet : créer la fiche dans `src/data/projects.ts` (champs `url`, `screenshots`), les captures dans `public/images/`.
+- Leurs formulaires et paniers **n’envoient rien** et le disent à l’écran.
+- Pour ajouter un projet : créer la fiche dans `src/data/projects.ts` (champs `url`, `screenshots`) et les captures dans `public/images/`.
 
 ## Structure
 

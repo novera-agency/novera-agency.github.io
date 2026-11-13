@@ -4,119 +4,118 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>La Table d’Aurèle — Restaurant de cuisine de saison</title>
-<meta name="description" content="La Table d’Aurèle, restaurant fictif : cuisine de saison, carte courte, menu du midi. Site de démonstration.">
+<meta name="description" content="La Table d’Aurèle, restaurant fictif : cuisine de saison, carte courte, menu du midi et réservation. Site de démonstration.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#14110F">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2314110F'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23C9A46B' stroke-width='1.500'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#1A0E11">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A0E11'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23D8BC8A' stroke-width='1.500'/%3E%3C/svg%3E">
 <link rel="preload" href="../fonts/cormorant-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../shared.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="demo-bar">Site de démonstration conçu par NOVERA Agency<a href="../../realisations/#restaurant">Retour aux réalisations</a></div>
-<a class="skip-link" href="#main">Aller au contenu</a>
+<div class="demo-bar"><span>Site de démonstration<span class="hide-s"> conçu par NOVERA Agency</span></span><a href="../../realisations/#restaurant"><span class="hide-s">Retour aux </span>réalisations</a></div>
+<a class="skip-link" href="#carte">Aller au contenu</a>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="index.html" aria-label="La Table d’Aurèle, accueil"><b>La Table d’Aurèle</b><small>Cuisine de saison</small></a>
-    <nav class="nav" aria-label="Navigation principale">
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="carte.html">La carte</a></li>
-        <li><a href="reserver.html">Réserver</a></li>
-        <li class="nav-cta"><a href="reserver.html#reservation">Réserver une table</a></li>
-      </ul>
-    </nav>
-    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
-  </div>
-</header>
+<a class="brand small" href="#couverture" aria-label="La Table d’Aurèle, début de page">La Table d’Aurèle</a>
+<a class="reserve small" href="#reserver">Réserver</a>
+<nav aria-label="Chapitres">
+  <ol class="chapters">
+    <li><a href="#couverture" aria-current="true"><span class="lab">Accueil</span><span class="num">I</span></a></li>
+    <li><a href="#carte"><span class="lab">La carte</span><span class="num">II</span></a></li>
+    <li><a href="#maison"><span class="lab">La maison</span><span class="num">III</span></a></li>
+    <li><a href="#reserver"><span class="lab">Réserver</span><span class="num">IV</span></a></li>
+  </ol>
+</nav>
 
-<main id="main">
-  <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow reveal">Restaurant · Déjeuner &amp; dîner</p>
-          <h1 class="reveal" style="--d:.1s">Une cuisine <em>de saison,</em> un lieu à partager.</h1>
-          <p class="lead reveal" style="--d:.2s">Une carte courte qui change avec le marché, des produits choisis avec soin et une salle où l’on prend son temps.</p>
-          <div class="hero-actions reveal" style="--d:.3s">
-            <a class="btn" href="reserver.html#reservation">Réserver une table <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="btn btn--ghost" href="carte.html">Voir la carte</a>
-          </div>
-        </div>
-        <div class="plate reveal" style="--d:.2s">
-          <svg viewBox="0 0 400 400" role="img" aria-label="Illustration d’une assiette">
-            <defs><path id="circ" d="M200 200m-158 0a158 158 0 1 1 316 0a158 158 0 1 1-316 0"/></defs>
-            <circle cx="200" cy="200" r="192" fill="none" stroke="#C9A46B" stroke-opacity=".3"/>
-            <circle cx="200" cy="200" r="118" fill="#1D1916" stroke="#C9A46B" stroke-opacity=".55"/>
-            <circle cx="200" cy="200" r="84" fill="none" stroke="#C9A46B" stroke-opacity=".28"/>
-            <g class="spin"><text font-size="15" letter-spacing="5.6" fill="#C9A46B" font-family="Inter, sans-serif" font-weight="500"><textPath href="#circ">CUISINE DE SAISON · PRODUITS DU MARCHÉ · CARTE COURTE · </textPath></text></g>
-            <path d="M160 214c10-34 46-52 82-44 22 5 30 26 14 44-20 22-70 24-96 0Z" fill="#8A3445" fill-opacity=".85"/>
-            <path d="M178 196c14-14 38-18 56-8" stroke="#C9A46B" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <circle cx="244" cy="206" r="5" fill="#C9A46B"/><circle cx="222" cy="226" r="3.500" fill="#C9A46B" fill-opacity=".7"/>
-          </svg>
-        </div>
+<main>
+  <section class="chapter cover" id="couverture" aria-labelledby="titre">
+    <svg class="rings" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke="#D8BC8A" stroke-opacity=".28"><circle cx="200" cy="200" r="196"/><circle cx="200" cy="200" r="150"/><circle cx="200" cy="200" r="104"/><circle cx="200" cy="200" r="60"/></g></svg>
+    <p class="pre">La Table d’</p>
+    <h1 id="titre">Aurèle</h1>
+    <p class="sub small">Cuisine de saison · Déjeuner &amp; dîner</p>
+    <div class="meta"><div><b>Du mardi au samedi</b>12h – 14h · 19h – 22h</div><div><b>Menu du midi</b>24 € (exemple)</div><div><b>Réservation conseillée</b>En ligne ou par téléphone</div></div>
+    <a class="cue small" href="#carte" aria-label="Aller à la carte">Défiler</a>
+  </section>
+
+  <section class="chapter carte" id="carte" aria-labelledby="carte-titre">
+    <div>
+      <span class="big-n" aria-hidden="true">II</span>
+      <h2 id="carte-titre" class="reveal">La <em>carte.</em></h2>
+      <p class="intro reveal" style="--d:.1s">Elle change au rythme des saisons et des arrivages. Prix en euros, service compris.</p>
+    </div>
+    <div>
+      <div class="tabs" role="tablist" aria-label="Sections de la carte">
+        <button role="tab" id="t-ent" aria-controls="p-ent" aria-selected="true">Entrées</button>
+        <button role="tab" id="t-pla" aria-controls="p-pla" aria-selected="false" tabindex="-1">Plats</button>
+        <button role="tab" id="t-des" aria-controls="p-des" aria-selected="false" tabindex="-1">Desserts</button>
+        <button role="tab" id="t-vin" aria-controls="p-vin" aria-selected="false" tabindex="-1">Vins au verre</button>
       </div>
-      <div class="hero-meta reveal">
-        <div><b>Du mardi au samedi</b>Déjeuner 12h – 14h · Dîner 19h – 22h</div>
-        <div><b>Menu du midi</b>Entrée + plat ou plat + dessert</div>
-        <div><b>Réservation conseillée</b>En ligne ou par téléphone</div>
+      <div class="panel" id="p-ent" role="tabpanel" aria-labelledby="t-ent">
+        <div class="dish"><b>Velouté de potimarron</b><i></i><span>12</span></div><p class="desc">Noisettes torréfiées, huile de courge.</p>
+        <div class="dish"><b>Œuf parfait</b><i></i><span>13</span></div><p class="desc">Crème de champignons, croûtons de pain de campagne.</p>
+        <div class="dish"><b>Betteraves rôties</b><i></i><span>12</span></div><p class="desc">Fromage frais, noix, vinaigrette au miel.</p>
+        <div class="dish"><b>Terrine de campagne</b><i></i><span>13</span></div><p class="desc">Pickles de légumes, pain grillé.</p>
       </div>
+      <div class="panel" id="p-pla" role="tabpanel" aria-labelledby="t-pla" hidden>
+        <div class="dish"><b>Volaille fermière</b><i></i><span>27</span></div><p class="desc">Jus corsé, purée de céleri, légumes racines.</p>
+        <div class="dish"><b>Dos de cabillaud</b><i></i><span>29</span></div><p class="desc">Beurre blanc, poireaux fondants, pommes de terre grenaille.</p>
+        <div class="dish"><b>Joue de bœuf braisée</b><i></i><span>28</span></div><p class="desc">Cuisson longue au vin rouge, polenta crémeuse.</p>
+        <div class="dish"><b>Risotto d’orge aux champignons</b><i></i><span>23</span></div><p class="desc">Plat végétarien. Parmesan, persil, huile de noisette.</p>
+      </div>
+      <div class="panel" id="p-des" role="tabpanel" aria-labelledby="t-des" hidden>
+        <div class="dish"><b>Tarte fine aux pommes</b><i></i><span>11</span></div><p class="desc">Glace vanille, caramel au beurre salé.</p>
+        <div class="dish"><b>Chocolat &amp; sarrasin</b><i></i><span>12</span></div><p class="desc">Crémeux, crumble, fleur de sel.</p>
+        <div class="dish"><b>Fromages affinés</b><i></i><span>10</span></div><p class="desc">Trois fromages, confiture de saison.</p>
+      </div>
+      <div class="panel" id="p-vin" role="tabpanel" aria-labelledby="t-vin" hidden>
+        <div class="dish"><b>Blanc de vigneron</b><i></i><span>8</span></div><p class="desc">Sec et vif, pour les entrées et le poisson.</p>
+        <div class="dish"><b>Rouge de caractère</b><i></i><span>9</span></div><p class="desc">Fruité, tannins souples, pour les viandes braisées.</p>
+        <div class="dish"><b>Rosé de saison</b><i></i><span>7</span></div><p class="desc">Léger et frais.</p>
+        <p class="note">L’abus d’alcool est dangereux pour la santé. À consommer avec modération.</p>
+      </div>
+      <div class="formules">
+        <div><b>Menu du midi</b><strong>24</strong> · mardi – vendredi</div>
+        <div><b>Menu dégustation</b><strong>55</strong> · cinq services</div>
+      </div>
+      <p class="note">Allergènes sur demande auprès de la salle. Plats et prix d’exemple, fictifs.</p>
     </div>
   </section>
 
-  <section class="section moment" aria-labelledby="moment">
-    <div class="container moment-grid">
-      <div class="moment-head">
-        <p class="eyebrow reveal">Cette semaine</p>
-        <h2 id="moment" class="reveal" style="--d:.08s">Le menu <em>du moment.</em></h2>
-        <p class="lead reveal" style="--d:.16s">Quelques plats, travaillés avec ce que le marché offre. La carte complète est à découvrir sur place ou en ligne.</p>
-        <a class="btn btn--ghost reveal" href="carte.html" style="justify-self:start">La carte complète</a>
-      </div>
-      <div>
-        <div class="course reveal"><h3>Pour commencer</h3>
-          <div class="dish"><b>Velouté de potimarron</b><i></i><span>12</span></div><p class="dish-desc">Noisettes torréfiées, huile de courge.</p>
-          <div class="dish"><b>Œuf parfait</b><i></i><span>13</span></div><p class="dish-desc">Crème de champignons, croûtons de pain de campagne.</p></div>
-        <div class="course reveal"><h3>Ensuite</h3>
-          <div class="dish"><b>Volaille fermière</b><i></i><span>27</span></div><p class="dish-desc">Jus corsé, purée de céleri, légumes racines.</p>
-          <div class="dish"><b>Dos de cabillaud</b><i></i><span>29</span></div><p class="dish-desc">Beurre blanc, poireaux fondants, pommes de terre grenaille.</p></div>
-        <div class="course reveal"><h3>Pour finir</h3>
-          <div class="dish"><b>Tarte fine aux pommes</b><i></i><span>11</span></div><p class="dish-desc">Glace vanille, caramel au beurre salé.</p>
-          <div class="dish"><b>Chocolat &amp; sarrasin</b><i></i><span>12</span></div><p class="dish-desc">Crémeux, crumble, fleur de sel.</p></div>
-      </div>
-    </div>
+  <section class="chapter maison" id="maison" aria-label="La maison">
+    <div class="stmt reveal"><span class="rn" aria-hidden="true">i</span><div><h3>Le produit <em>d’abord.</em></h3><p>Des fournisseurs identifiés, des légumes de saison, une carte qui s’adapte à leurs arrivages.</p></div></div>
+    <div class="stmt s2 reveal"><span class="rn" aria-hidden="true">ii</span><div><h3>Une cave <em>courte et vivante.</em></h3><p>Quelques vins de vignerons, servis au verre ou à la bouteille, choisis pour accompagner la cuisine.</p></div></div>
+    <div class="stmt s3 reveal"><span class="rn" aria-hidden="true">iii</span><div><h3>Le temps <em>de la table.</em></h3><p>Un service attentif et discret, pour un déjeuner d’affaires comme pour un dîner à deux.</p></div></div>
   </section>
 
-  <section class="section" aria-labelledby="lieu">
-    <div class="container">
-      <p class="eyebrow reveal">Le lieu</p>
-      <h2 id="lieu" class="reveal" style="--d:.08s;margin-top:22px;max-width:18ch">Une salle simple, <em>une table soignée.</em></h2>
-      <div class="place-grid">
-        <div class="place-item reveal"><b>Le produit</b><p>Des fournisseurs identifiés, des légumes de saison et une carte qui s’adapte à leurs arrivages.</p></div>
-        <div class="place-item reveal" style="--d:.08s"><b>La cave</b><p>Une sélection courte de vins de vignerons, servis au verre ou à la bouteille.</p></div>
-        <div class="place-item reveal" style="--d:.16s"><b>L’accueil</b><p>Un service attentif et discret, pour un déjeuner d’affaires comme pour un dîner à deux.</p></div>
+  <section class="chapter reserver" id="reserver" aria-labelledby="resa-titre">
+    <div>
+      <p class="small" style="color:var(--gold)">IV · Réservation</p>
+      <h2 id="resa-titre" style="margin-top:18px">Une table <em>vous attend.</em></h2>
+      <dl>
+        <div><dt>Horaires</dt><dd>Mardi – samedi<br>Déjeuner 12h – 14h · Dîner 19h – 22h</dd></div>
+        <div><dt>Adresse</dt><dd>14 place des Tilleuls, ville fictive</dd></div>
+        <div><dt>Contact</dt><dd>reservation@table-aurele.example<br>01 99 00 00 02</dd></div>
+      </dl>
+    </div>
+    <form class="form" data-demo novalidate>
+      <div class="fields">
+        <div class="field"><label for="nom">Nom</label><input class="input" id="nom" name="nom" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="email">E-mail</label><input class="input" id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="date">Date</label><input class="input" id="date" name="date" type="date" required></div>
+        <div class="field"><label for="heure">Heure</label><select class="input" id="heure" name="heure" required><option value="" selected disabled>Choisissez</option><option>12h00</option><option>12h30</option><option>13h00</option><option>13h30</option><option>19h00</option><option>19h30</option><option>20h00</option><option>20h30</option><option>21h00</option></select></div>
+        <div class="field"><label for="couverts">Convives</label><select class="input" id="couverts" name="couverts" required><option value="" selected disabled>Choisissez</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+        <div class="field"><label for="tel">Téléphone</label><input class="input" id="tel" name="tel" type="tel" autocomplete="tel" required></div>
+        <div class="field field--full"><label for="notes">Allergies, occasion particulière</label><textarea class="input" id="notes" name="notes" placeholder="Facultatif"></textarea></div>
       </div>
-    </div>
-  </section>
-
-  <section class="container" aria-labelledby="resa">
-    <div class="book reveal">
-      <div style="display:grid;gap:22px"><p class="eyebrow">Réservation</p><h2 id="resa">Une table <em>vous attend.</em></h2></div>
-      <div class="book-side"><p>Réservez en ligne en quelques secondes, ou appelez-nous pour un groupe de plus de 8 personnes.</p><a class="btn" href="reserver.html#reservation">Réserver une table</a></div>
-    </div>
+      <button class="btn" type="submit">Envoyer la demande</button>
+      <p class="form-note">Formulaire de démonstration : aucune donnée n’est envoyée ni conservée. Groupes de plus de 8 personnes : nous appeler.</p>
+      <div class="form-status" data-status role="status" hidden></div>
+    </form>
+    <p class="legal"><span>© <span data-year>2026</span> La Table d’Aurèle — Site de démonstration.</span><span>Établissement, adresse, horaires et prix fictifs.</span></p>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-brand"><a class="logo" href="index.html"><b>La Table d’Aurèle</b><small>Cuisine de saison</small></a><p>Restaurant fictif présenté à titre de démonstration.</p></div>
-      <div><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="carte.html">La carte</a></li><li><a href="reserver.html">Réserver</a></li></ul></div>
-      <div><h4>Horaires</h4><ul><li>Mardi – samedi</li><li>Déjeuner 12h – 14h</li><li>Dîner 19h – 22h</li><li>Dimanche et lundi : fermé</li></ul></div>
-    </div>
-    <p class="foot-bottom">© <span data-year>2026</span> La Table d’Aurèle — Site de démonstration. Établissement, adresse, horaires et prix fictifs.</p>
-  </div>
-</footer>
 <script src="../demo.js" defer></script>
+<script src="site.js" defer></script>
 </body>
 </html>
