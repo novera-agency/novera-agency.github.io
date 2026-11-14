@@ -141,3 +141,11 @@ textarea.input{min-height:110px;resize:vertical}
 /* Correctifs : badge photo qui ne chevauche pas les autres éléments */
 .visual .ph-tag{right:auto;left:10px;bottom:auto;top:10px}
 .btn{color:#fff}
+
+/* Lien discret dans les offres (un seul bouton de devis par page) */
+.tlink{display:inline-block;margin-top:6px;padding:10px 0;color:var(--aqua-d);font-weight:600;text-underline-offset:4px}
+
+/* Mobile : un seul bouton principal (barre fixe) et photo compacte */
+@media (max-width:900px){
+  .hero .cta .btn:first-child{display:none}
+}

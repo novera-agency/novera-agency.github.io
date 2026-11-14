@@ -157,3 +157,13 @@ textarea.input{min-height:100px;resize:vertical}
   .nav a{justify-content:center;text-align:center}
 }
 .fcard .p{color:#FF5A4F}
+
+/* Photos : hauteur plafonnée pour ne pas écraser le contenu */
+.hero .ph{max-height:560px;align-self:center}
+@media (max-width:980px){.hero .ph{max-height:300px}}
+
+/* Mobile : photo d'ambiance compacte après le titre, un seul bouton principal (barre fixe) */
+@media (max-width:980px){
+  .hero .ph{order:0;max-height:210px;min-height:150px}
+  .hero .cta .btn:first-child{display:none}
+}

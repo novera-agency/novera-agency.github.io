@@ -177,3 +177,10 @@ p{margin:0}
 /* Correctifs : titres lisibles sur les cartes */
 .tz h3{color:var(--ink)}
 .tz .go{color:var(--terra-d)}
+
+/* Photos : hauteur plafonnée */
+.cover .ph{max-height:600px;align-self:center}
+.aside .ph{aspect-ratio:4/3;max-height:380px}
+@media (max-width:900px){.cover .ph{max-height:320px}}
+@media (max-width:900px){.cover .ph{order:0;max-height:240px;min-height:160px}}
+@media (max-width:900px){.cover .cta .res{display:none}}
