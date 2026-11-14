@@ -106,9 +106,8 @@ export const site = {
     vat: '[N° de TVA intracommunautaire — À compléter]',
     director: '[Nom du directeur de la publication — À compléter]',
     host: {
-      name: '[Nom de l’hébergeur — À compléter]',
-      address: '[Adresse de l’hébergeur — À compléter]',
-      phone: '[Téléphone de l’hébergeur — À compléter]',
+      name: 'GitHub, Inc. (GitHub Pages)',
+      address: '88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis',
     },
   },
 };

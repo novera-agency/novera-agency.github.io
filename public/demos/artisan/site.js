@@ -16,8 +16,10 @@
     const fmt = (n) => (Math.round(n / 500) * 500 || 500).toLocaleString('fr-FR') + ' €';
     const fmtS = (n) => (Math.round(n / 50) * 50).toLocaleString('fr-FR') + ' €';
     const calc = () => {
-      const t = +$('#e-type').value, s = +$('#e-surf').value, k = +$('input[name="lvl"]:checked').value;
-      $('#e-surf-v').textContent = s;
+      const t = +$('#e-type').value, s = Math.min(+$('#e-surf').value, [200, 30, 20, 200][+$('#e-type').value]), k = +$('input[name="lvl"]:checked').value;
+      const MAX = [200, 30, 20, 200], sl = $('#e-surf');
+      if (sl.max != MAX[t]) { sl.max = MAX[t]; if (+sl.value > MAX[t]) sl.value = MAX[t]; }
+      const s2 = +sl.value; $('#e-surf-v').textContent = s2;
       const lo = P[t][0] * s * k, hi = P[t][1] * s * k, f = t === 3 ? fmtS : fmt;
       out.textContent = 'Entre ' + f(lo) + ' et ' + f(hi);
     };

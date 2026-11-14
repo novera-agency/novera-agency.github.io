@@ -13,6 +13,7 @@
     const calc = () => {
       const type = +t.value, surf = +s.value;
       $('#' + p + 'sv').textContent = surf;
+      f.disabled = type === 3;
       if (type === 3) { // fin de chantier : intervention unique
         const h = Math.max(4, surf / YIELD[3]);
         out.textContent = eur(h * RATE * 0.92) + ' – ' + eur(h * RATE * 1.12) + ' (unique)';
