@@ -66,7 +66,7 @@ export const reasons = [
   },
   {
     title: 'Pensé d’abord pour le téléphone',
-    text: 'La majorité des visites se fait sur mobile. Lecture, navigation et appel en un geste : tout est prévu.',
+    text: 'Beaucoup de visites se font sur mobile. Lecture, navigation et prise de contact en un geste : tout est prévu.',
   },
   {
     title: 'Un accompagnement personnalisé',
@@ -92,7 +92,7 @@ export const steps = [
   {
     n: '03',
     title: 'Création',
-    text: 'Notre équipe conçoit le design puis développe votre site, en vous associant aux validations clés.',
+    text: 'Nous concevons le design puis développons votre site, en vous associant aux validations clés.',
   },
   {
     n: '04',

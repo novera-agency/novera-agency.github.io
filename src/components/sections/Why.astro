@@ -5,6 +5,7 @@ import Icon from '../Icon.astro';
 const icons = ['user', 'compass', 'shield', 'mobile', 'spark', 'wallet'] as const;
 interface Props { show?: boolean }
 const { show = true } = Astro.props;
+const Hn = show ? 'h3' : 'h2';
 ---
 <section class="section section--dark why" id="pourquoi" aria-labelledby="why-title">
   <div class="container">
@@ -17,7 +18,7 @@ const { show = true } = Astro.props;
       {reasons.map((r, i) => (
         <li class="reason" data-reveal style={`--d:${(i % 3) * 0.08}s`}>
           <span class="reason__icon"><Icon name={icons[i]} size={22} /></span>
-          <h3 class="reason__title">{r.title}</h3>
+          <Hn class="reason__title">{r.title}</Hn>
           <p class="reason__text">{r.text}</p>
         </li>
       ))}

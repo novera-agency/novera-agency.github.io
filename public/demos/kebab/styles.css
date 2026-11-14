@@ -5,7 +5,7 @@
 @font-face{font-family:'Inter';src:url('../fonts/inter-latin-wght-normal.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
 
 :root{
-  --y:#FFD23F;--ink:#111;--red:#E5352B;--red-d:#B92119;--white:#fff;--muted:#4b4220;--focus:#111;
+  --y:#FFD23F;--ink:#111;--red:#CC2A20;--red-d:#9E1B13;--white:#fff;--muted:#4b4220;--focus:#111;
   --display:'Bricolage Grotesque','Arial Black',system-ui,sans-serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
   --appbar:64px;--gut:clamp(14px,3vw,36px);
 }

@@ -91,8 +91,8 @@ section{padding-inline:var(--pad)}
 .plan{padding-bottom:clamp(24px,3vw,40px)}
 /* Étude */
 .etude{min-height:calc(100svh - var(--bar) - 70px);align-content:center;background:var(--accent);color:var(--accent-ink);padding-block:clamp(56px,8vw,110px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,96px);transition:background-color .7s}
-.etude h2{font-size:clamp(3rem,7vw,6.4rem);line-height:.9}
-.etude h2 em{color:var(--soft)}
+.etude h1,.etude h2{font-size:clamp(3rem,7vw,6.4rem);line-height:.9}
+.etude h1 em,.etude h2 em{color:var(--soft)}
 .etude .lead{color:rgba(255,255,255,.82);margin-top:22px}
 .etude dl{margin:30px 0 0;display:grid;gap:14px}
 .etude dt{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;opacity:.7}
@@ -138,3 +138,7 @@ textarea.input{min-height:96px;resize:vertical}
 .sphoto{justify-self:stretch;aspect-ratio:4/5;border-radius:28px;box-shadow:0 30px 60px -36px rgba(20,37,26,.5)}
 .sphoto img{transition:opacity .5s}
 @media (max-width:1100px){.sphoto{aspect-ratio:16/10}}
+
+/* Correctifs : h1 de la page étude, libellé du rail plus lisible */
+.etude h1{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.02em}
+.rail-nav a{color:#3f5040}

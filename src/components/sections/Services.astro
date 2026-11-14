@@ -5,6 +5,7 @@ import Icon from '../Icon.astro';
 const icons = ['layout', 'spark', 'compass'] as const;
 interface Props { show?: boolean }
 const { show = true } = Astro.props;
+const Hn = show ? 'h3' : 'h2';
 ---
 <section class="section section--white" id="services" aria-labelledby="services-title">
   <div class="container">
@@ -21,7 +22,7 @@ const { show = true } = Astro.props;
             <span class="service__icon"><Icon name={icons[i]} size={26} /></span>
           </div>
           <div class="service__body">
-            <h3 class="h3 service__title">{s.title}</h3>
+            <Hn class="h3 service__title">{s.title}</Hn>
             <p class="service__lead">{s.lead}</p>
             <p class="service__text">{s.text}</p>
           </div>

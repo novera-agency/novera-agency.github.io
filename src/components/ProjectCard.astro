@@ -3,8 +3,9 @@ import { u } from '../utils/url';
 import type { Project } from '../data/projects';
 import DevicePair from './mockups/DevicePair.astro';
 import Icon from './Icon.astro';
-interface Props { project: Project; index?: number }
-const { project: p, index = 0 } = Astro.props;
+interface Props { project: Project; index?: number; level?: 'h2' | 'h3' }
+const { project: p, index = 0, level = 'h3' } = Astro.props;
+const Hn = level;
 ---
 <article class="project" data-category={p.categoryId} data-reveal style={`--d:${(index % 2) * 0.1}s; --tint:${p.theme.dark ? p.theme.bg : p.theme.photoA}`}>
   <a href={u(`/realisations/${p.slug}/`)} class="project__link" aria-label={`Voir le projet de démonstration ${p.category} — ${p.name}`}>
@@ -15,7 +16,7 @@ const { project: p, index = 0 } = Astro.props;
     <div class="project__meta">
       <div>
         <p class="project__cat">{p.category}</p>
-        <h3 class="project__name">{p.name}</h3>
+        <Hn class="project__name">{p.name}</Hn>
       </div>
       <span class="project__arrow"><Icon name="arrow-up-right" size={20} /></span>
     </div>

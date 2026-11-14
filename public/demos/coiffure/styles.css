@@ -6,7 +6,7 @@
 @font-face{font-family:'Inter';src:url('../fonts/inter-latin-wght-normal.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
 
 :root{
-  --bg:#F5F0E9;--paper:#FFFFFF;--ink:#1B1614;--muted:#6F625B;--line:rgba(27,22,20,.16);--blush:#EBD3CA;--terra:#B4533A;--terra-d:#8F3E29;--focus:#B4533A;
+  --bg:#F5F0E9;--paper:#FFFFFF;--ink:#1B1614;--muted:#6F625B;--line:rgba(27,22,20,.16);--blush:#EBD3CA;--terra:#A34A32;--terra-d:#7F3622;--focus:#A34A32;
   --serif:'Bodoni Moda','Didot','Times New Roman',serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
   --gut:clamp(16px,4vw,56px);--max:1280px;--bar:36px;
 }
@@ -173,3 +173,7 @@ p{margin:0}
 
 .steps,.book>*,.split>*,.step{min-width:0}
 .days{max-width:100%}
+
+/* Correctifs : titres lisibles sur les cartes */
+.tz h3{color:var(--ink)}
+.tz .go{color:var(--terra-d)}

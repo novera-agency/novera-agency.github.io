@@ -5,7 +5,7 @@
 @font-face{font-family:'Inter';src:url('../fonts/inter-latin-wght-normal.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
 
 :root{
-  --bg:#F2FAFB;--white:#FFFFFF;--ink:#0A3A55;--muted:#51707F;--aqua:#12A8C9;--aqua-d:#0C86A3;--mint:#D6F3EE;--sky:#DFF1F7;--sun:#FFC94D;--line:rgba(10,58,85,.14);--focus:#0C86A3;
+  --bg:#F2FAFB;--white:#FFFFFF;--ink:#0A3A55;--muted:#51707F;--aqua:#0A7C99;--aqua-d:#075F76;--mint:#D6F3EE;--sky:#DFF1F7;--sun:#FFC94D;--line:rgba(10,58,85,.14);--focus:#075F76;
   --disp:'Outfit',system-ui,sans-serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
   --gut:clamp(16px,4vw,56px);--max:1220px;--bar:36px;
 }
@@ -137,3 +137,7 @@ textarea.input{min-height:110px;resize:vertical}
   body{padding-bottom:84px}
   .cta .btn{width:100%}
 }
+
+/* Correctifs : badge photo qui ne chevauche pas les autres éléments */
+.visual .ph-tag{right:auto;left:10px;bottom:auto;top:10px}
+.btn{color:#fff}

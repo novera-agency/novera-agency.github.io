@@ -22,7 +22,7 @@ const { showHeading = true } = Astro.props;
       ))}
     </div>
     <div class="grid" data-filter-grid>
-      {projects.map((p, i) => <ProjectCard project={p} index={i} />)}
+      {projects.map((p, i) => <ProjectCard project={p} index={i} level={showHeading ? 'h3' : 'h2'} />)}
     </div>
     <div class="projects__foot" data-reveal>
       <p class="projects__disclaimer"><Icon name="alert" size={18} />Les projets marqués « démonstration » présentent des entreprises fictives, et les projets « indépendants » sont des projets réels. Aucun ne constitue une référence client.</p>

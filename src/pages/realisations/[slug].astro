@@ -17,7 +17,7 @@ const { project: p, prev, next, n } = Astro.props;
 const badge = p.badge ?? (p.demo ? 'Projet de démonstration' : '');
 const siteHref = p.url ? (p.url.startsWith('/') ? u(p.url) : p.url) : '';
 ---
-<BaseLayout title={`${p.name} — ${p.category}`} description={p.summary}>
+<BaseLayout title={`${p.name} — ${p.category}`} description={p.summary.length > 155 ? p.summary.slice(0, 154).replace(/\s+\S*$/, '') + '…' : p.summary}>
   <section class="head">
     <div class="container">
       <nav class="crumbs" aria-label="Fil d’Ariane" data-reveal>

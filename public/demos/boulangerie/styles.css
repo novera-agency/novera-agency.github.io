@@ -5,8 +5,8 @@
 @font-face{font-family:'Manrope';src:url('../fonts/manrope-latin-wght-normal.woff2') format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
 
 :root{
-  --paper:#EEEAE0;--paper-2:#F7F4EC;--ink:#1D1A17;--muted:#5C564E;--poppy:#B3261E;--wheat:#D9A441;
-  --slate:#25292B;--chalk:#EDE9DF;--wood:#7A5230;--focus:#B3261E;
+  --paper:#EEEAE0;--paper-2:#F7F4EC;--ink:#1D1A17;--muted:#5C564E;--poppy:#A5201A;--wheat:#D9A441;
+  --slate:#25292B;--chalk:#EDE9DF;--wood:#7A5230;--focus:#A5201A;
   --serif:'Young Serif',Georgia,serif;--sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;--gut:clamp(16px,3.4vw,44px);--max:1240px;
 }
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -124,3 +124,12 @@ textarea.input{min-height:100px;resize:vertical;background-image:repeating-linea
 .duo .ph{border:3px double var(--ink)}
 .fig .ph{border:3px double var(--ink)}
 @media (max-width:640px){.duo{grid-template-columns:1fr}}
+
+/* Correctifs : navigation mobile entièrement visible */
+@media (max-width:900px){
+  .strap ul{flex-wrap:wrap;overflow:visible;justify-content:center}
+  .strap li{flex:1 1 auto;text-align:center}
+  .strap li+li{border-left:1px solid var(--ink)}
+  .strap a{padding:12px 10px}
+}
+.strap .order a{color:var(--poppy)}

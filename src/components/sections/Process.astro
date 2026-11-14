@@ -3,6 +3,7 @@ import { steps } from '../../data/content';
 import SectionHeading from '../SectionHeading.astro';
 interface Props { show?: boolean }
 const { show = true } = Astro.props;
+const Hn = show ? 'h3' : 'h2';
 ---
 <section class="section" id="methode" aria-label="Notre méthode">
   <div class="container">
@@ -17,7 +18,7 @@ const { show = true } = Astro.props;
         <li class="step" data-reveal style={`--d:${i * 0.1}s`}>
           <span class="step__dot" aria-hidden="true"></span>
           <span class="step__n">{s.n}</span>
-          <h3 class="step__title">{s.title}</h3>
+          <Hn class="step__title">{s.title}</Hn>
           <p class="step__text">{s.text}</p>
         </li>
       ))}

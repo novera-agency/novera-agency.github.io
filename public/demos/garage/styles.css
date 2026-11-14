@@ -149,3 +149,11 @@ textarea.input{min-height:100px;resize:vertical}
   .nav li{flex:none}
   .state{margin-left:auto}
 }
+
+/* Correctifs : navigation mobile entièrement visible, contraste des tarifs */
+@media (max-width:980px){
+  .nav{flex-wrap:wrap;overflow:visible}
+  .nav li{flex:1 1 auto}
+  .nav a{justify-content:center;text-align:center}
+}
+.fcard .p{color:#FF5A4F}

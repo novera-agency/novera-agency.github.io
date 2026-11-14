@@ -121,17 +121,17 @@ const all: Project[] = [
     category: 'Boucherie',
     categoryId: 'boucherie',
     name: 'Boucherie Al-Baraka',
-    domain: 'gabriel-merlin.github.io/Buisness-solo',
-    url: 'https://gabriel-merlin.github.io/Buisness-solo/',
+    domain: 'boucherie-al-baraka.example',
+    url: '/demos/boucherie/',
     screenshots: {
       desktop: '/images/boucherie-desktop.webp',
       mobile: '/images/boucherie-mobile.webp',
-      alt: 'Aperçu du site de la Boucherie Al-Baraka, boucherie halal artisanale à Paris',
+      alt: 'Aperçu du site de la Boucherie Al-Baraka, boucherie halal artisanale (commerce fictif)',
     },
     summary:
-      'Site vitrine pour une boucherie halal artisanale parisienne : histoire de la maison, engagements qualité, gamme de produits, horaires et accès, avec un appel direct depuis le mobile.',
+      'Site vitrine pour une boucherie halal artisanale : histoire de la maison, engagements qualité, gamme de produits, horaires et accès, avec un appel direct depuis le mobile.',
     goals: ['Rassurer sur l’origine et la qualité des viandes', 'Présenter la gamme de produits', 'Faciliter la venue en boutique et l’appel'],
-    features: ['Pages viande, produits et contact', 'Horaires et adresse en un coup d’œil', 'Bouton d’appel sur mobile', 'Données structurées pour le référencement local'],
+    features: ['Pages viande, produits et contact', 'Horaires et adresse en un coup d’œil', 'Bouton d’appel sur mobile', 'Mention de l’Aïd al-Adha et commandes sur mesure'],
     theme: {
       bg: '#F8F6F1', surface: '#FFFFFF', ink: '#16302A', muted: '#5F6B66',
       accent: '#1A4D3A', accentInk: '#FFFFFF',
@@ -253,7 +253,7 @@ const all: Project[] = [
       alt: 'Aperçu du site de démonstration maison-duret',
     },
     summary:
-      'Un site de rénovation façon chantier : béton, noir et orange sécurité, formes en biais. Accueil percutante, galerie de chantiers filtrable, corps d’état et méthode en quatre phases, puis un estimateur de budget et la demande de devis.',
+      'Un site de rénovation façon chantier : béton, noir et orange sécurité, formes en biais. Accueil percutant, galerie de chantiers filtrable, corps d’état et méthode en quatre phases, puis un estimateur de budget et la demande de devis.',
     goals: ['Rassurer sur le sérieux de l’entreprise', 'Montrer les chantiers par métier', 'Chiffrer un projet avant le devis'],
     features: ['Estimateur de budget interactif', 'Galerie de chantiers filtrable', 'Corps d’état et méthode en 4 phases', 'Formulaire de devis'],
     theme: {
@@ -408,7 +408,7 @@ const all: Project[] = [
       alt: 'Aperçu du site de démonstration Atelier Solène, salon de coiffure',
     },
     summary:
-      'Un site de salon façon magazine de mode : une accueil à grande photo, la carte des prestations en onglets, la présentation de l’équipe et surtout une vraie réservation en ligne en quatre étapes, avec créneaux et total en direct.',
+      'Un site de salon façon magazine de mode : un accueil à grande photo, la carte des prestations en onglets, la présentation de l’équipe et surtout une vraie réservation en ligne en quatre étapes, avec créneaux et total en direct.',
     goals: ['Donner envie de pousser la porte du salon', 'Afficher clairement prestations et tarifs', 'Permettre de réserver en quelques touches'],
     features: ['Réservation en 4 étapes avec créneaux', 'Carte des prestations en onglets', 'Prochain créneau libre sur l’accueil', 'Quatre pages courtes'],
     theme: {
