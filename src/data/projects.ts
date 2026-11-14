@@ -250,7 +250,7 @@ const all: Project[] = [
     screenshots: {
       desktop: '/images/artisan-desktop.webp',
       mobile: '/images/artisan-mobile.webp',
-      alt: 'Aperçu du site de démonstration maison-duret',
+      alt: 'Aperçu du site de démonstration Maison Duret Rénovation',
     },
     summary:
       'Un site de rénovation façon chantier : béton, noir et orange sécurité, formes en biais. Accueil percutant, galerie de chantiers filtrable, corps d’état et méthode en quatre phases, puis un estimateur de budget et la demande de devis.',
@@ -281,7 +281,7 @@ const all: Project[] = [
     screenshots: {
       desktop: '/images/garage-desktop.webp',
       mobile: '/images/garage-mobile.webp',
-      alt: 'Aperçu du site de démonstration central-motors',
+      alt: 'Aperçu du site de démonstration Garage Central Motors',
     },
     summary:
       'Un site de garage façon tableau de bord : fond asphalte, rouge course, caractères condensés. Un diagnostic des voyants d’alerte dès l’accueil, des forfaits à prix annoncés, l’atelier et sa FAQ, puis la prise de rendez-vous avec immatriculation.',
@@ -374,7 +374,7 @@ const all: Project[] = [
     screenshots: {
       desktop: '/images/nettoyage-desktop.webp',
       mobile: '/images/nettoyage-mobile.webp',
-      alt: 'Aperçu du site de démonstration claireo-services',
+      alt: 'Aperçu du site de démonstration Clairéo Services',
     },
     summary:
       'Un site de nettoyage clair et aéré : navigation en capsule flottante, formes rondes et bulles. Une estimation de budget mensuelle dès l’accueil, quatre offres (bureaux, commerces, copropriétés, fin de chantier), la méthode, puis le devis gratuit.',

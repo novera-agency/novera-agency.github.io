@@ -785,3 +785,13 @@ img {
   .nav.is-open{visibility:visible;transition:transform .25s}
 }
 .hero .btn--primary{background:var(--color-accent);color:#1d1a10;border-color:var(--color-accent)}
+
+.aid-callout h2{color:#E3C07A}
+.field label span{color:#6b6b6b!important}
+.form-note{margin:0 0 1rem;padding:.7rem .9rem;background:#f1ece0;border-radius:6px;font-size:.9rem}
+
+@media (pointer:coarse),(max-width:768px){
+  .nav-toggle{min-height:44px}
+  .logo{display:inline-block;padding:10px 0}
+  .nav__list a,.site-footer a{display:inline-block;padding:12px 0;min-height:44px}
+}

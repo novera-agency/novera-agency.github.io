@@ -52,9 +52,9 @@ Tant qu’aucun service n’est configuré, le formulaire **n’affiche jamais d
 Par défaut, aucun cookie n’est déposé (polices auto-hébergées, aucun traceur) : aucun bandeau n’est nécessaire. Si vous renseignez `analytics.googleAnalyticsId`, un bandeau de consentement apparaît automatiquement, Google Analytics n’est chargé qu’après acceptation, et un lien « Gestion des cookies » est ajouté au pied de page.
 
 ### Avant la mise en ligne
-- [ ] Renseigner `url` (domaine définitif) dans `src/config/site.ts` et dans `public/robots.txt`
+- [ ] Renseigner `url` (domaine définitif) dans `src/config/site.ts` (le `robots.txt` est généré automatiquement)
 - [ ] Compléter toutes les informations `legal` (surlignées en jaune sur la page Mentions légales)
-- [ ] Remplacer l’e-mail et le téléphone de démonstration
+- [ ] Vérifier l’e-mail de contact et renseigner le téléphone le moment venu (`src/config/site.ts`)
 - [ ] Configurer l’envoi du formulaire et faire un essai réel
 - [ ] Remplacer les projets de démonstration par de vraies réalisations dès que possible (avec l’accord des clients)
 
@@ -64,11 +64,12 @@ Une page d'accueil courte qui donne envie, puis une page par sujet : `/services/
 
 ## Sites de démonstration
 
-Neuf sites statiques indépendants dans `public/demos/<nom>/`. Chacun a sa propre architecture, sa navigation et ses interactions, avec une page d'accueil qui donne envie et une page par sujet :
+Dix sites statiques indépendants dans `public/demos/<nom>/`. Chacun a sa propre architecture, sa navigation et ses interactions, avec une page d'accueil qui donne envie et une page par sujet :
 
 | Dossier | Concept | Pages |
 | --- | --- | --- |
 | `paysagiste/` | plan de jardin interactif, saisons qui recolorent le site, rail vertical | accueil, saisons, méthode, étude |
+| `boucherie/` | boucherie halal classique : en-tête, pages viande, produits et contact (commerce fictif) | accueil, viande, produits, contact |
 | `boulangerie/` | « gazette » à bandeau centré, fournées en direct, ardoise | une, carte, commande |
 | `restaurant/` | couverture plein écran, repères en chiffres romains, carte à onglets | accueil, carte, maison, réserver |
 | `kebab/` | application de commande, panier conservé d'une page à l'autre | accueil, carte, panier, infos |

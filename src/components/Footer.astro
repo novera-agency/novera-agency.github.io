@@ -64,7 +64,8 @@ const consentEnabled = Boolean(site.analytics.googleAnalyticsId);
   .footer__brand p { color: var(--on-dark-muted); max-width: 40ch; }
   .footer__cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
   .footer__title { font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; color: var(--on-dark-muted); font-weight: 600; margin-bottom: 18px; }
-  .footer__cols ul { display: grid; gap: 10px; }
+  .footer__cols ul { display: grid; gap: 2px; }
+  .footer__cols a, .footer__bottom a, .footer__bottom button { display: inline-block; padding-block: 8px; }
   .footer__cols a, .footer__bottom a, .footer__bottom button { color: var(--on-dark); opacity: .85; transition: opacity .3s, color .3s; overflow-wrap: anywhere; }
   @media (hover: hover) { .footer__cols a:hover, .footer__bottom a:hover, .footer__bottom button:hover { opacity: 1; color: #fff; text-decoration: underline; text-underline-offset: 4px; } }
   .footer__plain { color: var(--on-dark-muted); font-size: .95rem; }

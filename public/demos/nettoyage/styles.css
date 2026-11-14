@@ -126,8 +126,8 @@ textarea.input{min-height:110px;resize:vertical}
 @media (max-width:760px){
   .capsule{flex-wrap:wrap;border-radius:28px;padding:10px 10px 10px 16px;row-gap:6px}
   .logo{flex:1}
-  .links{order:3;flex-basis:100%;margin:0;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
-  .links li{flex:none}
+  .links{order:3;flex-basis:100%;margin:0;flex-wrap:wrap;padding-bottom:2px}
+  .links li{flex:1 1 auto;text-align:center}
   .offers,.check,.fields,.row{grid-template-columns:1fr}
   .tiles,.plan{grid-template-columns:1fr}
   .quote{position:static;margin-top:-30px;margin-inline:8px}
@@ -139,8 +139,7 @@ textarea.input{min-height:110px;resize:vertical}
 }
 
 /* Correctifs : badge photo qui ne chevauche pas les autres éléments */
-.visual .ph-tag{right:auto;left:10px;bottom:auto;top:10px}
-.btn{color:#fff}
+.visual .ph-tag{right:auto;left:50%;transform:translateX(-50%);bottom:auto;top:64px;white-space:nowrap}
 
 /* Lien discret dans les offres (un seul bouton de devis par page) */
 .tlink{display:inline-block;margin-top:6px;padding:10px 0;color:var(--aqua-d);font-weight:600;text-underline-offset:4px}
@@ -149,3 +148,5 @@ textarea.input{min-height:110px;resize:vertical}
 @media (max-width:900px){
   .hero .cta .btn:first-child{display:none}
 }
+
+.brand,.logo{min-height:44px;display:inline-flex;align-items:center}

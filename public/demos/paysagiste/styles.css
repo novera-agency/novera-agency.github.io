@@ -142,3 +142,6 @@ textarea.input{min-height:96px;resize:vertical}
 /* Correctifs : h1 de la page étude, libellé du rail plus lisible */
 .etude h1{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.02em}
 .rail-nav a{color:#3f5040}
+.etude .lead{color:#fff}.etude dt{opacity:1}.field label{opacity:1}.form-note{opacity:1}
+.etude .eyebrow{color:#fff}
+@media (max-width:900px){.rail-nav a{white-space:nowrap;padding-inline:6px}}

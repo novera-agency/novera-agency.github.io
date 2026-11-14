@@ -7,7 +7,7 @@
 
 :root{
   --bg:#F2EEE2;--paper:#FFFFFF;--ink:#222819;--muted:#5E6350;--line:rgba(34,40,25,.14);
-  --olive:#3D4A2A;--tomato:#D2492A;--ocre:#D9A236;--sage:#8EA06A;--plum:#6E2F4A;--focus:#3D4A2A;
+  --olive:#3D4A2A;--tomato:#BE3F22;--ocre:#D9A236;--sage:#8EA06A;--plum:#6E2F4A;--focus:#3D4A2A;
   --serif:'Instrument Serif',Georgia,serif;--sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;--gut:clamp(14px,3.4vw,44px);--barh:76px;
 }
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
@@ -196,3 +196,5 @@ textarea.input{min-height:110px;resize:vertical}
 .tagcard.c-vr .band{background-image:linear-gradient(0deg,rgba(90,110,60,.88),rgba(90,110,60,.3)),url('../photos/epicerie-vrac.webp')}
 .tagcard.c-cv .band{background-image:linear-gradient(0deg,rgba(210,73,42,.88),rgba(210,73,42,.3)),url('../photos/epicerie-cave.webp')}
 .ph.wide{margin-bottom:28px}
+
+@media (pointer:coarse){.hints a,.hints button{min-height:44px;display:inline-flex;align-items:center}}

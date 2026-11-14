@@ -177,3 +177,6 @@ textarea.input{min-height:120px;resize:vertical}
   .hero .ph{order:0;max-height:210px;min-height:150px}
   .hero .cta .btn:first-child{display:none}
 }
+
+.h1 em,h1 em,h2 em{color:var(--or-d)}
+.soon{color:#B24408}

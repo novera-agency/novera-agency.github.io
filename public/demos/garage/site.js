@@ -6,7 +6,7 @@
   const st = $('#state');
   if (st) { st.classList.toggle('off', !open); $('#state-txt').textContent = open ? 'Atelier ouvert' : 'Atelier fermé'; }
   document.querySelectorAll('#hours tr').forEach((tr) => { if (tr.dataset.days.split(',').includes(String(day))) tr.classList.add('today'); });
-  const d = $('#date'); if (d) d.min = now.toISOString().slice(0, 10);
+  const d = $('#date'); if (d) d.min = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
 
   const D = {
     huile: { t: 'Voyant d’huile', l: 'ARRÊT IMMÉDIAT', c: 'red', p: 'Pression ou niveau d’huile insuffisant. Coupez le moteur dès que possible en sécurité et ne continuez pas à rouler. Un niveau trop bas peut détruire le moteur.', f: 'Appelez l’atelier, puis forfait Vidange ou diagnostic.' },

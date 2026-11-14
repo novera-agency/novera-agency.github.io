@@ -184,3 +184,5 @@ p{margin:0}
 @media (max-width:900px){.cover .ph{max-height:320px}}
 @media (max-width:900px){.cover .ph{order:0;max-height:240px;min-height:160px}}
 @media (max-width:900px){.cover .cta .res{display:none}}
+
+@media (max-width:900px){.nav a,.nav-l a{display:inline-block;padding-block:12px;min-height:44px}}

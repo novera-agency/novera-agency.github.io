@@ -20,7 +20,7 @@ p{margin:0}
 .dateline span:nth-child(2){text-align:center}.dateline span:last-child{text-align:right}
 .masthead{text-align:center;padding-block:clamp(14px,2.4vw,30px) clamp(8px,1.4vw,18px)}
 .masthead a{text-decoration:none}
-.masthead h1{font-size:clamp(3.2rem,12.4vw,11rem);line-height:.84;letter-spacing:-.04em}
+.masthead h1,.masthead .mh{font-size:clamp(3.2rem,12.4vw,11rem);line-height:.84;letter-spacing:-.04em}
 .masthead .tagline{display:flex;align-items:center;gap:18px;margin-top:clamp(10px,1.6vw,20px)}
 .masthead .tagline::before,.masthead .tagline::after{content:'';flex:1;height:1px;background:var(--ink)}
 .strap{position:sticky;top:var(--bar);z-index:60;background:var(--paper);border-block:3px double var(--ink)}
@@ -133,3 +133,7 @@ textarea.input{min-height:100px;resize:vertical;background-image:repeating-linea
   .strap a{padding:12px 10px}
 }
 .strap .order a{color:var(--poppy)}
+
+.masthead .mh{margin:0;font-family:var(--serif);font-weight:400}
+.batch.done{opacity:1;color:#6b6359}
+.batch.done *{color:#6b6359}

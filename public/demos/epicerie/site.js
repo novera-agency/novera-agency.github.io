@@ -24,7 +24,7 @@
   });
 
   // ---- Données (exemples)
-  const LABEL = { fl: 'Fruits & légumes', cr: 'Crèmerie', ep: 'Épicerie', vr: 'Vrac', cv: 'Cave' };
+  const LABEL = { fl: 'Fruits & légumes', cr: 'Crémerie', ep: 'Épicerie', vr: 'Vrac', cv: 'Cave' };
   const P = [
     ['Tomates anciennes', 'fl', 4.9, '/ kg', ['Local'], [5, 6, 7, 8, 9]],
     ['Carottes', 'fl', 2.6, '/ kg', ['Bio'], [4, 5, 6, 7, 8, 9, 10]],
@@ -79,7 +79,7 @@
   const params = new URLSearchParams(location.search);
   const state = { shelf: LABEL[params.get('rayon')] ? params.get('rayon') : 'all', q: norm((params.get('q') || '').trim()), saison: params.get('saison') === '1', local: false, bio: false, shown: PAGE };
   const input = $('#q'); if (input) input.value = params.get('q') || '';
-  const SHELVES = [['all', 'Tout'], ['fl', 'Fruits & légumes'], ['cr', 'Crèmerie'], ['ep', 'Épicerie'], ['vr', 'Vrac'], ['cv', 'Cave']];
+  const SHELVES = [['all', 'Tout'], ['fl', 'Fruits & légumes'], ['cr', 'Crémerie'], ['ep', 'Épicerie'], ['vr', 'Vrac'], ['cv', 'Cave']];
 
   const match = (p, ignoreShelf) => {
     if (!ignoreShelf && state.shelf !== 'all' && p.c !== state.shelf) return false;

@@ -125,3 +125,5 @@ body{--note-ink:#A99C8C}
 /* Correctifs : titre de la page réservation (h1) */
 .reserver h1{font-size:clamp(3rem,7vw,6rem);line-height:.95}
 .phl{color:#E4D5BC}
+.chapters a:focus-visible .lab{opacity:1;transform:none}
+@media (max-width:620px){.cover{padding-bottom:96px}}
